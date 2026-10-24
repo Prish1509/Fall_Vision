@@ -1,0 +1,16 @@
+
+# ---- Fall_Vision: never commit big files ----
+data/
+cache/
+features/
+models/
+outputs/
+*.mp4
+*.avi
+*.mov
+*.pt
+*.pth
+*.pkl
+*.npy
+*.npz
+*.zip
