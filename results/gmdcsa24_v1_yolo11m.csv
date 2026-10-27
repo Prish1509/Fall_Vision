@@ -1,0 +1,161 @@
+video,subject,label,predicted,alert_time_s,est_fall_start_s,true_fall_start_s,box_x1_y1_x2_y2,description
+Subject 1/Fall/01.mp4,1,Fall,Fall,6.09,3.86,3.4,481.4 564.0 1047.1 716.9,Falling from sitting on the chair to the ground. Left side Fall. Full body not visible
+Subject 1/Fall/02.mp4,1,Fall,Fall,4.45,2.16,1.9,408.3 587.5 1042.0 718.1,Falling from sitting on the chair to the ground. Left side Fall. Full body not visible
+Subject 1/Fall/03.mp4,1,Fall,Fall,4.04,2.76,2.5,364.2 443.8 868.1 649.1,Falling from sitting on the chair to the ground. Left side fall
+Subject 1/Fall/04.mp4,1,Fall,Fall,4.01,2.58,2.3,119.2 458.0 706.0 702.4,Falling from sitting on the chair to the ground. Right side fall
+Subject 1/Fall/05.mp4,1,Fall,Fall,3.77,2.15,1.8,290.9 493.6 753.6 668.7,Walking to falling. Right side fall
+Subject 1/Fall/06.mp4,1,Fall,Fall,4.18,2.49,2.2,278.3 490.4 630.7 681.2,Walking to falling. Right side fall
+Subject 1/Fall/07.mp4,1,Fall,Fall,2.96,1.28,1.1,207.0 502.3 614.1 676.5,Walking to falling. Right side fall
+Subject 1/Fall/08.mp4,1,Fall,Fall,2.83,1.21,0.8,566.1 501.2 1030.3 655.0,Walking to falling. Left side fall
+Subject 1/Fall/09.mp4,1,Fall,Fall,2.94,1.16,0.7,480.4 537.7 799.2 720.0,Standing position to falling. Forward Fall. Full body (head) not visible
+Subject 1/Fall/10.mp4,1,Fall,Fall,3.04,1.08,0.7,607.5 512.9 902.9 720.0,Standing position to falling. Forward Fall. Full body (right eye) not visible
+Subject 1/Fall/11.mp4,1,Fall,Fall,3.57,1.35,1.0,511.4 535.0 850.3 720.0,Standing position to falling
+Subject 1/Fall/12.mp4,1,Fall,Fall,4.51,2.32,1.9,389.1 551.8 947.5 720.0,Standing position to falling. Backward Fall
+Subject 1/Fall/13.mp4,1,Fall,ADL,,,0.4,,Standing position to falling. Backward fall. Full body (head) is not visible
+Subject 1/Fall/14.mp4,1,Fall,ADL,,,0.3,,Standing position to falling. Backward fall. Full body (both ankles) is not visible
+Subject 1/Fall/15.mp4,1,Fall,Fall,3.37,2.29,1.8,66.3 339.6 280.2 448.2,Sitting on the chair (side view) to right side fall
+Subject 1/Fall/16.mp4,1,Fall,Fall,4.38,3.23,2.8,585.5 512.9 986.2 680.8,Sitting on the chair (side view) to the left side fall
+Subject 1/ADL/01.mp4,1,ADL,ADL,,,,,Sitting on the bed to sleeping right side on the bed. Face towards camera
+Subject 1/ADL/02.mp4,1,ADL,ADL,,,,,Sitting on the bed to sleeping left side on the bed. Face towards the camera
+Subject 1/ADL/03.mp4,1,ADL,ADL,,,,,Sitting on the bed to sleeping left side on the bed. Face towards the ceiling
+Subject 1/ADL/04.mp4,1,ADL,ADL,,,,,From sleeping left side on the bed (Face towards the ceiling) to sitting on the bed
+Subject 1/ADL/05.mp4,1,ADL,ADL,,,,,Coming to the bed and reading book in the sitting position. Front view of the subject. One leg folded
+Subject 1/ADL/06.mp4,1,ADL,ADL,,,,,Sitting on the bed (front view) to reading the book while supporting towards the wall. Side view
+Subject 1/ADL/07.mp4,1,ADL,ADL,,,,,Reading book while sitting on the chair; Front view;Leg straight
+Subject 1/ADL/08.mp4,1,ADL,ADL,,,,,Walking in the room
+Subject 1/ADL/09.mp4,1,ADL,ADL,,,,,Reading book while walking in the room
+Subject 1/ADL/10.mp4,1,ADL,ADL,,,,,Reading book while walking in the room
+Subject 1/ADL/11.mp4,1,ADL,ADL,,,,,Walking to sitting on the chair and then reading book
+Subject 1/ADL/12.mp4,1,ADL,ADL,,,,,Reading book while sitting on the chair to stand up and keeping the book on the chair and going out of the room
+Subject 1/ADL/13.mp4,1,ADL,ADL,,,,,Walking to sitting on the chair (side view)
+Subject 1/ADL/14.mp4,1,ADL,ADL,,,,,Sitting on the chair (side view) to walking
+Subject 1/ADL/15.mp4,1,ADL,ADL,,,,,Walking to picking a mobile phone from the ground and then sitting on the chair
+Subject 1/ADL/16.mp4,1,ADL,ADL,,,,,Picking the mobile phone from the ground while sitting on the chair
+Subject 2/Fall/01.mp4,2,Fall,Fall,3.55,2.08,1.4,191.2 532.7 646.2 717.4,Right side fall on the ground
+Subject 2/Fall/02.mp4,2,Fall,Fall,4.76,3.02,2.7,457.9 596.8 902.7 720.0,Right side fall on the ground after walking
+Subject 2/Fall/03.mp4,2,Fall,Fall,1.54,0.67,0.0,411.1 336.4 812.3 485.5,Forward fall on the bed
+Subject 2/Fall/04.mp4,2,Fall,Fall,6.9,3.82,3.3,252.5 506.9 815.5 717.6,Seeing outside the window then backward fall
+Subject 2/Fall/05.mp4,2,Fall,Fall,2.68,1.21,0.8,497.0 485.6 805.6 719.5,Left side fall (face hidden by hand)
+Subject 2/Fall/06.mp4,2,Fall,Fall,5.09,3.01,2.1,274.1 587.8 884.4 715.9,Walking while seeing the mobile phone then fall backward (left hand not fully in the frame)
+Subject 2/Fall/07.mp4,2,Fall,Fall,2.68,2.55,2.0,390.7 413.0 716.9 661.1,Falling (forward) after trying to pick the bottle from the ground
+Subject 2/Fall/08.mp4,2,Fall,Fall,4.89,3.42,3.2,372.9 526.2 890.2 720.0,Reading a newspaper in the sitting position on the ground then falling backward
+Subject 2/Fall/09.mp4,2,Fall,Fall,4.96,2.08,1.8,323.5 530.8 861.4 717.7,Falling backward after walking
+Subject 2/Fall/10.mp4,2,Fall,Fall,3.73,2.33,2.0,732.8 476.5 1089.8 714.4,Right side fall then backward
+Subject 2/Fall/11.mp4,2,Fall,Fall,2.86,1.8,,521.8 219.7 797.1 439.4,Falling from bed to ground
+Subject 2/Fall/12.mp4,2,Fall,Fall,9.93,7.53,6.9,37.6 349.8 366.8 479.9,Drinking water from the water bottle then falling backwards
+Subject 2/Fall/13.mp4,2,Fall,Fall,5.48,3.21,2.5,183.4 333.7 567.0 480.0,Falling backward (side view)
+Subject 2/Fall/14.mp4,2,Fall,ADL,,,3.4,,Falling backward on the bed
+Subject 2/Fall/15.mp4,2,Fall,Fall,9.52,7.91,7.7,336.5 453.9 664.0 697.4,Writing while sitting on the bed; then falling on the ground
+Subject 2/Fall/16.mp4,2,Fall,Fall,3.01,1.47,0.8,300.8 480.4 964.4 720.0,Walking then falling forward
+Subject 2/Fall/17.mp4,2,Fall,Fall,4.76,3.08,2.5,444.4 499.9 1020.1 719.3,Walking then falling forward
+Subject 2/Fall/18.mp4,2,Fall,ADL,,,9.8,,Picking a water bottle from the ground and drinking water from it then falling forward on the ground
+Subject 2/Fall/19.mp4,2,Fall,Fall,10.19,8.58,8.2,175.2 462.2 728.5 690.9,Eating in standing position then falling forward
+Subject 2/Fall/20.mp4,2,Fall,Fall,10.12,8.44,7.9,341.3 453.3 922.1 636.1,Eating in standing position then falling forward
+Subject 2/Fall/21.mp4,2,Fall,Fall,8.38,6.71,6.2,63.9 481.9 617.5 679.7,Standing then falling sideways
+Subject 2/Fall/22.mp4,2,Fall,Fall,3.42,1.74,1.3,416.3 494.2 993.0 718.0,Walking then falling forward
+Subject 2/Fall/23.mp4,2,Fall,Fall,5.9,4.15,3.6,121.0 435.8 590.8 667.7,Standing then falling sideways
+Subject 2/Fall/24.mp4,2,Fall,Fall,5.7,4.02,3.3,286.4 435.4 749.1 717.0,Standing from the bed and then falling sideways on the ground
+Subject 2/Fall/25.mp4,2,Fall,Fall,5.36,3.41,3.0,114.2 481.1 732.6 716.0,Standing then falling backward on the ground
+Subject 2/ADL/01.mp4,2,ADL,ADL,,,,,Talking on the mobile phone while sitting on the bed and walking
+Subject 2/ADL/02.mp4,2,ADL,ADL,,,,,Picking up a water bottle from the ground and drinking while sitting on the bed
+Subject 2/ADL/03.mp4,2,ADL,ADL,,,,,Walking; removing dust from the bed using a pillow; and sleeping on the bed
+Subject 2/ADL/04.mp4,2,ADL,ADL,,,,,Yoga: Standing forward bend (Uttanasana)
+Subject 2/ADL/05.mp4,2,ADL,ADL,,,,,Throwing a book on the bed; standing up from the ground; walking; and opening the curtain
+Subject 2/ADL/06.mp4,2,ADL,ADL,,,,,Picking up the mobile phone from the ground; placing it on the bed; and sitting on the bed
+Subject 2/ADL/07.mp4,2,ADL,ADL,,,,,Exercising (Moving both hands up and down)
+Subject 2/ADL/08.mp4,2,ADL,Fall,2.81,1.41,,514.2 305.1 945.7 715.9,Exercising (Stretching thigh and trying to touch the ground:Pyramid Pose)
+Subject 2/ADL/09.mp4,2,ADL,ADL,,,,,Standing up from a sitting position on the bed and then sitting on the ground
+Subject 2/ADL/10.mp4,2,ADL,ADL,,,,,Standing up from the ground and closing the curtain
+Subject 2/ADL/11.mp4,2,ADL,ADL,,,,,Removing the shirt and hanging it on the hanger
+Subject 2/ADL/12.mp4,2,ADL,ADL,,,,,Going to bed and sleeping (belly facing downwards)
+Subject 2/ADL/13.mp4,2,ADL,ADL,,,,,Sitting on the ground and reading a book
+Subject 2/ADL/14.mp4,2,ADL,ADL,,,,,Walking and reading something while sitting on the bed
+Subject 2/ADL/15.mp4,2,ADL,ADL,,,,,Reading a newspaper while sitting on the bed and placing a pillow on the lap
+Subject 2/ADL/16.mp4,2,ADL,ADL,,,,,Reading a newspaper; throwing the newspaper; and sleeping
+Subject 2/ADL/17.mp4,2,ADL,ADL,,,,,Standing up from bed; walking; and checking the dress on the hanger
+Subject 2/ADL/18.mp4,2,ADL,ADL,,,,,Walking; opening the window; and looking outside
+Subject 2/ADL/19.mp4,2,ADL,ADL,,,,,Sitting on the ground and writing in a notebook
+Subject 2/ADL/20.mp4,2,ADL,ADL,,,,,Standing up; picking up a water bottle; and drinking water while sitting on the ground
+Subject 2/ADL/21.mp4,2,ADL,Fall,3.07,1.67,,612.1 275.9 937.2 708.1,Picking up a pen from the ground and walking
+Subject 2/ADL/22.mp4,2,ADL,Fall,3.07,3.07,,499.5 520.1 831.4 675.1,Exercising (Push-up) and sitting
+Subject 2/ADL/23.mp4,2,ADL,ADL,,,,,Eating biscuits while sitting on the bed with legs folded
+Subject 3/Fall/01.mp4,3,Fall,Fall,1.87,0.27,0.0,357.0 496.4 764.0 715.2,falling forward
+Subject 3/Fall/02.mp4,3,Fall,Fall,5.22,3.15,2.6,537.1 314.1 834.8 504.2,Falling on the bed (forward)
+Subject 3/Fall/03.mp4,3,Fall,Fall,4.03,1.88,1.5,408.0 510.5 905.6 687.3,Falling backward on the floor
+Subject 3/Fall/04.mp4,3,Fall,Fall,3.75,1.54,1.2,291.0 518.8 842.5 719.5,Walking and then falling backward on the floor
+Subject 3/Fall/05.mp4,3,Fall,Fall,5.56,3.48,3.2,523.8 471.0 904.2 690.5,Falling slowly from standing position to the floor
+Subject 3/Fall/06.mp4,3,Fall,Fall,1.81,0.94,0.0,382.8 503.6 829.0 692.8,Falling (backward) on the floor from the sitting position
+Subject 3/Fall/07.mp4,3,Fall,Fall,3.36,1.27,1.0,159.6 402.5 854.4 649.0,Falling on the floor from the standing position
+Subject 3/Fall/08.mp4,3,Fall,Fall,1.77,0.27,0.0,366.3 474.7 805.5 717.8,Falling on the right side onto the floor from a standing position
+Subject 3/Fall/09.mp4,3,Fall,Fall,5.09,3.68,3.3,195.9 420.1 685.5 690.5,Reading the book while sitting on the ground; then falling backward
+Subject 3/Fall/10.mp4,3,Fall,Fall,2.08,2.08,1.7,475.0 327.3 678.0 465.8,Falling forward on the bed
+Subject 3/Fall/11.mp4,3,Fall,Fall,7.17,5.36,4.7,312.3 451.5 825.3 585.8,Eating in standing position then falling forward
+Subject 3/Fall/12.mp4,3,Fall,Fall,4.16,2.48,1.6,198.7 420.1 772.5 703.5,Falling backward from the bed
+Subject 3/Fall/13.mp4,3,Fall,Fall,3.01,1.67,1.4,148.0 464.3 756.4 713.5,Writing something in a notebook while sitting position on the floor; then falling backward
+Subject 3/Fall/14.mp4,3,Fall,Fall,10.6,8.38,8.1,375.9 445.8 834.8 718.3,Falling backward on the floor while removing the shirt and trying to hang it on the hangar
+Subject 3/Fall/15.mp4,3,Fall,ADL,,,1.9,,Trying to drink water from the water bottle and then falling on the floor
+Subject 3/Fall/16.mp4,3,Fall,ADL,,,1.8,,Walking and then falling left side on the floor
+Subject 3/Fall/17.mp4,3,Fall,Fall,3.13,1.86,1.4,444.3 332.4 889.7 561.9,Reading newspaper then falling Backward on the bed
+Subject 3/Fall/18.mp4,3,Fall,Fall,7.54,4.4,4.2,486.2 492.9 730.7 718.7,Sitting on the bed; then falling on the floor
+Subject 3/Fall/19.mp4,3,Fall,ADL,,,2.0,,Falling on the floor from the standing position
+Subject 3/Fall/20.mp4,3,Fall,Fall,3.92,2.46,2.3,206.8 330.0 535.8 479.5,Walking then falling forward on the floor
+Subject 3/Fall/21.mp4,3,Fall,Fall,7.76,5.56,5.4,155.7 456.9 707.7 649.8,Drinking in standing position then falling sideways
+Subject 3/ADL/01.mp4,3,ADL,ADL,,,,,Writing something in the notebook while sitting on the bed
+Subject 3/ADL/02.mp4,3,ADL,ADL,,,,,Exercise (Hand up & down)
+Subject 3/ADL/03.mp4,3,ADL,ADL,,,,,Getting up from the sleeping position from the bed; Putting a mask on the face; then walking
+Subject 3/ADL/04.mp4,3,ADL,Fall,2.14,0.67,,466.3 286.0 728.3 618.9,Picking a book from the floor and putting it on the bed; sitting on the bed
+Subject 3/ADL/05.mp4,3,ADL,Fall,3.42,1.95,,385.2 280.2 693.5 712.4,Exercising (hand down & up with body bending)
+Subject 3/ADL/06.mp4,3,ADL,Fall,5.16,3.82,,468.8 293.0 862.4 712.6,Exercising then sitting down on the floor
+Subject 3/ADL/07.mp4,3,ADL,ADL,,,,,Exercising (sitting and standing)
+Subject 3/ADL/08.mp4,3,ADL,ADL,,,,,Sitting to sleeping on the floor
+Subject 3/ADL/09.mp4,3,ADL,ADL,,,,,Sleeping on the floor to sitting and then standing
+Subject 3/ADL/10.mp4,3,ADL,ADL,,,,,Opening the window curtain and the window
+Subject 3/ADL/11.mp4,3,ADL,ADL,,,,,Closing the window curtain and the window
+Subject 3/ADL/12.mp4,3,ADL,ADL,,,,,Changing pages of a book while sitting on the bed; standing
+Subject 3/ADL/13.mp4,3,ADL,ADL,,,,,Sitting on the floor
+Subject 3/ADL/14.mp4,3,ADL,ADL,,,,,Sitting on the floor & drinking water from the water bottle
+Subject 3/ADL/15.mp4,3,ADL,ADL,,,,,Reading newspaper while sitting on the floor
+Subject 3/ADL/16.mp4,3,ADL,ADL,,,,,Eating while sitting on the ground
+Subject 3/ADL/17.mp4,3,ADL,ADL,,,,,Drinking water from a water bottle while sitting on the bed Putting the water bottle on the bed
+Subject 3/ADL/18.mp4,3,ADL,ADL,,,,,Walking; sitting on the bed and eating biscuits
+Subject 3/ADL/19.mp4,3,ADL,ADL,,,,,Picking the pen from the floor and putting it on the bed
+Subject 3/ADL/20.mp4,3,ADL,ADL,,,,,Talking on the phone while sitting on the bed
+Subject 3/ADL/21.mp4,3,ADL,ADL,,,,,Drinking while sitting on the bed
+Subject 3/ADL/22.mp4,3,ADL,ADL,,,,,Writing while sitting on the bed
+Subject 4/Fall/01.mp4,4,Fall,Fall,3.55,2.01,1.8,101.1 201.1 331.3 275.1,Standing on the bed to falling (LS) on the bed
+Subject 4/Fall/02.mp4,4,Fall,Fall,2.01,2.01,1.5,0.0 248.4 439.0 425.7,Falling (LS) from the bed to the floor
+Subject 4/Fall/03.mp4,4,Fall,Fall,4.96,2.01,1.7,54.6 344.4 330.7 479.9,Walking then falling (forward) view 1
+Subject 4/Fall/04.mp4,4,Fall,Fall,2.88,1.41,1.2,254.9 535.6 698.3 718.0,Walking then falling (forward) view 2
+Subject 4/Fall/05.mp4,4,Fall,Fall,4.96,3.02,2.7,229.7 305.0 728.0 564.1,Falling (RS) on the bed from sitting on the bed
+Subject 4/Fall/06.mp4,4,Fall,Fall,3.62,3.62,1.1,262.3 415.9 674.9 645.6,Falling (LS) on the bed from sitting on the bed then falling (RS) to the floor
+Subject 4/Fall/07.mp4,4,Fall,Fall,3.09,2.01,2.4,388.6 437.8 682.1 680.3,Walking then falling (LS) on the floor
+Subject 4/Fall/08.mp4,4,Fall,Fall,3.88,2.68,2.3,210.9 341.3 589.8 614.8,Falling backward on the bed from sitting on the bed
+Subject 4/Fall/09.mp4,4,Fall,ADL,,,,,Falling backward on the bed from sitting on the bed
+Subject 4/Fall/10.mp4,4,Fall,Fall,3.22,2.75,2.2,278.4 496.4 577.6 715.1,Reading a book while sitting on the chair then falling (FW) on the ground
+Subject 4/Fall/11.mp4,4,Fall,Fall,3.69,1.54,1.2,204.3 513.9 629.8 670.3,Walking then falling (FW: only waist to toe is visible after falling)
+Subject 4/Fall/12.mp4,4,Fall,ADL,,,1.5,,Falling (FW)to the floor from sitting on the bed
+Subject 4/Fall/13.mp4,4,Fall,Fall,2.48,0.67,0.3,280.5 292.1 735.9 432.4,Falling (sideways) on the bed from sitting on the bed
+Subject 4/Fall/14.mp4,4,Fall,Fall,2.47,1.27,0.8,178.3 300.0 770.6 610.1,Falling (RS) on the bed from sitting on the bed then falling (LS) to the floor
+Subject 4/Fall/15.mp4,4,Fall,Fall,3.55,2.07,,267.9 495.7 565.6 716.0,Falling (FW) on the floor from sitting on the bed
+Subject 4/Fall/16.mp4,4,Fall,Fall,4.96,3.55,3.2,320.2 520.4 688.9 718.1,Walking then falling (FW) on the floor
+Subject 4/Fall/17.mp4,4,Fall,Fall,4.42,3.21,2.8,214.7 308.6 686.4 594.3,Falling (LS) on the bed from sitting on the bed
+Subject 4/ADL/01.mp4,4,ADL,ADL,,,,,Wiping the face with a handkerchief while sitting on the bed; cleaning the goggles and putting them on
+Subject 4/ADL/02.mp4,4,ADL,ADL,,,,,Talking on the mobile phone while walking
+Subject 4/ADL/03.mp4,4,ADL,ADL,,,,,Reading a book while sitting on the bed
+Subject 4/ADL/04.mp4,4,ADL,ADL,,,,,Using a laptop while sitting on the bed
+Subject 4/ADL/05.mp4,4,ADL,Fall,4.02,2.34,,258.3 326.8 603.9 720.0,Doing exercise (push-up); view 1
+Subject 4/ADL/06.mp4,4,ADL,Fall,2.48,1.21,,159.2 298.2 595.7 705.8,Doing exercise (push-up); view 2
+Subject 4/ADL/07.mp4,4,ADL,Fall,1.54,1.21,,183.3 439.1 559.6 651.4,Doing exercise (push-up); view 3
+Subject 4/ADL/08.mp4,4,ADL,ADL,,,,,Sleeping to sitting; putting on the goggles and drinking water
+Subject 4/ADL/09.mp4,4,ADL,ADL,,,,,Reading a book and checking the mobile phone while sitting on the bed
+Subject 4/ADL/10.mp4,4,ADL,Fall,9.92,9.92,,242.8 327.5 636.0 410.5,Walking then sleeping on the bed after removing the goggles
+Subject 4/ADL/11.mp4,4,ADL,ADL,,,,,Copying content from a book into a notebook while sitting on the floor
+Subject 4/ADL/12.mp4,4,ADL,ADL,,,,,Stopping copying from a book and drinking water while sitting on the floor
+Subject 4/ADL/13.mp4,4,ADL,ADL,,,,,Writing while sitting on the chair
+Subject 4/ADL/14.mp4,4,ADL,ADL,,,,,Sitting in the chair to standing on the floor; then picking up the water bottle and drinking water from it
+Subject 4/ADL/15.mp4,4,ADL,ADL,,,,,Sitting to sleeping on the bed
+Subject 4/ADL/16.mp4,4,ADL,ADL,,,,,Sitting on the bed; removing the goggles; then sleeping
+Subject 4/ADL/17.mp4,4,ADL,ADL,,,,,Picking up the book from the floor and putting it on the bed
+Subject 4/ADL/18.mp4,4,ADL,ADL,,,,,Wiping the face with a handkerchief; putting on the goggles; then reading a book
+Subject 4/ADL/19.mp4,4,ADL,Fall,3.08,1.74,,179.7 73.8 407.2 424.9,Walking; then picking up the biscuit jar and eating biscuits from it after sitting on the bed
+Subject 4/ADL/20.mp4,4,ADL,ADL,,,,,Eating biscuits then picking up the water bottle from the floor and drinking the water from it after sitting on the bed; keeping the bottle on the floor
