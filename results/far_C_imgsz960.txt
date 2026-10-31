@@ -1,0 +1,42 @@
+160 videos (79 Fall, 81 ADL)
+  pose extracted 10/160  (36 s)
+  pose extracted 20/160  (74 s)
+  pose extracted 30/160  (117 s)
+  pose extracted 40/160  (154 s)
+  pose extracted 50/160  (212 s)
+  pose extracted 60/160  (268 s)
+  pose extracted 70/160  (323 s)
+  pose extracted 80/160  (386 s)
+  pose extracted 90/160  (423 s)
+  pose extracted 100/160  (467 s)
+  pose extracted 110/160  (511 s)
+  pose extracted 120/160  (570 s)
+  pose extracted 130/160  (613 s)
+  pose extracted 140/160  (646 s)
+  pose extracted 150/160  (703 s)
+  pose extracted 160/160  (763 s)
+Rules: v2, hold = 2.0 s
+
+Subjects 1-2 (tuning)        F1=0.784  P=0.879  R=0.707  Acc=0.800  [TP=29 FP=4 TN=35 FN=12]  alert delay=2.9 s  fall-start error=0.4 s
+Subjects 3-4 (held out)      F1=0.742  P=0.958  R=0.605  Acc=0.800  [TP=23 FP=1 TN=41 FN=15]  alert delay=3.0 s  fall-start error=0.3 s
+All subjects                 F1=0.765  P=0.912  R=0.658  Acc=0.800  [TP=52 FP=5 TN=76 FN=27]  alert delay=2.9 s  fall-start error=0.4 s
+
+Mistakes on held-out Subjects 3-4 (watch these videos):
+  Fall -> predicted ADL  | Subject 3/Fall/01.mp4 | falling forward
+  Fall -> predicted ADL  | Subject 3/Fall/04.mp4 | Walking and then falling backward on the floor
+  Fall -> predicted ADL  | Subject 3/Fall/06.mp4 | Falling (backward) on the floor from the sitting position
+  Fall -> predicted ADL  | Subject 3/Fall/10.mp4 | Falling forward on the bed
+  Fall -> predicted ADL  | Subject 3/Fall/12.mp4 | Falling backward from the bed
+  Fall -> predicted ADL  | Subject 3/Fall/14.mp4 | Falling backward on the floor while removing the shirt and trying to h
+  Fall -> predicted ADL  | Subject 3/Fall/15.mp4 | Trying to drink water from the water bottle and then falling on the fl
+  Fall -> predicted ADL  | Subject 3/Fall/17.mp4 | Reading newspaper then falling Backward on the bed
+  Fall -> predicted ADL  | Subject 3/Fall/19.mp4 | Falling on the floor from the standing position
+  Fall -> predicted ADL  | Subject 3/Fall/20.mp4 | Walking then falling forward on the floor
+  Fall -> predicted ADL  | Subject 4/Fall/01.mp4 | Standing on the bed to falling (LS) on the bed
+  Fall -> predicted ADL  | Subject 4/Fall/02.mp4 | Falling (LS) from the bed to the floor
+  Fall -> predicted ADL  | Subject 4/Fall/06.mp4 | Falling (LS) on the bed from sitting on the bed then falling (RS) to t
+  Fall -> predicted ADL  | Subject 4/Fall/10.mp4 | Reading a book while sitting on the chair then falling (FW) on the gro
+  Fall -> predicted ADL  | Subject 4/Fall/12.mp4 | Falling (FW)to the floor from sitting on the bed
+   ADL -> predicted Fall | Subject 4/ADL/06.mp4 | Doing exercise (push-up); view 2
+
+Per-video results saved to results/far_C_imgsz960.csv
