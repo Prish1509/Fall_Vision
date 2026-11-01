@@ -26,3 +26,15 @@ Most misses: falls onto or from a bed or chair.
 | 10b | YOLO11m-pose | denoise + gamma | 0.417 | 1.000 | 0.263 | 0 | 28 |
 
 Finding: darkness causes missed falls, not false alarms. Brightening makes it worse; not used.
+
+## Far away (simulated: frames shrunk to 20 %, people about 60-130 px tall)
+
+| Step | Pose model | Small-person setting | F1 | Precision | Recall | False alarms | Missed falls |
+|---|---|---|---|---|---|---|---|
+| 15b | YOLO11m-pose | none (input 640) | 0.632 | 0.947 | 0.474 | 1 | 20 |
+| 15b | YOLO11m-pose | zoom re-check below 160 px | 0.632 | 0.947 | 0.474 | 1 | 20 |
+| 15b | YOLO11m-pose | input 960 | 0.742 | 0.958 | 0.605 | 1 | 15 |
+| 15b | YOLO11m-pose | input 1280 | 0.719 | 0.885 | 0.605 | 3 | 15 |
+
+Finding: input 960 helps far-away people with no extra false alarms; 1280 adds false alarms;
+the zoom re-check changed nothing (misses come from lost detections, not weak joints).
