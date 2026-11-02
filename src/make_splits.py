@@ -5,7 +5,7 @@ Which video goes where:
   Le2i, CAUCAFall, MCFD   OmniFall's official cross-subject (cs) splits:
                           train -> train, val -> val, test -> test_staged
                           (cross-subject = the same person never appears in two splits)
-  GMDCSA24                Subjects 1-2 -> train, Subjects 3-4 -> test_gmdcsa24, matching the
+  GMDCSA24                Subject 1 -> train, Subject 2 -> val, Subjects 3-4 -> test_gmdcsa24, matching the
                           rule experiments (rules were tuned on S1-2 and reported on S3-4)
   OOPS                    ALL videos -> test_oops (real-world falls, never trained or tuned on)
   Own videos              added later from splits/own_videos_labels.csv -> test_own
@@ -101,7 +101,7 @@ def main():
     # ---- GMDCSA24: same subjects as the rule experiments ----
     gm = [k for k in info if k[0].lower() == "gmdcsa24"]
     for k in gm:
-        assign(k, "train" if info[k]["subject"] in ("1", "2") else "test_gmdcsa24")
+        assign(k, {"1": "train", "2": "val"}.get(info[k]["subject"], "test_gmdcsa24"))
     if not gm:
         print("  GMDCSA24: no label file, skipped")
 
