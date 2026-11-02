@@ -1,0 +1,42 @@
+160 videos in both day and night folders
+  loaded 20/160
+  loaded 40/160
+  loaded 60/160
+  loaded 80/160
+  loaded 100/160
+  loaded 120/160
+  loaded 140/160
+  loaded 160/160
+
+A. Pose visibility (largest person)
+  Fall whole clip         day    detected  96.7 %   torso  88.9 %   conf 0.74
+  Fall whole clip         night  detected  93.8 %   torso  90.1 %   conf 0.74
+  Fall fall -1 s to +4 s  day    detected  96.3 %   torso  88.2 %   conf 0.73
+  Fall fall -1 s to +4 s  night  detected  92.9 %   torso  89.0 %   conf 0.73
+  ADL  whole clip         day    detected  99.6 %   torso  98.3 %   conf 0.84
+  ADL  whole clip         night  detected  98.5 %   torso  96.5 %   conf 0.81
+
+  Falls caught by day but missed at night: 15
+    Subject 1/Fall/01.mp4  day 64 / 42   night 70 / 65   Falling from sitting on the chair to the ground. L
+    Subject 1/Fall/09.mp4  day 83 / 82   night 39 / 39   Standing position to falling. Forward Fall. Full b
+    Subject 2/Fall/02.mp4  day 99 / 95   night 86 / 85   Right side fall on the ground after walking
+    Subject 2/Fall/08.mp4  day 100 / 100 night 83 / 83   Reading a newspaper in the sitting position on the
+    Subject 2/Fall/09.mp4  day 99 / 74   night 100 / 100 Falling backward after walking
+    Subject 2/Fall/12.mp4  day 96 / 57   night 87 / 56   Drinking water from the water bottle then falling 
+    Subject 2/Fall/14.mp4  day 95 / 88   night 49 / 49   Falling backward on the bed
+    Subject 2/Fall/16.mp4  day 100 / 100 night 98 / 98   Walking then falling forward
+    Subject 3/Fall/01.mp4  day 100 / 98  night 100 / 100 falling forward
+    Subject 3/Fall/04.mp4  day 96 / 96   night 91 / 81   Walking and then falling backward on the floor
+    Subject 3/Fall/14.mp4  day 95 / 83   night 92 / 79   Falling backward on the floor while removing the s
+    Subject 3/Fall/17.mp4  day 99 / 68   night 97 / 92   Reading newspaper then falling Backward on the bed
+    Subject 3/Fall/20.mp4  day 96 / 84   night 78 / 78   Walking then falling forward on the floor
+    Subject 4/Fall/01.mp4  day 98 / 98   night 76 / 76   Standing on the bed to falling (LS) on the bed
+    Subject 4/Fall/12.mp4  day 100 / 100 night 98 / 97   Falling (FW)to the floor from sitting on the bed
+
+B. Rule settings chosen on Subjects 1-2 (day + night, no extra false alarms): {'hold': 1.5, 'kp_conf': 0.3, 'drop_ratio': 0.25}
+  current v2 day    S3-4: F1=0.853  P=0.967  R=0.763  [TP=29 FP=1 TN=41 FN=9]
+  current v2 night  S3-4: F1=0.742  P=0.958  R=0.605  [TP=23 FP=1 TN=41 FN=15]
+  chosen     day    S3-4: F1=0.849  P=0.886  R=0.816  [TP=31 FP=4 TN=38 FN=7]
+  chosen     night  S3-4: F1=0.812  P=0.903  R=0.737  [TP=28 FP=3 TN=39 FN=10]
+
+Saved results/far_analysis.md

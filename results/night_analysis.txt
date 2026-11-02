@@ -1,0 +1,53 @@
+160 videos in both day and night folders
+Creating new Ultralytics Settings v0.0.8 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings
+[KDownloading https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11m-pose.pt to 'yolo11m-pose.pt': 49% ━━━━━╸────── 20.0/40.5MB 157.1MB/s 0.1s<0.1s[KDownloading https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11m-pose.pt to 'yolo11m-pose.pt': 100% ━━━━━━━━━━━━ 40.5MB 212.2MB/s 0.2s
+  loaded 20/160
+  loaded 40/160
+  loaded 60/160
+  loaded 80/160
+  loaded 100/160
+  loaded 120/160
+  loaded 140/160
+  loaded 160/160
+
+A. Pose visibility (largest person)
+  Fall whole clip         day    detected  96.6 %   torso  90.9 %   conf 0.75
+  Fall whole clip         night  detected  82.7 %   torso  72.6 %   conf 0.69
+  Fall fall -1 s to +4 s  day    detected  96.3 %   torso  90.2 %   conf 0.74
+  Fall fall -1 s to +4 s  night  detected  81.1 %   torso  69.3 %   conf 0.68
+  ADL  whole clip         day    detected  99.6 %   torso  99.1 %   conf 0.84
+  ADL  whole clip         night  detected  95.3 %   torso  92.7 %   conf 0.78
+
+  Falls caught by day but missed at night: 22
+    Subject 1/Fall/01.mp4  day 82 / 56   night 68 / 41   Falling from sitting on the chair to the ground. L
+    Subject 1/Fall/09.mp4  day 94 / 94   night 33 / 33   Standing position to falling. Forward Fall. Full b
+    Subject 1/Fall/10.mp4  day 100 / 100 night 46 / 46   Standing position to falling. Forward Fall. Full b
+    Subject 2/Fall/02.mp4  day 99 / 97   night 73 / 70   Right side fall on the ground after walking
+    Subject 2/Fall/09.mp4  day 96 / 79   night 100 / 40  Falling backward after walking
+    Subject 2/Fall/10.mp4  day 73 / 65   night 32 / 32   Right side fall then backward
+    Subject 2/Fall/12.mp4  day 97 / 56   night 40 / 33   Drinking water from the water bottle then falling 
+    Subject 2/Fall/13.mp4  day 95 / 92   night 59 / 45   Falling backward (side view)
+    Subject 3/Fall/02.mp4  day 97 / 97   night 66 / 34   Falling on the bed (forward)
+    Subject 3/Fall/04.mp4  day 99 / 99   night 77 / 45   Walking and then falling backward on the floor
+    Subject 3/Fall/06.mp4  day 100 / 100 night 92 / 92   Falling (backward) on the floor from the sitting p
+    Subject 3/Fall/13.mp4  day 100 / 100 night 98 / 78   Writing something in a notebook while sitting posi
+    Subject 3/Fall/14.mp4  day 99 / 99   night 100 / 25  Falling backward on the floor while removing the s
+    Subject 3/Fall/17.mp4  day 100 / 89  night 28 / 28   Reading newspaper then falling Backward on the bed
+    Subject 3/Fall/18.mp4  day 79 / 79   night 31 / 31   Sitting on the bed; then falling on the floor
+    Subject 3/Fall/20.mp4  day 97 / 96   night 46 / 36   Walking then falling forward on the floor
+    Subject 4/Fall/01.mp4  day 100 / 98  night 95 / 90   Standing on the bed to falling (LS) on the bed
+    Subject 4/Fall/04.mp4  day 81 / 81   night 22 / 12   Walking then falling (forward) view 2
+    Subject 4/Fall/07.mp4  day 100 / 100 night 30 / 27   Walking then falling (LS) on the floor
+    Subject 4/Fall/09.mp4  day n/a       night n/a       Falling backward on the bed from sitting on the be
+    Subject 4/Fall/12.mp4  day 100 / 98  night 69 / 66   Falling (FW)to the floor from sitting on the bed
+    Subject 4/Fall/13.mp4  day 98 / 98   night 98 / 98   Falling (sideways) on the bed from sitting on the 
+
+B. Rule settings chosen on Subjects 1-2 (day + night, no extra false alarms): {'hold': 1.5, 'kp_conf': 0.3, 'drop_ratio': 0.25}
+  current v2 day    S3-4: F1=0.870  P=0.968  R=0.789  [TP=30 FP=1 TN=41 FN=8]
+  current v2 night  S3-4: F1=0.582  P=0.941  R=0.421  [TP=16 FP=1 TN=41 FN=22]
+  chosen     day    S3-4: F1=0.880  P=0.892  R=0.868  [TP=33 FP=4 TN=38 FN=5]
+  chosen     night  S3-4: F1=0.667  P=0.840  R=0.553  [TP=21 FP=4 TN=38 FN=17]
+
+Saved results/night_analysis.md

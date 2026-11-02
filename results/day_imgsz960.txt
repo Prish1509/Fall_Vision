@@ -1,0 +1,36 @@
+160 videos (79 Fall, 81 ADL)
+  pose extracted 10/160  (39 s)
+  pose extracted 20/160  (81 s)
+  pose extracted 30/160  (127 s)
+  pose extracted 40/160  (169 s)
+  pose extracted 50/160  (232 s)
+  pose extracted 60/160  (294 s)
+  pose extracted 70/160  (355 s)
+  pose extracted 80/160  (422 s)
+  pose extracted 90/160  (463 s)
+  pose extracted 100/160  (511 s)
+  pose extracted 110/160  (560 s)
+  pose extracted 120/160  (625 s)
+  pose extracted 130/160  (672 s)
+  pose extracted 140/160  (709 s)
+  pose extracted 150/160  (771 s)
+  pose extracted 160/160  (836 s)
+Rules: v2, hold = 2.0 s
+
+Subjects 1-2 (tuning)        F1=0.925  P=0.949  R=0.902  Acc=0.925  [TP=37 FP=2 TN=37 FN=4]  alert delay=2.9 s  fall-start error=0.4 s
+Subjects 3-4 (held out)      F1=0.853  P=0.967  R=0.763  Acc=0.875  [TP=29 FP=1 TN=41 FN=9]  alert delay=2.5 s  fall-start error=0.3 s
+All subjects                 F1=0.892  P=0.957  R=0.835  Acc=0.900  [TP=66 FP=3 TN=78 FN=13]  alert delay=2.9 s  fall-start error=0.4 s
+
+Mistakes on held-out Subjects 3-4 (watch these videos):
+  Fall -> predicted ADL  | Subject 3/Fall/06.mp4 | Falling (backward) on the floor from the sitting position
+  Fall -> predicted ADL  | Subject 3/Fall/10.mp4 | Falling forward on the bed
+  Fall -> predicted ADL  | Subject 3/Fall/12.mp4 | Falling backward from the bed
+  Fall -> predicted ADL  | Subject 3/Fall/15.mp4 | Trying to drink water from the water bottle and then falling on the fl
+  Fall -> predicted ADL  | Subject 3/Fall/19.mp4 | Falling on the floor from the standing position
+  Fall -> predicted ADL  | Subject 4/Fall/02.mp4 | Falling (LS) from the bed to the floor
+  Fall -> predicted ADL  | Subject 4/Fall/06.mp4 | Falling (LS) on the bed from sitting on the bed then falling (RS) to t
+  Fall -> predicted ADL  | Subject 4/Fall/10.mp4 | Reading a book while sitting on the chair then falling (FW) on the gro
+  Fall -> predicted ADL  | Subject 4/Fall/14.mp4 | Falling (RS) on the bed from sitting on the bed then falling (LS) to t
+   ADL -> predicted Fall | Subject 4/ADL/06.mp4 | Doing exercise (push-up); view 2
+
+Per-video results saved to results/day_imgsz960.csv
