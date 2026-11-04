@@ -38,3 +38,28 @@ Finding: darkness causes missed falls, not false alarms. Brightening makes it wo
 
 Finding: input 960 helps far-away people with no extra false alarms; 1280 adds false alarms;
 the zoom re-check changed nothing (misses come from lost detections, not weak joints).
+
+## Input size 960 vs 640 (Step 15c, held-out Subjects 3-4, rules v2 hold 2.0)
+
+| Step | Video | Input | F1 | Precision | Recall | False alarms | Missed falls |
+|---|---|---|---|---|---|---|---|
+| 15c | normal | 960 | 0.853 | 0.967 | 0.763 | 1 | 9 |
+| 15c | night (simulated) | 960 | 0.519 | 0.875 | 0.368 | 2 | 24 |
+
+Decision: input 640 is the default (960 is worse for normal and night video);
+960 is used only when people are small (it helps far-away people: F1 0.632 -> 0.742).
+
+## Why falls are missed at night and far away (Steps 16 and 15d; largest person, 1 s before to 4 s after the fall)
+
+| Step | Video | Input | Person detected % | Torso readable % |
+|---|---|---|---|---|
+| 16 | normal | 640 | 96 | 90 |
+| 16 | night (simulated) | 640 | 81 | 69 |
+| 15d | normal | 960 | 96 | 88 |
+| 15d | far away (20 % size) | 960 | 93 | 89 |
+
+Night: the person is lost in about 1 of 5 frames and the torso is unreadable in about 1 of 3.
+Far away at input 960: people are seen almost as well as at normal size, so the misses come from the rules.
+Rule search (chosen on Subjects 1-2): hold 1.5 s raises recall (night 0.42 -> 0.55) but adds 3 false
+alarms on held-out Subjects 3-4, so rules v2 keeps hold 2.0. A lower joint threshold did not help.
+Plan: fix night and far-away in the learned model (night-darkened and shrunk training skeletons) and the motion cue.
