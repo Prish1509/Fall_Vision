@@ -123,6 +123,7 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default="results/gru.md")
     ap.add_argument("--model-out", default="/kaggle/working/models/gru.pt")
+    ap.add_argument("--probs-out", default="", help="folder to save window probabilities per split")
     a = ap.parse_args()
 
     from sklearn.metrics import confusion_matrix, f1_score
@@ -194,6 +195,9 @@ def main():
         if d is None:
             continue
         proba = pv if split == "val" else predict(model, d["X"], mean, std, device)
+        if a.probs_out:
+            os.makedirs(a.probs_out, exist_ok=True)
+            np.savez_compressed(os.path.join(a.probs_out, f"{split}.npz"), proba=proba, vid=d["vid"], t=d["t"])
         truth = np.array([int(v["has_fall"]) for v in d["videos"]], bool)
         score, when = video_scores(proba, d["vid"], len(d["videos"]))
         for name, thr in (("precision-first", thr_p), ("best-F1", thr_f1)):
