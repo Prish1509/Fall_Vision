@@ -1,0 +1,2 @@
+video,person_id,fall_start_s,alarm_time_s,x1,y1,x2,y2,score,rules_agree
+/kaggle/input/notebooks/prishaitaliya/fallvision-data-omnifall/omnifall/OOPS/video/falls/25BestTrampolineFailNominees-FailArmyHallofFameJuly201724.mp4,1,2.2,2.87,607.1,273.2,705.5,483.9,0.993,0

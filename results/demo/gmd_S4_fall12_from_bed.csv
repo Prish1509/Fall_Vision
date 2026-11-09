@@ -1,0 +1,2 @@
+video,person_id,fall_start_s,alarm_time_s,x1,y1,x2,y2,score,rules_agree
+/kaggle/input/notebooks/prishaitaliya/fallvision-data-gmdcsa24/GMDCSA24/Subject 4/Fall/12.mp4,1,1.94,2.88,365.4,504.3,617.8,720.0,0.971,1

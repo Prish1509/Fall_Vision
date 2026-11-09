@@ -1,0 +1,6 @@
+clip                       label                  system                             verdict
+gmd_S4_fall12_from_bed     fall 0.9-2.3 s         alarm 2.9 s (start ~1.9 s)         CORRECT (start error +1.0 s, alarm 2.0 s after fall)
+gmd_S4_adl15_lying_down    no fall                alarm 3.4 s (start ~3.0 s)         WRONG - false alarm
+gmd_S4_adl06_pushups       no fall                alarm 3.4 s (start ~3.4 s)         WRONG - false alarm
+oops_1                     fall 2.3-3.8 s         alarm 2.9 s (start ~2.2 s)         CORRECT (start error -0.1 s, alarm 0.5 s after fall)
+oops_2                     fall 3.0-4.6 s         alarm 2.4 s (start ~0.5 s)         CORRECT (start error -2.5 s, alarm -0.6 s after fall)
