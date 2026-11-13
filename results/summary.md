@@ -63,3 +63,29 @@ Far away at input 960: people are seen almost as well as at normal size, so the 
 Rule search (chosen on Subjects 1-2): hold 1.5 s raises recall (night 0.42 -> 0.55) but adds 3 false
 alarms on held-out Subjects 3-4, so rules v2 keeps hold 2.0. A lower joint threshold did not help.
 Plan: fix night and far-away in the learned model (night-darkened and shrunk training skeletons) and the motion cue.
+
+## Learned models vs rules (Steps 19, 21, 22; video level, threshold chosen on validation)
+
+Same cached YOLO11m-pose skeletons and the same test videos for every model. FP = false alarms on
+non-fall videos, FN = missed falls. None of these test sets was used for training or for any choice.
+
+| Model | GMDCSA24 S3-4: F1 / P / R | FP | FN | Staged test: F1 / P / R | FP | FN | OOPS: F1 / P / R | FP | FN |
+|---|---|---|---|---|---|---|---|---|---|
+| Rules v2 (hold 2.0 s) | 0.870 / 0.968 / 0.789 | 1 | 8 | 0.741 / 0.870 / 0.645 | 3 | 11 | 0.384 / 0.973 / 0.239 | 5 | 564 |
+| Random Forest | 0.909 / 0.897 / 0.921 | 4 | 3 | 0.949 / 1.000 / 0.903 | 0 | 3 | 0.691 / 0.978 / 0.535 | 9 | 344 |
+| GRU, no augmentation | 0.944 / 1.000 / 0.895 | 0 | 4 | 0.830 / 1.000 / 0.710 | 0 | 9 | 0.566 / 0.970 / 0.399 | 9 | 444 |
+| **GRU with augmentation (chosen)** | 0.914 / 0.860 / 0.974 | 6 | 1 | 0.933 / 0.966 / 0.903 | 1 | 3 | **0.798** / 0.953 / 0.686 | 25 | 232 |
+| GRU with augmentation + hard negatives x3 | 0.947 / 0.947 / 0.947 | 2 | 2 | 0.912 / 1.000 / 0.839 | 0 | 5 | 0.763 / 0.955 / 0.635 | 22 | 270 |
+
+Findings:
+- Every learned model beats the rules on every test set; on real-world OOPS the chosen GRU catches
+  507 falls against the rules' 177.
+- Augmentation (mirror, rotation, scale, joint noise, night-style hidden joints, dropped frames)
+  matters most for unseen real-world video: OOPS recall 0.399 -> 0.686.
+- Extra weight on "looks like a fall" windows (lying down, exercise, sitting down...) cuts false
+  alarms on GMDCSA24 from 6 to 2, at some cost in OOPS recall. Validation (76 videos, 35 non-falls)
+  could not separate the two models (both F1 0.940), so the simpler one was kept, as decided
+  before looking at the test sets.
+- Error analysis: 9 of the 12 worst missed OOPS falls scored 0 because the person is detected in
+  only 6-21 % of frames - a pose-detection failure, not a classifier failure. 77 of 818 OOPS clips
+  carry no "fall" label although they come from the falls folder, so OOPS precision is understated.

@@ -1,29 +1,53 @@
 # Fall_Vision: fall detection and localization in video (DS5602)
 
-Detects when a person who is walking, running, standing or sitting falls, by day or at night,
-and localizes them: who fell (track ID), where (bounding box) and when (fall start, alert time).
-Pose model: Ultralytics YOLO11-pose (AGPL-3.0) with ByteTrack tracking.
+Detects when a person who is walking, standing or sitting falls, by day or at night, and
+localizes them: **who** fell (track ID), **where** (bounding box) and **when** (fall start, alarm time).
 
-## Folders
-| Folder | Contents |
+## How it works
+1. **Pose:** Ultralytics YOLO11m-pose (17 COCO keypoints) + ByteTrack, at about 15 fps.
+   If people are small (standing height < 150 px) the video is re-run at input 960.
+2. **Tracks:** broken tracks are joined so a person keeps one ID through the fall.
+3. **Features:** 92 numbers per frame per person (joint positions and speeds scaled by body
+   height, joint confidences, head height and speed, box shape, torso angle).
+4. **Model:** a 2-layer GRU reads 2-second windows and outputs normal / falling / fallen.
+   Trained on Le2i, CAUCAFall, MCFD and GMDCSA24 with augmentation (mirror, rotation, scale,
+   joint noise, night-style hidden joints, dropped frames).
+5. **Alarm:** when the fall score passes the threshold chosen on validation; every person is scored.
+6. **Second opinion:** a rule-based detector runs on the same skeletons.
+
+## Run it on a video
+
+    python src/detect_falls.py --video clip.mp4 --gru models/gru.pt --threshold 0.849 --out clip_annotated.mp4 --csv clip_falls.csv
+
+Output: printed alarms (person, fall start, alarm time, box), a CSV, and an annotated video.
+
+## Data and splits
+| Use | Data |
 |---|---|
-| `src/` | All Python code |
-| `notebooks/` | Kaggle notebooks we ran |
-| `configs/` | Settings and thresholds |
-| `splits/` | Train / validation / test lists (test = OOPS + own videos, never trained on) |
-| `results/` | Small CSVs of scores and `summary.md` |
-| `team/` | Setup check-in files |
+| Train | Le2i, CAUCAFall, MCFD (OmniFall cross-subject splits), GMDCSA24 Subject 1 |
+| Validation (all choices) | Le2i + CAUCAFall val, GMDCSA24 Subject 2 |
+| Test (never trained or tuned on) | GMDCSA24 Subjects 3-4, staged test, **OOPS** (818 real-world falls), **our own videos** |
+
+## Results
+See `results/summary.md` for every experiment, including the ideas we tested and rejected
+(night brightening, zoom re-check for small people, input 1280, shorter hold time).
+
+## Code (`src/`)
+| Step | File |
+|---|---|
+| Data and splits | `make_splits.py`, `cache_poses.py` |
+| Rule baseline | `baseline_fall.py`, `eval_gmdcsa24.py`, `eval_rules_splits.py` |
+| Night and far-away tests | `simulate_night.py`, `simulate_far.py`, `night_analysis.py`, `small_person.py` |
+| Learned models | `preprocess.py`, `make_windows.py`, `train_rf.py`, `train_gru.py`, `fuse.py` |
+| Complete system | `detect_falls.py`, `eval_system.py` |
 
 Videos, pose caches and model weights stay on Kaggle and are never committed.
+Pose model: Ultralytics YOLO11 (AGPL-3.0). Datasets: see their own licences (OOPS and Le2i are
+for non-commercial research).
 
 ## Team
-| Member | Owns |
+| Member | Main work |
 |---|---|
-| Member 1 | System: pose + tracking, rules, small-person handling, motion cue, localization, demo |
-| Member 2 | Data and evaluation: datasets, splits, pose caches, preprocessing, all scoring |
-| Member 3 | Night handling and learned models: night tests, augmentation, Random Forest, GRU |
-
-## Workflow
-1. Run the start-of-session cell in Kaggle (clones or pulls this repo).
-2. Edit only the files you own; run on the Kaggle GPU.
-3. Pull, then commit and push your own files.
+| Member 1 | System, rules, small-person handling, localization, demo |
+| Member 2 | Data, splits, pose caches, evaluation, model runs |
+| Member 3 | Night handling, learned models, own-video recording, report |
