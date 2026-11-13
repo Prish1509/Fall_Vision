@@ -38,6 +38,25 @@ from train_gru import GRUNet
 
 WIN, STRIDE_S = 30, 0.5
 
+REF_W = 1280   # the 150-px small-person limit was set on 1280x720 GMDCSA24 video (Steps 15b-15c)
+
+
+def standing_height(video, data):
+    """90th percentile of box heights, rescaled to a 1280-pixel-wide frame.
+
+    Raw pixels depend on the camera: a far person 200 px tall in a 1920x1080 phone video is only
+    about 67 px after YOLO scales the frame to 640, yet looked "big enough" in raw pixels. Rescaling
+    to the 1280-wide frame the limit was chosen on makes the check mean the same for every video
+    (unchanged for 1280x720 video)."""
+    heights = [b[3] - b[1] for f in data["frames"] for b in f["boxes"]]
+    if not heights:
+        return None
+    cap = cv2.VideoCapture(video)
+    w, h = cap.get(cv2.CAP_PROP_FRAME_WIDTH), cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+    cap.release()
+    side = max(w, h) or REF_W
+    return float(np.percentile(heights, 90)) * REF_W / side
+
 
 def load_gru(path, device):
     ck = torch.load(path, map_location=device, weights_only=False)
@@ -123,7 +142,7 @@ def main():
     ap.add_argument("--score", choices=["fall+fallen", "falling"], default="fall+fallen")
     ap.add_argument("--threshold", type=float, default=0.835, help="chosen on validation (fuse.py)")
     ap.add_argument("--model", default="yolo11m-pose.pt")
-    ap.add_argument("--small-px", type=int, default=150, help="re-run at input 960 if people are smaller")
+    ap.add_argument("--small-px", type=int, default=150, help="re-run at input 960 if the standing height (in a 1280-wide frame) is below this")
     ap.add_argument("--conf", type=float, default=0.25)
     ap.add_argument("--out", default=None, help="annotated output video (.mp4)")
     ap.add_argument("--csv", default=None, help="CSV with one row per alarm")
@@ -140,9 +159,9 @@ def main():
     data, images = extract_tracks(a.video, a.model, 15.0, imgsz, keep_frames=bool(a.out), conf=a.conf)
     # standing height = 90th percentile of box heights (a person lying down has a short box,
     # so the median would wrongly call a lying person "small")
-    heights = [b[3] - b[1] for f in data["frames"] for b in f["boxes"]]
-    if heights and np.percentile(heights, 90) < a.small_px:
-        print(f"People are small (standing height {np.percentile(heights, 90):.0f} px): re-running at input 960")
+    h_std = standing_height(a.video, data)
+    if h_std is not None and h_std < a.small_px:
+        print(f"People are small (standing height {h_std:.0f} px in a 1280-wide frame): re-running at input 960")
         imgsz = 960
         data, images = extract_tracks(a.video, a.model, 15.0, imgsz, keep_frames=bool(a.out), conf=a.conf)
     fps = data["fps"]

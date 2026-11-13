@@ -117,3 +117,11 @@ Error analysis (results/error_analysis.md; 12 missed falls and 6 false alarms wa
 misses are mostly small or far-away people (4), camera motion (3) and very fast falls (2), plus a
 backward fall from sitting and a fall while mounting a horse; false alarms are lying down on purpose
 (2), exercise, a non-person "fall", one very fast movement and one label error.
+
+Small-person check fixed (after the error analysis): the standing height is now measured in a
+1280-wide frame (the frame size the 150-px limit was chosen on), so a far person in a 1920x1080
+or portrait phone video is recognised as small and re-run at input 960. Unchanged for 1280x720
+video; low-resolution video no longer re-runs needlessly. Re-run once on the 20 own videos
+(results/system_own_fix.md): the far video 009 now runs at 960 (person seen in 54 % of frames
+instead of 46 %) but is still missed; all other videos are unchanged, so the own-video result
+stays 17/20 falls caught, 0 false alarms. Kept because it is correct for any video resolution.

@@ -30,7 +30,7 @@ import numpy as np
 import torch
 
 from baseline_fall import extract_tracks
-from detect_falls import alarms_for_video, load_gru
+from detect_falls import alarms_for_video, load_gru, standing_height
 from train_rf import video_metrics
 
 EXTS = (".mp4", ".mov", ".avi", ".mkv", ".m4v", ".3gp")
@@ -39,9 +39,8 @@ EXTS = (".mp4", ".mov", ".avi", ".mkv", ".m4v", ".3gp")
 def run_video(path, grus, device, a):
     imgsz = 640
     data, _ = extract_tracks(path, a.model, 15.0, imgsz, conf=a.conf)
-    heights = [b[3] - b[1] for f in data["frames"] for b in f["boxes"]]
-    h90 = float(np.percentile(heights, 90)) if heights else 0.0
-    if heights and h90 < a.small_px:
+    h90 = standing_height(path, data) or 0.0
+    if h90 and h90 < a.small_px:
         imgsz = 960
         data, _ = extract_tracks(path, a.model, 15.0, imgsz, conf=a.conf)
     seen = np.mean([bool(f["boxes"]) for f in data["frames"]]) if data["frames"] else 0.0
