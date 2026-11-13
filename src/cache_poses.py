@@ -30,10 +30,15 @@ import time
 from baseline_fall import extract_tracks
 
 
-def video_file(ds, path, omnifall_root, gmd_root):
+def video_file(ds, path, omnifall_root, gmd_root, own_root=None):
     if ds.lower() == "gmdcsa24":
         subj, rest = path.split("/", 1)                       # "Subject_1", "ADL/01"
         return os.path.join(gmd_root, subj.replace("_", " "), rest + ".mp4")
+    if ds.lower() == "own":                                   # our own recordings (Step 13)
+        import glob as _glob
+        hits = _glob.glob(os.path.join(own_root or ".", "**", path + ".*"), recursive=True)
+        hits = [h for h in hits if h.lower().endswith((".mp4", ".mov", ".avi", ".mkv"))]
+        return hits[0] if hits else os.path.join(own_root or ".", path + ".mp4")
     return os.path.join(omnifall_root, ds, "video", path + ".mp4")
 
 
@@ -42,6 +47,7 @@ def main():
     ap.add_argument("--splits", default="splits/videos.csv")
     ap.add_argument("--omnifall-root", required=True, help="folder with mcfd/ caucafall/ le2i/ OOPS/")
     ap.add_argument("--gmd-root", required=True, help="GMDCSA24 folder with 'Subject 1' ...")
+    ap.add_argument("--own-root", default=None, help="folder with our own recorded videos (Step 13)")
     ap.add_argument("--out", default="poses")
     ap.add_argument("--model", default="yolo11m-pose.pt")
     ap.add_argument("--imgsz", type=int, default=640)
@@ -65,7 +71,7 @@ def main():
     for n, r in enumerate(rows, 1):
         ds, path, split = r["dataset"], r["path"], r["split"]
         pkl = os.path.join(a.out, ds, path + ".pkl")
-        src = video_file(ds, path, a.omnifall_root, a.gmd_root)
+        src = video_file(ds, path, a.omnifall_root, a.gmd_root, a.own_root)
         status, frames, fps = "cached", 0, 0.0
         if os.path.exists(pkl):
             status = "already"

@@ -83,6 +83,38 @@ def window_scores(grus, rf, feats, present, fps, device, score="fall+fallen"):
     return np.array(ends), s, p
 
 
+def alarms_for_video(data, grus, rf, device, threshold, score="fall+fallen"):
+    """One alarm per person who falls: (person id, alarm time, estimated fall start, box, score).
+
+    Used by detect_falls.py on a video and by eval_system.py on cached skeletons, so the scored
+    system and the demonstrated system are exactly the same code.
+    """
+    fps = data["fps"]
+    alarms = []
+    for pid, td in person_tracks(data).items():
+        f = features_from_tracks(td)
+        if f is None:
+            continue
+        ends, s, p = window_scores(grus, rf, f["feats"], f["present"], fps, device, score)
+        hit = np.where(s >= threshold)[0]
+        if len(hit) == 0:
+            continue
+        k = hit[0]
+        alarm_i = ends[k] - 1
+        # fall start: the fastest head drop inside the alarm window, then back to where the drop began
+        ts = f["feats"][:, 86]                                       # head-top vertical speed
+        lo = max(0, ends[k] - WIN)
+        start_i = lo + int(np.argmin(ts[lo:ends[k]]))
+        while start_i > lo and ts[start_i - 1] < -0.3:
+            start_i -= 1
+        frames = td["frames"]
+        bi = next((j for j in range(alarm_i, -1, -1) if frames[j]["boxes"]), None)
+        box = [round(float(v), 1) for v in frames[bi]["boxes"][0]] if bi is not None else []
+        alarms.append((pid, round(float(frames[alarm_i]["t"]), 2), round(float(frames[start_i]["t"]), 2),
+                       box, round(float(s[hit].max()), 3)))
+    return alarms
+
+
 def main():
     ap = argparse.ArgumentParser(description="FallVision: detect and localize falls in a video")
     ap.add_argument("--video", required=True)
@@ -116,28 +148,7 @@ def main():
     fps = data["fps"]
     print(f"{len(data['frames'])} frames at {fps:.1f} fps, input {imgsz}")
 
-    alarms = []                                   # (person, alarm_t, start_t, box, score)
-    for pid, td in person_tracks(data).items():
-        f = features_from_tracks(td)
-        if f is None:
-            continue
-        ends, s, p = window_scores(grus, rf, f["feats"], f["present"], fps, device, a.score)
-        hit = np.where(s >= a.threshold)[0]
-        if len(hit) == 0:
-            continue
-        k = hit[0]
-        alarm_i = ends[k] - 1
-        # fall start: the fastest head drop inside the alarm window, then back to where the drop began
-        ts = f["feats"][:, 86]                                       # head-top vertical speed
-        lo = max(0, ends[k] - WIN)
-        start_i = lo + int(np.argmin(ts[lo:ends[k]]))
-        while start_i > lo and ts[start_i - 1] < -0.3:
-            start_i -= 1
-        frames = td["frames"]
-        bi = next((j for j in range(alarm_i, -1, -1) if frames[j]["boxes"]), None)
-        box = [round(float(v), 1) for v in frames[bi]["boxes"][0]] if bi is not None else []
-        alarms.append((pid, round(float(frames[alarm_i]["t"]), 2), round(float(frames[start_i]["t"]), 2),
-                       box, round(float(s[hit].max()), 3)))
+    alarms = alarms_for_video(data, grus, rf, device, a.threshold, a.score)
 
     rule_events, rule_labels = run_rules(data, Params())
     print("\nGRU (main model):")
