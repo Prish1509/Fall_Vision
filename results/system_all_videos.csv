@@ -1,0 +1,956 @@
+split,group,dataset,path,has_fall,alarm,people_flagged,score,alarm_time_s,fall_start_est_s,true_fall_start_s,person_id,box
+test_staged,all,caucafall,adl/HopS8,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/HopS9,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/KneelS8,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/KneelS9,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/PickupobjectS8,0,1,1,0.865,10.95,10.4,,1,227.5 226.2 351.1 388.2
+test_staged,all,caucafall,adl/PickupobjectS9,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/SitDownS8,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/SitDownS9,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/WalkS8,0,0,0,0.0,,,,,
+test_staged,all,caucafall,adl/WalkS9,0,0,0,0.0,,,,,
+test_staged,all,caucafall,backwards/FallBackwardsS8,1,1,1,0.98,3.95,2.5,1.73,1,300.9 212.8 430.3 317.7
+test_staged,all,caucafall,forward/FallForwardS8,1,1,1,0.996,1.95,0.9,0.71,1,294.0 131.9 346.1 244.4
+test_staged,all,caucafall,forward/FallForwardS9,1,1,1,0.994,3.95,3.65,1.25,1,278.8 222.9 412.2 458.3
+test_staged,all,caucafall,side/FallLeftS8,1,1,1,0.984,2.45,1.55,1.0,1,250.0 201.8 320.5 320.0
+test_staged,all,caucafall,side/FallLeftS9,1,1,1,0.984,4.45,3.45,0.92,1,267.1 247.8 408.7 462.1
+test_staged,all,caucafall,side/FallRightS8,1,1,1,0.997,2.95,1.85,1.58,1,339.0 204.6 455.1 299.3
+test_staged,all,caucafall,side/FallRightS9,1,1,2,0.992,3.45,2.0,1.5,1,238.8 267.2 361.7 369.8
+test_staged,all,caucafall,side/FallSittingS8,1,1,1,0.992,4.95,3.8,2.25,1,262.4 283.9 460.2 389.0
+test_staged,all,caucafall,side/FallSittingS9,1,1,1,0.978,6.45,5.5,1.54,2,208.8 328.7 477.1 477.2
+test_staged,all,le2i,Coffee_room_01/video_23,1,1,1,0.999,9.04,8.08,7.529,2,150.1 135.5 225.8 202.1
+test_staged,all,le2i,Coffee_room_01/video_24,1,1,1,0.999,9.04,8.24,7.571,1,146.6 142.2 238.2 198.9
+test_staged,all,le2i,Coffee_room_01/video_25,1,1,1,0.999,6.16,5.2,5.196,1,150.4 106.0 247.0 217.3
+test_staged,all,le2i,Coffee_room_01/video_26,1,1,1,0.999,8.56,7.92,7.342,1,160.0 137.1 211.0 217.4
+test_staged,all,le2i,Coffee_room_01/video_27,1,1,2,0.984,7.6,6.48,6.237,1,160.9 138.1 221.3 177.3
+test_staged,all,le2i,Coffee_room_01/video_28,1,1,1,0.996,3.28,2.24,2.154,1,167.6 141.1 219.3 200.1
+test_staged,all,le2i,Coffee_room_01/video_4,1,1,1,0.999,5.68,4.8,4.592,2,194.6 171.1 249.2 240.0
+test_staged,all,le2i,Coffee_room_01/video_5,1,1,1,0.998,6.16,4.96,4.883,1,140.0 158.5 199.2 226.5
+test_staged,all,le2i,Coffee_room_01/video_6,1,1,1,0.999,6.64,5.36,5.32,1,148.1 166.0 212.2 218.1
+test_staged,all,le2i,Coffee_room_01/video_7,1,1,1,0.999,4.72,3.68,3.84,1,149.3 156.8 193.3 221.1
+test_staged,all,le2i,Coffee_room_01/video_8,1,1,1,0.99,7.12,6.16,6.07,1,152.2 147.5 185.3 208.0
+test_staged,all,le2i,Coffee_room_02/video_54,1,1,1,0.969,7.12,6.08,5.959,2,211.1 145.5 246.2 225.9
+test_staged,all,le2i,Coffee_room_02/video_57,1,1,1,0.999,18.64,17.68,17.216,1,174.8 134.4 211.4 217.2
+test_staged,all,le2i,Coffee_room_02/video_68,0,0,0,0.0,,,,,
+test_staged,all,le2i,Home_01/video_11,1,1,1,0.964,6.42,5.17,5.278,2,152.8 143.0 185.7 212.7
+test_staged,all,le2i,Home_01/video_14,1,1,1,0.995,8.42,7.25,7.299,1,153.9 118.8 185.9 162.9
+test_staged,all,le2i,Home_01/video_15,1,1,1,0.998,8.92,6.67,6.528,4,143.0 130.4 195.1 178.8
+test_staged,all,le2i,Home_01/video_18,1,0,0,0.0,,,4.799,,
+test_staged,all,le2i,Home_02/video_40,0,0,0,0.0,,,,,
+test_staged,all,le2i,Home_02/video_57,0,0,0,0.0,,,,,
+test_staged,all,le2i,Home_02/video_58,0,0,0,0.0,,,,,
+test_staged,all,le2i,Home_02/video_59,0,0,0,0.0,,,,,
+test_staged,all,le2i,Home_02/video_60,0,0,0,0.0,,,,,
+test_staged,all,le2i,Lecture_room/video_15,0,0,0,0.0,,,,,
+test_staged,all,le2i,Lecture_room/video_16,0,0,0,0.0,,,,,
+test_staged,all,le2i,Lecture_room/video_20,0,0,0,0.0,,,,,
+test_staged,all,le2i,Lecture_room/video_21,0,0,0,0.0,,,,,
+test_staged,all,le2i,Lecture_room/video_22,0,0,0,0.0,,,,,
+test_staged,all,le2i,Lecture_room/video_23,0,0,0,0.0,,,,,
+test_staged,all,le2i,Lecture_room/video_4,1,1,1,0.999,11.92,10.96,10.57,2,102.1 163.1 126.0 222.5
+test_staged,all,le2i,Lecture_room/video_5,1,1,1,0.999,11.92,10.56,10.487,1,84.2 175.0 145.4 212.0
+test_staged,all,le2i,Office/video_10,1,1,1,0.999,7.12,6.16,6.07,1,127.4 174.2 183.7 240.0
+test_staged,all,le2i,Office/video_11,1,1,1,0.956,5.2,3.28,3.091,5,118.7 160.0 183.3 240.0
+test_staged,all,le2i,Office/video_12,1,1,1,0.999,8.56,7.68,7.424,1,122.7 155.8 188.3 227.9
+test_staged,all,le2i,Office/video_21,0,0,0,0.0,,,,,
+test_staged,all,le2i,Office/video_22,0,0,0,0.0,,,,,
+test_staged,all,le2i,Office/video_25,0,0,0,0.0,,,,,
+test_staged,all,le2i,Office/video_31,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/01,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/02,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/03,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/04,0,1,1,0.948,5.69,4.96,,1,430.4 151.4 582.1 548.2
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/05,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/06,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/07,0,1,1,0.852,2.88,2.27,,1,590.1 356.7 799.7 702.0
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/08,0,1,1,0.986,2.88,1.27,,1,317.2 495.0 827.9 700.6
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/09,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/10,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/11,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/12,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/13,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/14,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/15,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/16,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/17,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/18,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/19,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/20,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/21,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/ADL/22,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/01,1,1,1,0.999,2.41,0.53,0.0,1,344.1 502.1 783.3 715.5
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/02,1,1,1,0.999,3.35,2.81,2.6,1,643.8 300.1 728.5 429.9
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/03,1,1,1,0.998,2.88,2.28,1.341,1,478.3 449.5 840.9 682.4
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/04,1,1,1,0.998,2.88,2.28,1.2,1,364.1 520.9 753.6 720.0
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/05,1,1,1,0.998,4.76,3.28,3.2,1,528.5 445.7 891.0 699.0
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/06,1,1,1,0.996,2.41,0.74,0.0,1,356.2 506.2 869.7 687.1
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/07,1,1,1,0.999,2.42,1.01,1.0,1,335.2 416.8 698.9 637.9
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/08,1,1,1,0.999,2.45,0.48,0.0,1,330.4 551.7 750.9 717.9
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/09,1,1,1,0.989,4.28,3.48,3.3,1,196.3 423.4 655.0 695.3
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/10,1,1,1,0.993,2.41,1.67,1.7,1,324.7 336.8 817.7 422.3
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/11,1,1,1,0.999,5.7,4.89,4.7,1,500.2 251.5 759.0 580.7
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/12,1,1,1,0.993,2.88,2.08,1.653,1,292.7 333.8 777.8 667.6
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/13,1,1,1,0.995,2.41,1.41,1.174,1,183.2 472.6 734.1 715.0
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/14,1,1,1,0.997,8.99,8.11,8.1,3,345.6 372.0 558.0 692.7
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/15,1,1,1,0.996,3.52,1.99,1.9,1,688.0 389.3 930.0 713.2
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/16,1,1,1,0.999,2.87,1.8,1.7,1,554.3 317.7 768.4 711.4
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/17,1,1,1,0.998,2.46,1.46,1.4,1,497.5 333.0 855.1 555.2
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/18,1,1,1,0.994,5.2,4.2,4.07,1,509.6 457.2 709.7 720.0
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/19,1,1,1,0.979,2.99,1.93,2.0,1,221.3 266.6 339.1 425.6
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/20,1,1,1,0.999,3.52,2.26,2.3,1,238.4 326.6 513.5 474.9
+test_gmdcsa24,all,GMDCSA24,Subject_3/Fall/21,1,1,1,0.998,6.63,5.35,5.091,1,278.3 379.8 610.8 618.6
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/01,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/02,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/03,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/04,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/05,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/06,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/07,0,1,1,0.986,2.41,0.94,,1,85.7 333.5 723.4 648.4
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/08,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/09,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/10,0,1,1,0.965,5.7,3.82,,1,309.1 279.9 629.6 411.3
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/11,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/12,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/13,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/14,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/15,0,1,1,0.982,2.41,0.47,,1,244.4 283.0 589.7 413.4
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/16,0,1,1,0.973,3.82,3.28,,1,276.7 276.8 587.2 410.7
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/17,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/18,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/19,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/ADL/20,0,0,0,0.0,,,,,
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/01,1,1,1,0.999,2.41,1.74,1.14,1,193.7 192.2 290.6 274.6
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/02,1,1,1,0.881,2.88,2.21,1.44,1,4.4 299.0 410.5 456.2
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/03,1,1,1,0.997,2.41,1.88,1.64,1,126.9 313.6 281.1 479.8
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/04,1,1,1,0.999,2.41,1.07,1.04,1,287.6 520.8 662.4 713.3
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/05,1,1,1,0.995,3.82,2.68,1.92,1,200.2 303.8 787.1 486.2
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/06,1,1,1,0.997,2.41,1.94,0.66,1,279.4 298.1 680.6 577.7
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/07,1,1,1,0.998,3.35,1.54,2.06,1,307.2 484.2 642.7 687.1
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/08,1,1,1,0.999,2.88,2.48,1.56,1,285.4 333.6 548.6 582.1
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/09,1,1,1,0.965,2.88,2.21,1.42,1,527.9 326.7 713.1 617.6
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/10,1,1,1,0.998,3.35,2.61,1.48,1,268.2 504.1 591.6 714.4
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/11,1,1,1,0.999,2.41,1.41,1.0,1,202.0 511.5 625.1 672.4
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/12,1,1,1,0.984,2.88,1.94,0.92,1,365.4 504.3 617.8 720.0
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/13,1,1,1,0.994,2.41,0.47,0.0,1,277.5 291.5 737.9 433.1
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/14,1,1,1,0.994,2.41,1.07,0.0,1,175.9 295.7 775.0 606.6
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/15,1,1,1,0.987,2.88,1.74,1.18,1,282.1 497.9 510.5 718.9
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/16,1,1,1,0.999,2.41,1.74,2.98,5,316.9 2.0 723.6 708.2
+test_gmdcsa24,all,GMDCSA24,Subject_4/Fall/17,1,1,1,0.998,2.41,2.41,2.14,1,234.5 173.5 485.7 616.6
+test_oops,all,OOPS,falls/25BestTrampolineFailNominees-FailArmyHallofFameJuly201724,1,1,1,0.997,2.87,2.2,2.346,1,607.1 273.2 705.5 483.9
+test_oops,all,OOPS,falls/25BestTrampolineFailNominees-FailArmyHallofFameJuly20176,1,1,2,0.997,2.4,0.47,3.012,1,395.3 228.8 541.6 519.0
+test_oops,all,OOPS,falls/29BestWorkFailNominees-FailArmyHallofFameAugust201713,1,1,1,0.991,3.8,2.94,2.965,3,623.5 364.0 772.7 562.8
+test_oops,all,OOPS,falls/29BestWorkFailNominees-FailArmyHallofFameAugust201722,0,1,1,0.977,6.14,5.21,,1,116.2 157.6 270.0 467.4
+test_oops,all,OOPS,falls/29BestWorkFailNominees-FailArmyHallofFameAugust201728,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/29BestWorkFailNominees-FailArmyHallofFameAugust20175,1,1,1,0.999,2.87,2.4,2.436,2,282.3 183.3 403.4 371.4
+test_oops,all,OOPS,falls/29HilariousInstantKarmaFailNominees-FailArmyHallofFame0,1,1,1,0.972,2.87,1.74,1.587,2,734.9 312.3 976.9 710.4
+test_oops,all,OOPS,falls/29HilariousInstantKarmaFailNominees-FailArmyHallofFame26,1,0,0,0.0,,,2.326,,
+test_oops,all,OOPS,falls/29HilariousInstantKarmaFailNominees-FailArmyHallofFame3,1,1,3,0.994,9.88,9.08,3.116,49,0.0 216.0 172.2 291.2
+test_oops,all,OOPS,falls/29HilariousInstantKarmaFailNominees-FailArmyHallofFame41,1,1,2,0.995,4.27,3.34,6.061,2,257.3 245.2 610.2 608.7
+test_oops,all,OOPS,falls/31BackToSchoolFailNominees-FailArmyHallofFameSeptember201740,1,1,12,0.999,12.21,11.28,5.484,173,242.6 587.8 416.1 717.5
+test_oops,all,OOPS,falls/31BackToSchoolFailNominees-FailArmyHallofFameSeptember201743,1,0,0,0.0,,,2.142,,
+test_oops,all,OOPS,falls/31SeniorCitizenFails-FailArmyHallofFameSeptember201719,1,1,1,0.983,8.94,7.47,3.997,10,292.4 398.2 369.6 595.1
+test_oops,all,OOPS,falls/31SeniorCitizenFails-FailArmyHallofFameSeptember201728,1,1,1,0.969,12.68,12.01,11.766,1,634.9 225.8 720.4 309.7
+test_oops,all,OOPS,falls/34FunnyKidNominees-FailArmyHallOfFameMay201713,1,1,1,0.996,5.21,4.2,4.337,1,150.1 400.6 340.0 719.5
+test_oops,all,OOPS,falls/34FunnyKidNominees-FailArmyHallOfFameMay201729,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/34FunnyKidNominees-FailArmyHallOfFameMay20179,0,1,1,0.99,3.34,2.8,,1,474.3 298.7 564.5 370.6
+test_oops,all,OOPS,falls/34WorkoutFailNominees-FailArmyHallOfFameApril201716,1,1,1,0.881,8.01,7.34,6.831,5,23.2 55.7 317.9 403.1
+test_oops,all,OOPS,falls/34WorkoutFailNominees-FailArmyHallOfFameApril201730,0,1,1,0.995,2.4,2.14,,1,12.4 186.1 756.6 709.0
+test_oops,all,OOPS,falls/38ParkourFailNominees-FailArmyHallOfFameMay201715,1,1,1,0.99,2.4,1.67,1.832,1,786.9 321.3 1006.0 508.6
+test_oops,all,OOPS,falls/38ParkourFailNominees-FailArmyHallOfFameMay201727,1,1,4,0.998,9.41,8.34,2.248,33,674.0 362.3 817.5 511.0
+test_oops,all,OOPS,falls/38ParkourFailNominees-FailArmyHallOfFameMay20176,1,0,0,0.0,,,2.784,,
+test_oops,all,OOPS,falls/ABoatloadofFails-ThrowbackFailsNovember2017_FailArmy0,1,1,1,0.938,7.07,6.21,3.826,1,487.6 207.8 612.8 412.6
+test_oops,all,OOPS,falls/ABoatloadofFails-ThrowbackFailsNovember2017_FailArmy15,1,1,1,0.996,3.34,2.87,3.058,1,317.9 466.8 485.6 647.2
+test_oops,all,OOPS,falls/ABoatloadofFails-ThrowbackFailsNovember2017_FailArmy18,1,0,0,0.0,,,3.018,,
+test_oops,all,OOPS,falls/AChristmasMiracle-FailsYouMissed21December2017_FailArmy3,0,1,2,0.946,5.42,3.84,,1,510.5 11.3 834.2 713.1
+test_oops,all,OOPS,falls/AChristmasMiracle-FailsYouMissed21December2017_FailArmy38,1,1,2,0.899,6.92,5.17,8.186,6,672.1 263.9 839.0 715.6
+test_oops,all,OOPS,falls/AChristmasMiracle-FailsYouMissed21December2017_FailArmy41,1,1,1,0.99,5.92,5.17,5.005,1,321.3 241.7 478.3 488.3
+test_oops,all,OOPS,falls/AChristmasMiracle-FailsYouMissed21December2017_FailArmy80,1,0,0,0.0,,,1.795,,
+test_oops,all,OOPS,falls/AlleyOOPS-FailsoftheWeekOctober201710,1,0,0,0.0,,,3.009,,
+test_oops,all,OOPS,falls/AlleyOOPS-FailsoftheWeekOctober20178,1,1,1,0.99,2.47,1.07,0.971,1,481.4 330.0 790.1 548.9
+test_oops,all,OOPS,falls/AlwaysWearYourHelmet-FailsoftheWeekJuly2018_FailArmy11,1,1,2,0.987,47.8,47.67,50.101,30,151.6 329.4 259.7 414.5
+test_oops,all,OOPS,falls/AmericanFailsJuly2017_FailArmy27,1,1,9,0.998,9.88,9.21,3.7,12,275.6 555.3 396.2 637.4
+test_oops,all,OOPS,falls/AmericanFailsJuly2017_FailArmy30,1,1,4,0.998,16.42,15.62,6.58,14,553.8 307.4 899.6 716.2
+test_oops,all,OOPS,falls/AngerManagement-FailsoftheWeekJanuary2019_FailArmy15,1,1,2,0.995,9.88,8.54,9.796,15,195.8 333.6 278.3 432.1
+test_oops,all,OOPS,falls/AngerManagement-FailsoftheWeekJanuary2019_FailArmy2,1,0,0,0.0,,,2.371,,
+test_oops,all,OOPS,falls/AngerManagement-FailsoftheWeekJanuary2019_FailArmy26,1,1,1,0.945,2.4,1.13,9.231,1,159.6 327.0 231.0 470.1
+test_oops,all,OOPS,falls/AngerManagement-FailsoftheWeekJanuary2019_FailArmy29,1,1,3,0.993,18.75,18.02,0.0,8,143.6 451.7 225.7 531.3
+test_oops,all,OOPS,falls/AngerManagement-FailsoftheWeekJanuary2019_FailArmy5,1,1,1,0.962,7.07,5.67,8.078,3,138.7 323.5 204.7 396.7
+test_oops,all,OOPS,falls/AntsAreMarching-FailsoftheMonthOctober2017_FailArmy7,1,0,0,0.0,,,0.894,,
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy10,1,1,1,0.994,5.21,4.34,4.308,1,52.5 293.3 394.9 541.6
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy21,1,1,1,0.995,4.74,2.87,10.143,2,384.2 156.0 559.9 467.5
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy37,1,1,2,0.997,4.74,4.07,3.696,2,690.2 256.3 876.7 460.6
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy40,1,1,3,0.997,3.8,3.34,3.168,4,211.5 643.5 359.9 720.0
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy46,1,1,1,0.919,4.27,3.2,3.144,5,516.2 356.4 654.6 531.3
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy51,1,1,1,0.919,2.4,1.4,1.298,1,597.9 250.4 824.0 518.7
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy63,1,1,2,0.989,11.28,10.41,3.612,2,479.2 401.1 591.0 520.1
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy75,1,0,0,0.0,,,12.645,,
+test_oops,all,OOPS,falls/AreYouSerious-ThrowbackThursdaySeptember2017_FailArmy76,1,1,1,0.995,7.07,6.47,6.05,4,882.4 342.8 1078.1 403.5
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_2018102,1,1,1,0.996,5.42,4.5,4.207,1,572.3 372.3 674.6 451.4
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_201821,1,1,1,0.866,4.42,3.84,3.545,1,208.0 3.0 437.2 710.4
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_201828,1,1,1,0.973,2.92,2.09,15.047,1,427.2 136.0 627.9 555.3
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_201836,1,1,1,0.996,3.42,1.58,4.218,2,633.2 134.5 794.6 455.0
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_201838,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_201852,1,1,1,0.985,13.93,13.26,7.465,7,135.3 279.3 296.1 492.4
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_20187,1,1,2,0.995,13.93,13.26,3.955,15,0.0 204.9 716.0 441.4
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_201879,1,1,1,0.974,2.92,2.09,15.043,1,448.0 173.0 673.1 477.2
+test_oops,all,OOPS,falls/ArmpitWax-FailsYouMissedApril2018_201880,1,0,0,0.0,,,2.167,,
+test_oops,all,OOPS,falls/BabysStealingOutHere-FailsoftheWeek-April2017_FailArmy28,1,1,1,0.994,6.61,4.67,5.153,1,191.0 462.9 499.3 719.8
+test_oops,all,OOPS,falls/BabysStealingOutHere-FailsoftheWeek-April2017_FailArmy32,1,1,1,0.997,3.8,3.34,3.044,1,1066.4 443.2 1180.1 541.4
+test_oops,all,OOPS,falls/BabysStealingOutHere-FailsoftheWeek-April2017_FailArmy45,1,1,2,0.998,9.88,8.81,2.93,29,409.6 83.3 449.7 205.5
+test_oops,all,OOPS,falls/BackflippingBros-FailsoftheMonthMay2018_Failarmy6,1,1,1,0.993,3.53,2.33,2.511,2,633.0 357.1 861.2 580.6
+test_oops,all,OOPS,falls/BackinUSSRFebruary2019_FailArmy13,1,1,1,0.998,6.14,5.34,5.365,1,131.9 285.7 311.0 580.8
+test_oops,all,OOPS,falls/BackinUSSRFebruary2019_FailArmy46,1,1,2,0.994,4.74,4.14,4.104,1,0.0 399.2 227.0 720.0
+test_oops,all,OOPS,falls/BackintheMud-DownandDirtyFailsOctober2018_FailArmy0,1,1,1,0.981,5.21,4.47,4.31,3,582.7 186.0 685.6 384.0
+test_oops,all,OOPS,falls/BackintheMud-DownandDirtyFailsOctober2018_FailArmy10,1,1,1,0.999,5.21,4.54,4.24,1,414.2 351.9 690.0 440.7
+test_oops,all,OOPS,falls/BackintheMud-DownandDirtyFailsOctober2018_FailArmy3,1,1,1,0.98,3.8,3.07,3.427,1,883.5 200.0 984.6 342.4
+test_oops,all,OOPS,falls/BackintheMud-DownandDirtyFailsOctober2018_FailArmy41,1,1,2,0.994,2.4,0.47,2.283,1,680.8 0.0 827.6 296.2
+test_oops,all,OOPS,falls/BackintheMud-DownandDirtyFailsOctober2018_FailArmy9,1,0,0,0.0,,,7.797,,
+test_oops,all,OOPS,falls/BadHairDay-FailsoftheweekApril2019_FailArmy11,1,0,0,0.0,,,0.97,,
+test_oops,all,OOPS,falls/BasketballFails-MarchMadnessMarch2017_FailArmy14,1,1,1,0.991,5.21,4.54,4.464,2,517.2 318.9 807.4 705.6
+test_oops,all,OOPS,falls/BasketballFails-MarchMadnessMarch2017_FailArmy32,0,1,1,0.972,3.8,2.94,,2,741.3 364.2 907.0 666.0
+test_oops,all,OOPS,falls/BatsBallsFailCompilation_ByFailArmy201622,0,1,1,0.947,6.42,5.75,,1,776.8 449.5 955.5 610.5
+test_oops,all,OOPS,falls/BatsBallsFailCompilation_ByFailArmy201631,1,0,0,0.0,,,2.446,,
+test_oops,all,OOPS,falls/BatsBallsFailCompilation_ByFailArmy201649,1,1,1,0.883,6.92,5.84,6.428,2,774.5 58.3 858.4 286.8
+test_oops,all,OOPS,falls/BatsBallsFailCompilation_ByFailArmy201650,0,1,1,0.866,2.92,1.33,,1,42.9 365.0 162.0 610.1
+test_oops,all,OOPS,falls/BatsBallsFailCompilation_ByFailArmy201652,1,1,2,0.95,3.42,2.5,4.09,3,628.3 318.8 725.0 454.0
+test_oops,all,OOPS,falls/Bedtime-MattressFails33,1,1,3,0.986,6.61,5.07,4.998,3,481.9 2.7 786.5 467.1
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy15,1,1,1,0.994,5.67,4.94,4.509,1,220.4 205.7 576.1 524.1
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy18,1,1,1,0.976,6.61,5.21,7.922,1,757.1 113.5 947.7 551.6
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy2,1,0,0,0.0,,,3.744,,
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy31,1,1,1,0.989,6.61,5.34,6.941,1,212.3 266.7 603.9 473.7
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy33,1,1,7,0.991,9.41,8.54,2.011,72,0.0 278.6 696.1 585.4
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy34,1,1,3,0.999,3.8,3.07,3.117,1,897.0 403.1 980.8 486.8
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy4,1,1,1,0.992,2.4,1.74,2.684,1,745.8 56.6 887.6 479.6
+test_oops,all,OOPS,falls/BeeKeeperBusiness-FailsoftheWeekNovember2018_FailArmy9,0,1,1,0.979,4.27,3.6,,1,0.0 351.2 100.1 638.5
+test_oops,all,OOPS,falls/BendYourKnees-FailsoftheWeekSeptember2017_FailArmy33,1,1,2,0.995,2.47,1.6,0.0,3,230.4 0.0 1008.8 658.3
+test_oops,all,OOPS,falls/BendYourKnees-FailsoftheWeekSeptember2017_FailArmy49,1,1,1,0.997,3.53,2.73,2.376,1,408.7 333.4 650.5 634.2
+test_oops,all,OOPS,falls/BendYourKnees-FailsoftheWeekSeptember2017_FailArmy53,1,1,1,0.997,3.53,2.53,2.743,4,142.7 305.6 297.4 450.8
+test_oops,all,OOPS,falls/BestFailoftheWeek-BadKittyApril2018_FailArmy13,0,1,1,0.985,11.53,9.6,,1,0.0 582.8 147.1 720.0
+test_oops,all,OOPS,falls/BestFailoftheWeek-BadKittyApril2018_FailArmy22,1,1,2,0.997,2.47,0.8,0.0,2,611.4 290.2 1246.1 553.7
+test_oops,all,OOPS,falls/BestFailoftheWeek-BadKittyApril2018_FailArmy31,1,1,1,0.997,2.47,0.93,2.359,2,78.0 296.8 163.3 468.4
+test_oops,all,OOPS,falls/BestFailsOfTheMonth-ICantHearFebruary2018_FailArmy15,1,0,0,0.0,,,2.521,,
+test_oops,all,OOPS,falls/BestFailsOfTheMonth-ICantHearFebruary2018_FailArmy5,1,1,2,0.992,6.73,5.67,5.628,3,535.7 411.0 625.8 470.3
+test_oops,all,OOPS,falls/BestFailsofWeek1July2016_FailArmy18,1,1,1,0.993,4.27,3.47,3.116,3,345.5 295.9 668.2 517.1
+test_oops,all,OOPS,falls/BestFailsofWeek1July2016_FailArmy39,1,1,1,0.864,4.74,4.54,4.163,1,728.2 176.9 1159.5 608.9
+test_oops,all,OOPS,falls/BestFailsofWeek1July2016_FailArmy40,1,1,1,0.985,6.61,6.21,6.24,1,122.6 182.9 278.0 521.4
+test_oops,all,OOPS,falls/BestFailsofWeek1July2016_FailArmy5,1,1,2,0.996,3.8,3.07,2.792,1,658.0 344.0 797.4 511.1
+test_oops,all,OOPS,falls/BestFailsofWeek1July2016_FailArmy57,1,1,1,0.967,2.4,1.47,4.487,1,114.2 319.8 340.3 638.6
+test_oops,all,OOPS,falls/BestFailsofWeek1July2016_FailArmy6,1,1,1,0.973,5.67,4.87,5.023,1,530.0 343.0 736.7 709.9
+test_oops,all,OOPS,falls/BestFailsofWeek1July2016_FailArmy8,0,1,1,0.954,4.74,4.34,,1,281.7 126.2 520.9 682.2
+test_oops,all,OOPS,falls/BestFailsofWeek2July2016_FailArmy15,1,1,1,0.994,4.74,3.87,3.991,1,420.2 495.4 524.5 720.0
+test_oops,all,OOPS,falls/BestFailsofWeek2July2016_FailArmy23,1,1,1,0.997,6.61,5.94,5.685,1,699.9 298.9 985.8 633.5
+test_oops,all,OOPS,falls/BestFailsofWeek2July2016_FailArmy34,1,1,1,0.993,4.27,3.67,3.614,1,223.1 535.0 383.5 719.8
+test_oops,all,OOPS,falls/BestFailsofWeek2July2016_FailArmy9,1,1,1,0.998,3.8,2.8,2.387,1,72.7 295.5 379.8 445.5
+test_oops,all,OOPS,falls/BestFailsofWeek2June2016_FailArmy16,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsofWeek2June2016_FailArmy34,1,0,0,0.0,,,0.68,,
+test_oops,all,OOPS,falls/BestFailsofWeek3June2016_FailArmy57,1,1,1,0.921,13.43,13.26,6.866,13,7.2 223.6 79.3 391.0
+test_oops,all,OOPS,falls/BestFailsofWeek4June2016_FailArmy21,1,1,1,0.996,2.92,1.67,5.029,1,400.3 263.3 501.9 415.3
+test_oops,all,OOPS,falls/BestFailsofWeek4June2016_FailArmy25,1,0,0,0.0,,,1.995,,
+test_oops,all,OOPS,falls/BestFailsofWeek4June2016_FailArmy45,1,1,2,0.995,4.42,4.17,3.339,3,429.4 240.1 1064.5 635.2
+test_oops,all,OOPS,falls/BestFailsofWeek4June2016_FailArmy56,1,1,1,0.985,7.92,7.17,7.165,1,125.2 417.2 343.1 716.2
+test_oops,all,OOPS,falls/BestFailsofWeek4June2016_FailArmy60,1,0,0,0.0,,,3.297,,
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy14,1,1,1,0.972,5.67,4.13,4.072,1,323.1 472.5 606.4 702.2
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy17,1,1,2,0.989,6.73,5.8,5.68,2,134.7 358.4 418.8 678.2
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy3,1,1,1,0.989,3.0,2.0,2.061,1,54.7 240.9 231.1 433.4
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy41,0,1,1,0.998,2.47,1.73,,1,47.3 1.4 681.4 714.7
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy42,1,1,1,0.989,2.47,2.13,1.918,1,752.7 240.8 896.2 447.0
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy45,1,1,1,0.96,4.6,3.8,3.913,14,299.3 268.7 437.0 452.6
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy48,1,1,1,0.997,9.93,8.8,8.82,1,583.4 553.9 819.2 719.8
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy51,1,1,1,0.996,4.07,3.2,2.986,1,246.7 418.9 694.2 652.8
+test_oops,all,OOPS,falls/BestFailsoftheMonth-DrivingMeCrazyJanuary2018_FailArmy9,1,1,1,0.923,4.07,3.07,0.0,1,261.1 141.6 451.1 591.1
+test_oops,all,OOPS,falls/BestFailsoftheMonth-IsThisRegulationSizeMarch2018_FailArmy3,1,1,1,0.982,2.47,1.0,4.889,1,112.3 0.0 324.5 515.9
+test_oops,all,OOPS,falls/BestFailsoftheMonth-IsThisRegulationSizeMarch2018_FailArmy4,1,1,1,0.995,4.6,4.2,4.019,9,628.4 157.7 848.9 255.1
+test_oops,all,OOPS,falls/BestFailsoftheMonthApril2016_FailArmy0,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheMonthApril2016_FailArmy11,1,1,1,0.998,2.92,1.58,5.128,1,252.2 154.0 421.5 539.6
+test_oops,all,OOPS,falls/BestFailsoftheMonthApril2016_FailArmy20,1,0,0,0.0,,,4.976,,
+test_oops,all,OOPS,falls/BestFailsoftheMonthApril2016_FailArmy54,1,1,1,0.987,3.92,2.5,1.661,1,508.3 221.6 944.5 698.1
+test_oops,all,OOPS,falls/BestFailsoftheMonthApril2016_FailArmy68,1,1,5,0.992,2.92,0.67,3.192,2,78.2 1.1 160.4 119.8
+test_oops,all,OOPS,falls/BestFailsoftheMonthFebruary2016_Babe_YoureActuallyCrazyFailArmy0,0,1,1,0.858,6.61,4.87,,1,409.7 195.0 954.0 712.4
+test_oops,all,OOPS,falls/BestFailsoftheMonthFebruary2016_Babe_YoureActuallyCrazyFailArmy34,1,1,1,0.997,3.34,1.87,2.306,1,804.9 577.9 1037.2 689.7
+test_oops,all,OOPS,falls/BestFailsoftheMonthFebruary2016_Babe_YoureActuallyCrazyFailArmy40,1,0,0,0.0,,,4.879,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-GoHard_OrGoHomeMarch2018_FailArmy0,0,1,2,0.989,2.47,1.0,,1,648.9 220.3 908.9 672.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek-GoHard_OrGoHomeMarch2018_FailArmy11,1,0,0,0.0,,,3.359,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-GoHard_OrGoHomeMarch2018_FailArmy20,1,1,1,0.994,2.47,1.2,3.678,1,264.6 131.0 426.8 523.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek-GoHard_OrGoHomeMarch2018_FailArmy3,1,1,1,0.998,7.27,6.8,4.98,1,309.1 298.3 470.4 454.9
+test_oops,all,OOPS,falls/BestFailsoftheWeek-GoHard_OrGoHomeMarch2018_FailArmy9,1,1,1,0.992,5.13,3.93,3.838,1,712.9 345.4 1008.7 506.4
+test_oops,all,OOPS,falls/BestFailsoftheWeek-IsWinterDoneYetJanuary2018_FailArmy16,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-IsWinterDoneYetJanuary2018_FailArmy23,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-IsWinterDoneYetJanuary2018_FailArmy39,1,1,1,0.994,2.47,1.47,1.798,1,95.3 520.4 315.2 720.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek-IsWinterDoneYetJanuary2018_FailArmy44,1,1,1,0.99,3.0,2.8,2.541,1,259.5 424.9 455.0 649.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek-ItsRainingInsideFebruary2018_FailArmy11,1,1,1,0.996,2.47,1.73,2.246,2,587.6 233.3 782.4 511.8
+test_oops,all,OOPS,falls/BestFailsoftheWeek-ItsRainingInsideFebruary2018_FailArmy20,0,1,1,0.998,7.27,6.4,,1,567.9 537.5 616.8 647.2
+test_oops,all,OOPS,falls/BestFailsoftheWeek-ItsRainingInsideFebruary2018_FailArmy44,1,1,1,0.996,2.47,2.0,2.634,1,416.5 439.7 524.2 617.4
+test_oops,all,OOPS,falls/BestFailsoftheWeek-NoBaseballInsideDecember2017_FailArmy22,1,1,1,0.988,9.4,8.4,8.068,1,52.5 452.3 280.3 720.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek-SnowmobilesOverWaterMarch2018_FailArmy21,1,1,2,0.991,11.0,9.47,9.673,9,552.1 149.5 775.3 407.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek-SnowmobilesOverWaterMarch2018_FailArmy25,1,1,1,0.996,6.2,5.33,5.591,5,369.3 434.3 606.5 537.7
+test_oops,all,OOPS,falls/BestFailsoftheWeek-SnowmobilesOverWaterMarch2018_FailArmy31,1,1,3,0.982,2.47,0.53,4.107,1,582.0 664.9 629.5 720.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek-SnowmobilesOverWaterMarch2018_FailArmy41,1,0,0,0.0,,,3.958,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-SnowmobilesOverWaterMarch2018_FailArmy42,1,1,1,0.985,6.73,5.8,5.701,1,142.1 258.4 674.8 719.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek-T-RexCanShredFebruary2018_FailArmy36,1,1,1,0.995,4.07,3.07,2.843,3,754.0 335.3 1227.0 720.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek-T-RexCanShredFebruary2018_FailArmy42,1,1,1,0.91,4.6,3.8,3.629,1,351.9 414.4 458.2 488.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek-T-RexCanShredFebruary2018_FailArmy48,1,1,1,0.992,4.6,3.93,2.708,8,330.7 387.3 454.6 495.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek-T-RexCanShredFebruary2018_FailArmy9,1,1,1,0.997,4.6,3.73,3.555,1,750.2 437.2 940.7 578.7
+test_oops,all,OOPS,falls/BestFailsoftheWeek-TheEaglesAreChampsFebruary2018_FailArmy11,1,0,0,0.0,,,2.767,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-TheEaglesAreChampsFebruary2018_FailArmy13,1,0,0,0.0,,,3.017,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-TheEaglesAreChampsFebruary2018_FailArmy14,1,1,2,0.998,4.07,3.33,3.343,1,566.0 91.0 705.8 235.2
+test_oops,all,OOPS,falls/BestFailsoftheWeek-TheEaglesAreChampsFebruary2018_FailArmy18,1,1,1,0.996,4.6,4.13,4.043,1,716.7 466.3 876.6 601.1
+test_oops,all,OOPS,falls/BestFailsoftheWeek-TheEaglesAreChampsFebruary2018_FailArmy23,1,1,1,0.995,4.6,3.6,3.494,1,897.5 370.6 1110.0 538.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek-TheEaglesAreChampsFebruary2018_FailArmy4,1,1,1,0.997,2.47,2.0,2.379,1,111.4 351.3 347.2 623.2
+test_oops,all,OOPS,falls/BestFailsoftheWeek-WatchItDronesMay2018_FailArmy14,1,1,3,0.995,14.73,14.07,1.277,11,600.6 210.1 681.8 349.8
+test_oops,all,OOPS,falls/BestFailsoftheWeek-WatchItDronesMay2018_FailArmy24,1,1,1,0.991,3.53,2.4,2.345,1,700.8 484.6 932.9 706.8
+test_oops,all,OOPS,falls/BestFailsoftheWeek-WatchItDronesMay2018_FailArmy8,1,0,0,0.0,,,15.4,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek-WatchOutMarch2018_FailArmy8,1,1,2,0.998,10.47,10.0,2.418,9,483.9 463.7 613.1 568.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek1April2016_YouKnewThatWasGoingToHappenFailArmy21,1,1,1,0.973,5.21,4.6,4.331,1,523.8 354.7 736.6 718.8
+test_oops,all,OOPS,falls/BestFailsoftheWeek1April2016_YouKnewThatWasGoingToHappenFailArmy25,1,1,1,0.895,2.87,2.14,1.919,3,818.5 255.7 929.4 424.9
+test_oops,all,OOPS,falls/BestFailsoftheWeek1April2016_YouKnewThatWasGoingToHappenFailArmy45,1,1,2,0.985,6.14,5.14,2.88,5,386.6 402.9 765.4 535.2
+test_oops,all,OOPS,falls/BestFailsoftheWeek1June2016_FailArmy26,1,1,1,0.997,3.42,2.5,4.284,1,625.6 272.1 758.5 449.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek1June2016_FailArmy41,1,1,1,0.998,6.42,5.5,4.944,2,454.8 353.4 728.3 542.9
+test_oops,all,OOPS,falls/BestFailsoftheWeek1June2016_FailArmy46,1,1,2,0.997,6.92,6.01,5.672,1,811.8 338.4 1104.9 488.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek1June2016_FailArmy5,1,0,0,0.0,,,1.791,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek1June2016_FailArmy6,1,1,3,0.997,5.42,3.0,5.214,4,493.5 341.2 613.5 683.7
+test_oops,all,OOPS,falls/BestFailsoftheWeek1March2016_WTFWasthatbyFailArmy4,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek1May2016_ThatSquirrelJustAttackedMebyFailArmy29,1,1,1,0.993,6.92,4.59,4.338,1,0.0 190.1 313.5 432.4
+test_oops,all,OOPS,falls/BestFailsoftheWeek1May2016_ThatSquirrelJustAttackedMebyFailArmy75,1,1,1,0.998,3.42,2.67,2.699,1,546.0 260.9 636.8 344.2
+test_oops,all,OOPS,falls/BestFailsoftheWeek2April2016_IKnewThatWasaBadIdeabyFailArmy0,1,1,6,0.998,3.42,2.42,2.069,26,924.8 586.6 1207.9 719.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek2April2016_IKnewThatWasaBadIdeabyFailArmy15,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek2April2016_IKnewThatWasaBadIdeabyFailArmy16,1,1,1,0.997,2.92,0.92,0.542,1,411.0 422.1 736.5 707.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek2April2016_IKnewThatWasaBadIdeabyFailArmy24,1,1,1,0.965,3.42,2.84,0.0,3,535.5 338.5 868.6 506.9
+test_oops,all,OOPS,falls/BestFailsoftheWeek2April2016_IKnewThatWasaBadIdeabyFailArmy27,1,1,2,0.997,2.92,2.09,2.495,1,323.7 438.1 482.2 709.2
+test_oops,all,OOPS,falls/BestFailsoftheWeek2April2016_IKnewThatWasaBadIdeabyFailArmy37,1,0,0,0.0,,,3.243,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek2February2016_FailArmy11,1,1,1,0.996,4.74,4.2,4.13,1,447.6 416.6 649.2 672.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek2February2016_FailArmy12,1,1,1,0.991,3.34,1.4,3.017,1,677.5 457.3 818.7 714.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek2February2016_FailArmy8,1,1,2,0.989,34.63,33.83,25.052,31,132.0 185.7 293.7 471.6
+test_oops,all,OOPS,falls/BestFailsoftheWeek2March2016_IThinkWeGotWhatWereLookingForbyFailArmy49,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek2March2016_IThinkWeGotWhatWereLookingForbyFailArmy5,1,1,1,0.997,2.4,0.6,1.648,1,360.4 428.0 486.1 554.2
+test_oops,all,OOPS,falls/BestFailsoftheWeek2March2016_IThinkWeGotWhatWereLookingForbyFailArmy51,1,1,1,0.998,8.01,7.27,7.302,1,136.1 409.8 426.0 664.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek2March2016_IThinkWeGotWhatWereLookingForbyFailArmy52,1,1,1,0.973,5.67,5.21,4.456,1,839.8 440.2 1023.2 599.6
+test_oops,all,OOPS,falls/BestFailsoftheWeek2March2016_IThinkWeGotWhatWereLookingForbyFailArmy7,1,1,1,0.954,4.74,3.94,3.769,1,553.9 125.2 696.3 361.9
+test_oops,all,OOPS,falls/BestFailsoftheWeek2March2016_IThinkWeGotWhatWereLookingForbyFailArmy8,1,0,0,0.0,,,12.663,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek2May2016_FailArmyThatWasAnEpicFailSam13,1,1,1,0.997,6.92,6.09,5.917,1,0.0 492.1 388.9 670.4
+test_oops,all,OOPS,falls/BestFailsoftheWeek2May2016_FailArmyThatWasAnEpicFailSam6,1,1,1,0.974,4.92,3.59,13.335,1,277.0 177.7 338.5 276.6
+test_oops,all,OOPS,falls/BestFailsoftheWeek2May2016_FailArmyThatWasAnEpicFailSam73,1,1,1,0.997,5.42,4.34,4.386,1,114.7 447.4 225.3 570.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek2May2016_FailArmyThatWasAnEpicFailSam74,1,1,1,0.999,2.92,1.33,1.285,1,180.6 566.4 468.6 720.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek2May2016_FailArmyThatWasAnEpicFailSam79,1,1,1,0.999,2.92,1.25,1.371,2,507.6 443.9 641.4 710.7
+test_oops,all,OOPS,falls/BestFailsoftheWeek3April2016_FailArmy13,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3April2016_FailArmy21,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3April2016_FailArmy25,1,1,1,0.881,3.8,3.0,2.777,1,605.4 180.8 780.6 353.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek3April2016_FailArmy32,1,1,3,0.991,6.14,5.41,5.26,2,840.8 246.1 1085.3 715.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek3April2016_FailArmy52,1,1,1,0.998,6.14,5.21,5.593,4,165.4 334.2 244.9 475.7
+test_oops,all,OOPS,falls/BestFailsoftheWeek3April2016_FailArmy7,1,1,1,0.999,2.87,2.07,1.915,1,190.3 424.4 414.0 720.0
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy0,1,1,1,0.991,7.07,6.47,6.242,1,471.0 416.7 695.0 588.3
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy20,1,1,1,0.989,4.27,3.74,3.557,1,276.9 280.4 408.0 354.4
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy21,1,0,0,0.0,,,4.06,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy37,1,1,2,0.996,4.74,3.74,2.969,2,202.8 340.9 700.9 577.6
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy45,0,1,2,0.987,2.4,1.33,,1,644.4 263.3 736.4 419.6
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy46,1,1,1,0.979,4.74,3.94,5.312,1,487.0 57.7 798.9 680.9
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy5,1,1,1,0.998,6.14,5.07,5.174,1,513.2 360.4 805.2 463.8
+test_oops,all,OOPS,falls/BestFailsoftheWeek3February2016_ImOK_WheresmyJetskiFailArmy7,1,1,1,0.997,4.74,4.27,3.64,6,219.4 356.2 327.3 581.1
+test_oops,all,OOPS,falls/BestFailsoftheWeek3March2016_YouAreAnEpicFailbyFailArmy24,1,1,1,0.988,3.34,2.4,2.289,1,269.9 230.0 521.7 688.7
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy19,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy20,1,0,0,0.0,,,7.261,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy32,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy53,0,1,1,0.96,2.92,0.83,,1,447.3 262.6 650.1 524.9
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy70,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy83,1,1,1,0.998,2.92,1.83,1.692,2,415.6 227.0 816.4 393.5
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy87,1,0,0,0.0,,,4.389,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek3May2016_FailArmy88,1,0,0,0.0,,,3.882,,
+test_oops,all,OOPS,falls/BestFailsoftheWeek4March2016_NotTodayFailArmy27,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part12018_FailArmy41,1,1,3,0.997,12.68,12.01,6.64,29,370.3 224.3 543.6 522.1
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part12018_FailArmy48,1,1,1,0.988,9.88,9.54,9.467,1,885.3 390.6 1017.7 578.3
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part12018_FailArmy6,1,1,1,0.993,4.74,3.74,3.604,4,460.2 270.3 702.7 470.0
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part12018_FailArmy8,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part22018_FailArmy10,1,1,1,0.984,4.27,3.87,4.69,1,198.2 0.0 456.9 601.4
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part22018_FailArmy14,1,1,1,0.997,4.74,4.0,3.774,1,252.8 426.1 330.4 519.8
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part22018_FailArmy22,1,1,2,0.984,2.87,2.87,5.914,2,93.0 294.8 206.2 651.1
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part22018_FailArmy41,1,1,3,0.997,5.67,5.01,5.625,1,571.0 324.2 738.2 625.3
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part22018_FailArmy51,1,1,1,0.972,7.07,6.34,4.138,3,558.0 366.1 866.9 564.2
+test_oops,all,OOPS,falls/BestFailsoftheYear-Part22018_FailArmy52,1,1,1,0.991,4.27,3.87,2.043,1,13.9 161.1 268.1 365.3
+test_oops,all,OOPS,falls/BestFailsoftheYear2016SoFar_FailArmyFailCompilation16,1,1,4,0.998,15.43,14.68,14.767,48,406.6 328.3 564.8 443.3
+test_oops,all,OOPS,falls/BestFailsoftheYear2016SoFar_FailArmyFailCompilation20,1,1,2,0.957,5.42,4.25,2.045,12,152.2 504.9 679.0 720.0
+test_oops,all,OOPS,falls/BestFailsoftheYear2016SoFar_FailArmyFailCompilation37,1,1,1,0.995,3.42,2.34,2.415,1,488.5 279.0 1071.6 532.7
+test_oops,all,OOPS,falls/BestFailsoftheYear2016SoFar_FailArmyFailCompilation44,1,0,0,0.0,,,3.552,,
+test_oops,all,OOPS,falls/BestFailsoftheYear2016SoFar_FailArmyFailCompilation59,1,1,2,0.996,6.42,5.75,4.519,1,328.6 195.5 531.1 531.7
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy23,1,0,0,0.0,,,2.393,,
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy27,1,1,1,0.987,4.74,3.67,3.47,1,437.4 276.8 795.7 502.5
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy28,1,1,3,0.995,11.75,9.81,15.266,5,446.7 619.6 522.6 719.8
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy33,1,1,1,0.991,5.67,4.4,4.19,1,565.2 296.8 691.7 595.5
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy57,1,1,2,0.996,3.34,2.74,4.122,1,625.3 257.3 734.9 362.8
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy6,1,1,1,0.998,5.67,5.14,4.316,1,323.8 301.4 461.8 500.2
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy79,0,1,1,0.956,2.4,0.47,,1,331.8 187.0 834.8 712.2
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part1December2017_FailArmy84,1,1,1,0.996,5.67,3.74,5.724,1,628.7 128.1 817.9 492.3
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part2December2017_FailArmy10,1,1,1,0.996,4.27,3.4,3.356,1,713.8 408.6 1021.4 504.1
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part2December2017_FailArmy58,1,1,2,0.999,2.4,1.53,2.075,5,498.4 457.2 637.2 616.1
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part2December2017_FailArmy74,1,1,1,0.952,3.34,2.34,2.23,1,584.7 114.1 654.0 366.5
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part2December2017_FailArmy87,1,0,0,0.0,,,0.965,,
+test_oops,all,OOPS,falls/BestFailsoftheYear2017-Part2December2017_FailArmy90,1,1,3,0.996,6.61,5.61,5.028,20,101.6 280.4 249.2 492.7
+test_oops,all,OOPS,falls/BestFailsoftheYear2017SoFar_FailArmy105,1,1,1,0.998,2.4,0.93,2.549,1,760.4 329.3 907.1 539.0
+test_oops,all,OOPS,falls/BestFailsoftheYear2017SoFar_FailArmy123,1,1,1,0.96,5.67,4.34,2.437,15,291.6 232.6 721.4 453.8
+test_oops,all,OOPS,falls/BestFailsoftheYear2017SoFar_FailArmy24,1,0,0,0.0,,,1.486,,
+test_oops,all,OOPS,falls/BestFailsoftheYear2017SoFar_FailArmy43,1,1,1,0.998,4.74,4.07,3.843,3,791.7 543.8 1280.0 715.8
+test_oops,all,OOPS,falls/BestFailsoftheYear2018SoFar_FailArmy55,1,1,1,0.988,3.53,2.6,2.656,1,589.2 155.9 700.4 420.7
+test_oops,all,OOPS,falls/BestFunnyKidFailsCompilationPart2_FailArmy201615,1,0,0,0.0,,,7.587,,
+test_oops,all,OOPS,falls/BestFunnyKidFailsCompilationPart2_FailArmy201618,1,1,1,0.979,7.54,6.81,6.715,1,720.7 274.2 1091.1 673.0
+test_oops,all,OOPS,falls/BigAir-SoaringwithStyleSeptember2017_FailArmy4,1,1,1,0.998,6.14,5.47,6.192,6,726.3 12.8 911.4 257.9
+test_oops,all,OOPS,falls/BigAir-SoaringwithStyleSeptember2017_FailArmy41,1,1,2,0.998,2.4,1.2,1.808,1,209.2 305.9 268.3 416.2
+test_oops,all,OOPS,falls/BigAir-SoaringwithStyleSeptember2017_FailArmy42,1,0,0,0.0,,,5.711,,
+test_oops,all,OOPS,falls/BigAirFailsCompilation_IBelieveICanFlyByFailArmy201631,1,0,0,0.0,,,0.0,,
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201710,1,1,1,0.995,3.8,3.07,3.342,1,248.5 425.7 619.0 540.6
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201717,1,1,3,0.993,31.83,30.76,30.017,94,0.0 255.6 247.6 662.8
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201728,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201736,1,1,1,0.997,2.87,2.0,4.501,2,164.6 166.4 291.5 432.2
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201746,1,0,0,0.0,,,6.755,,
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201756,1,1,4,0.996,9.41,9.08,3.154,23,544.7 95.8 578.0 251.6
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201789,1,1,1,0.972,4.74,2.8,2.602,1,394.9 402.3 651.2 584.6
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201797,1,1,1,0.997,4.27,3.67,3.315,1,92.8 329.3 311.5 574.6
+test_oops,all,OOPS,falls/BoatloadsofFails-ThrowbackThursdayAugust201799,1,1,1,0.988,10.34,9.41,2.508,2,704.2 403.2 926.2 651.6
+test_oops,all,OOPS,falls/BowlingForFails-SubmissionShowApril2018_FailArmy12,1,1,1,0.983,2.4,1.13,0.981,1,262.5 197.6 938.7 549.4
+test_oops,all,OOPS,falls/BowlingForFails-SubmissionShowApril2018_FailArmy37,1,1,1,0.88,4.27,2.6,0.84,1,310.4 374.9 451.4 508.0
+test_oops,all,OOPS,falls/BrainFreezeIsReal-FailsoftheMonthJune2017_FailArmy11,1,0,0,0.0,,,2.811,,
+test_oops,all,OOPS,falls/BrainFreezeIsReal-FailsoftheMonthJune2017_FailArmy50,1,1,1,0.976,2.4,1.53,1.296,1,685.7 315.7 855.3 521.4
+test_oops,all,OOPS,falls/BreakStuff-IHopeWeKepttheReceipt14,1,1,1,0.981,5.21,5.01,3.784,1,48.5 197.8 321.0 572.4
+test_oops,all,OOPS,falls/BreakYourself-FailsoftheWeekSeptember2017_FailArmy18,1,1,1,0.991,4.07,3.33,3.257,1,388.1 480.9 576.0 649.8
+test_oops,all,OOPS,falls/BreakYourself-FailsoftheWeekSeptember2017_FailArmy19,1,1,1,0.994,4.07,3.6,2.853,1,202.3 293.2 312.1 365.9
+test_oops,all,OOPS,falls/BreakYourself-FailsoftheWeekSeptember2017_FailArmy21,1,1,1,0.937,2.47,1.53,1.545,1,432.9 314.6 645.0 542.0
+test_oops,all,OOPS,falls/BreakYourself-FailsoftheWeekSeptember2017_FailArmy22,1,1,2,0.986,14.73,13.47,4.179,5,609.1 390.3 764.4 533.3
+test_oops,all,OOPS,falls/BreakYourself-FailsoftheWeekSeptember2017_FailArmy28,1,1,1,0.994,2.47,1.33,1.524,2,462.1 336.0 982.0 649.4
+test_oops,all,OOPS,falls/BreakYourself-FailsoftheWeekSeptember2017_FailArmy35,1,1,1,0.985,7.27,7.13,6.368,1,147.3 244.9 404.0 528.2
+test_oops,all,OOPS,falls/BreakYourself-FailsoftheWeekSeptember2017_FailArmy7,1,1,1,0.997,11.0,10.33,5.293,23,690.5 521.8 849.9 719.4
+test_oops,all,OOPS,falls/BrotherFails_BrosForLifeByFailArmy201614,1,0,0,0.0,,,0.797,,
+test_oops,all,OOPS,falls/BrotherFails_BrosForLifeByFailArmy201628,1,1,1,0.992,3.8,3.0,2.912,2,574.8 351.0 892.6 484.2
+test_oops,all,OOPS,falls/BrotherFails_BrosForLifeByFailArmy201638,1,1,2,0.998,2.4,0.47,7.1,2,629.9 386.3 843.5 666.8
+test_oops,all,OOPS,falls/BrotherFails_BrosForLifeByFailArmy201645,1,1,2,0.998,4.74,4.07,4.279,1,373.8 268.7 531.9 685.0
+test_oops,all,OOPS,falls/BrotherFails_BrosForLifeByFailArmy20169,1,1,1,0.988,6.14,5.27,4.803,2,303.2 400.1 472.5 531.1
+test_oops,all,OOPS,falls/CatsHatePlastic-BestFailsoftheWeek_FailArmy21,1,1,1,0.994,3.0,1.33,3.663,1,394.0 69.1 720.0 578.9
+test_oops,all,OOPS,falls/CatsHatePlastic-BestFailsoftheWeek_FailArmy28,1,1,1,0.988,3.0,2.13,2.305,1,1066.1 198.8 1280.0 616.4
+test_oops,all,OOPS,falls/CatsHatePlastic-BestFailsoftheWeek_FailArmy31,1,1,2,0.994,4.6,4.53,4.621,3,86.8 132.5 373.8 720.0
+test_oops,all,OOPS,falls/CatsHatePlastic-BestFailsoftheWeek_FailArmy36,1,1,1,0.958,2.47,1.33,3.427,1,303.1 176.6 442.3 412.5
+test_oops,all,OOPS,falls/CatsHatePlastic-BestFailsoftheWeek_FailArmy41,0,1,1,0.995,2.47,2.4,,1,251.0 316.4 406.5 581.4
+test_oops,all,OOPS,falls/CatsHatePlastic-BestFailsoftheWeek_FailArmy45,1,1,1,0.984,8.33,7.07,6.866,1,591.5 394.3 718.0 650.3
+test_oops,all,OOPS,falls/CaughtSlippin-FailsoftheWeekFebruary2019_FailArmy0,1,1,1,0.899,2.4,0.73,0.473,1,624.1 244.4 756.5 365.5
+test_oops,all,OOPS,falls/CaughtSlippin-FailsoftheWeekFebruary2019_FailArmy12,1,1,1,0.998,2.87,0.93,12.182,1,527.3 199.0 843.4 410.0
+test_oops,all,OOPS,falls/CaughtSlippin-FailsoftheWeekFebruary2019_FailArmy14,1,1,1,0.947,2.4,1.8,1.675,1,320.2 320.8 402.6 466.2
+test_oops,all,OOPS,falls/CaughtSlippin-FailsoftheWeekFebruary2019_FailArmy23,1,1,2,0.999,12.68,12.61,2.021,96,1138.6 528.1 1272.1 720.0
+test_oops,all,OOPS,falls/ChristmasFailsDecember2016_FailArmy12,1,1,1,0.993,2.4,0.67,2.543,1,474.6 293.8 579.1 583.6
+test_oops,all,OOPS,falls/ClassicRedneckWaterslide-ThrowbackFailsJuly201712,1,1,1,0.995,2.4,2.27,4.478,1,587.2 165.6 720.3 532.1
+test_oops,all,OOPS,falls/ClassicRedneckWaterslide-ThrowbackFailsJuly201739,1,1,1,0.997,2.4,1.13,1.143,1,495.3 277.9 684.0 362.2
+test_oops,all,OOPS,falls/ClassicRedneckWaterslide-ThrowbackFailsJuly201740,1,1,3,0.999,3.34,3.2,2.333,2,694.0 438.5 869.7 606.0
+test_oops,all,OOPS,falls/ClassicRedneckWaterslide-ThrowbackFailsJuly201741,1,1,5,0.993,30.43,29.56,8.055,97,144.5 431.6 412.4 720.0
+test_oops,all,OOPS,falls/ClassicRedneckWaterslide-ThrowbackFailsJuly201743,1,1,1,0.994,6.14,5.61,5.583,1,615.0 441.4 815.4 563.3
+test_oops,all,OOPS,falls/ClassicRedneckWaterslide-ThrowbackFailsJuly201750,1,1,1,0.998,6.61,5.74,5.257,1,246.0 426.5 499.5 498.2
+test_oops,all,OOPS,falls/ClassicRedneckWaterslide-ThrowbackFailsJuly201766,1,1,1,0.983,7.07,6.54,7.815,2,421.8 325.4 523.6 479.6
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy21,1,1,1,0.994,5.92,5.09,2.612,6,668.6 212.0 884.2 377.8
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy26,1,1,2,0.995,11.43,10.76,2.907,14,496.4 507.6 675.2 587.3
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy32,1,1,1,0.997,2.92,0.5,3.172,1,154.8 241.1 268.5 455.0
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy4,1,0,0,0.0,,,1.382,,
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy41,1,1,1,0.977,2.92,1.75,1.646,1,788.2 287.9 1123.7 556.4
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy46,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy52,0,1,1,0.997,4.42,3.67,,1,1005.7 317.4 1184.5 597.9
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy67,1,1,1,0.983,3.42,2.42,2.301,1,414.2 228.8 544.8 437.7
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy80,1,1,1,0.998,4.42,3.5,3.307,1,745.5 371.5 948.8 716.5
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy88,1,0,0,0.0,,,2.789,,
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy92,1,1,2,0.993,3.92,3.42,3.248,2,551.8 465.8 688.4 624.9
+test_oops,all,OOPS,falls/ClassicbailsandThrowbackFailsJune2017_FailArmy99,1,1,1,0.877,8.92,7.17,5.907,1,181.8 332.4 337.7 503.1
+test_oops,all,OOPS,falls/ConfidenceisKey-FailsoftheWeekDecember2016_FailArmy10,1,1,1,0.992,2.87,2.34,2.086,2,560.7 391.1 705.7 499.7
+test_oops,all,OOPS,falls/ConfidenceisKey-FailsoftheWeekDecember2016_FailArmy3,1,0,0,0.0,,,2.058,,
+test_oops,all,OOPS,falls/ConfidenceisKey-FailsoftheWeekDecember2016_FailArmy30,1,0,0,0.0,,,0.618,,
+test_oops,all,OOPS,falls/ConfidenceisKey-FailsoftheWeekDecember2016_FailArmy4,1,0,0,0.0,,,2.946,,
+test_oops,all,OOPS,falls/ConfidenceisKey-FailsoftheWeekDecember2016_FailArmy45,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/CrackThatWhip-ThrowbackFailsJuly201716,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/CrackThatWhip-ThrowbackFailsJuly201722,1,0,0,0.0,,,5.375,,
+test_oops,all,OOPS,falls/CrackThatWhip-ThrowbackFailsJuly201723,1,1,1,0.998,9.41,9.14,8.976,1,468.4 225.1 602.8 440.2
+test_oops,all,OOPS,falls/CrackThatWhip-ThrowbackFailsJuly201726,1,0,0,0.0,,,2.165,,
+test_oops,all,OOPS,falls/CrackThatWhip-ThrowbackFailsJuly201738,1,1,1,0.994,4.74,4.0,4.06,1,470.4 353.8 621.9 682.0
+test_oops,all,OOPS,falls/CrackThatWhip-ThrowbackFailsJuly201766,1,1,1,0.994,3.34,3.0,2.457,1,321.1 433.2 521.3 576.9
+test_oops,all,OOPS,falls/CrackThatWhip-ThrowbackFailsJuly201793,1,0,0,0.0,,,6.234,,
+test_oops,all,OOPS,falls/DamagedGoods_FunnyFailsandBrokenThingsbyFailArmy0,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/DesertFails-TheSandsofFailureNovember2018_FailArmy36,1,0,0,0.0,,,6.383,,
+test_oops,all,OOPS,falls/DesertFails-TheSandsofFailureNovember2018_FailArmy38,1,1,1,0.988,18.28,16.88,19.151,6,752.0 207.7 886.3 396.8
+test_oops,all,OOPS,falls/DesertFails-TheSandsofFailureNovember2018_FailArmy42,1,1,1,0.989,7.07,6.34,5.559,9,779.3 302.0 980.2 379.5
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy13,1,1,2,0.989,2.4,1.94,1.651,1,1133.7 300.9 1231.4 467.3
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy21,1,1,1,0.998,2.4,1.53,1.29,1,332.4 463.6 565.6 638.1
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy25,1,1,2,0.994,2.4,0.6,2.22,2,6.3 578.6 112.7 718.1
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy28,1,1,1,0.997,5.21,4.54,4.126,1,555.3 447.6 750.4 714.7
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy32,1,1,1,0.994,3.8,3.07,3.105,1,25.8 257.0 180.7 619.0
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy41,1,1,2,0.979,5.67,5.01,2.895,10,442.0 265.0 598.8 559.3
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy45,1,1,1,0.998,2.4,0.93,0.681,1,219.4 490.4 352.6 613.5
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy5,1,1,1,0.998,4.74,3.8,3.883,1,314.5 486.2 549.2 569.5
+test_oops,all,OOPS,falls/DidntMakeTheTeam-BetterlucknexttimeSeptember2017_FailArmy8,1,1,2,0.995,4.74,4.0,3.802,1,119.1 191.2 227.2 284.3
+test_oops,all,OOPS,falls/DoggoneIt-FailsYouMissed23December2017_FailArmy16,1,1,3,0.997,6.92,6.01,2.186,2,919.3 289.1 1068.2 560.5
+test_oops,all,OOPS,falls/DoggoneIt-FailsYouMissed23December2017_FailArmy3,1,0,0,0.0,,,1.837,,
+test_oops,all,OOPS,falls/DoggoneIt-FailsYouMissed23December2017_FailArmy39,1,1,1,0.994,2.92,2.0,1.724,1,78.6 385.2 404.0 564.4
+test_oops,all,OOPS,falls/DoggoneIt-FailsYouMissed23December2017_FailArmy44,1,0,0,0.0,,,12.316,,
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy10,1,0,0,0.0,,,10.017,,
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy13,1,1,1,0.98,10.34,9.74,5.028,1,258.4 274.0 361.5 428.4
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy20,1,1,1,0.993,2.4,1.87,1.783,2,343.1 396.9 743.3 596.3
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy21,1,0,0,0.0,,,9.792,,
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy23,1,1,2,0.94,7.54,6.67,2.827,1,429.0 121.4 500.6 242.3
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy24,1,1,1,0.997,3.34,2.47,2.642,1,4.5 317.5 305.7 680.1
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy25,1,1,1,0.99,15.48,14.48,14.453,1,328.6 399.7 792.2 669.3
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy27,1,1,1,0.973,6.14,5.67,25.088,1,498.0 189.2 753.5 708.1
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy28,1,0,0,0.0,,,8.418,,
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy30,1,1,3,0.927,5.21,4.0,9.054,9,408.6 0.3 536.5 247.9
+test_oops,all,OOPS,falls/DontBeSuchaBaby-KidFailsSeptember2018_FailArmy8,1,1,1,0.991,13.15,11.54,10.022,1,3.8 97.2 277.9 481.8
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust2017112,1,1,1,0.996,12.21,11.68,11.036,20,804.8 303.8 906.1 365.9
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust2017122,1,0,0,0.0,,,0.72,,
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust2017125,1,0,0,0.0,,,4.473,,
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust2017132,1,1,1,0.98,2.87,2.0,1.543,1,469.2 367.7 752.1 590.3
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201718,1,0,0,0.0,,,2.404,,
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201722,1,1,1,0.998,2.4,0.73,3.443,1,687.1 255.3 752.6 430.6
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201730,1,1,3,0.995,2.4,0.47,5.537,2,94.6 256.1 248.3 602.0
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201738,1,1,1,0.997,2.4,0.6,0.551,1,231.1 381.3 363.9 463.9
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201745,1,0,0,0.0,,,1.826,,
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201761,1,1,1,0.999,4.27,3.74,1.554,1,468.5 405.4 578.5 495.8
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201775,1,1,1,0.996,3.34,2.54,2.285,1,678.0 274.2 759.5 386.4
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201782,1,0,0,0.0,,,1.78,,
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201784,1,0,0,0.0,,,4.141,,
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201787,1,1,1,0.981,3.8,3.14,2.513,1,502.2 457.5 672.7 720.0
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201788,1,1,2,0.999,8.48,7.74,2.796,8,500.0 309.0 664.5 501.7
+test_oops,all,OOPS,falls/DontGetZapped-ThrowbackThursdayAugust201789,1,1,2,0.99,2.87,2.2,2.049,1,421.6 153.7 536.6 295.0
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsFebruary2018_FailArmy17,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsFebruary2018_FailArmy2,0,1,1,0.95,4.27,3.27,,3,343.0 3.3 761.6 716.0
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsFebruary2018_FailArmy26,1,1,2,0.999,6.14,5.27,5.021,3,190.1 486.6 377.0 580.5
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsFebruary2018_FailArmy64,1,1,1,0.997,2.4,1.67,3.365,1,800.2 228.7 1015.2 496.1
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsJuly201722,1,1,1,0.991,2.4,1.8,1.646,1,304.3 350.4 562.7 681.8
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsJuly201734,1,1,1,0.998,3.34,2.47,2.336,1,711.1 229.6 1025.6 712.6
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsJuly201741,1,0,0,0.0,,,2.254,,
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsJuly201742,1,1,3,0.994,2.4,1.53,5.308,1,484.3 318.1 592.9 480.8
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsJuly201778,1,1,3,0.982,2.4,2.4,6.558,4,569.4 274.8 669.7 671.0
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsJuly201781,1,1,2,0.998,21.55,19.62,30.468,42,956.3 1.7 1110.7 242.8
+test_oops,all,OOPS,falls/DontRocktheBoat-ThrowbackFailsJuly201784,1,1,2,0.998,11.75,11.21,3.83,4,197.8 304.5 319.6 447.0
+test_oops,all,OOPS,falls/DontStopBelievin-FailsoftheMonthNovember2016_FailArmy30,1,1,1,0.996,8.94,8.61,0.0,1,629.4 375.1 675.1 462.0
+test_oops,all,OOPS,falls/DontStopBelievin-FailsoftheMonthNovember2016_FailArmy33,1,1,1,0.952,5.67,4.74,4.214,1,313.9 216.3 620.4 568.4
+test_oops,all,OOPS,falls/DontStopBelievin-FailsoftheMonthNovember2016_FailArmy47,1,1,1,0.99,2.87,1.94,2.003,1,560.3 294.9 712.9 469.5
+test_oops,all,OOPS,falls/DoubleFailsCompilation_DoubleTroubleByFailArmy201668,1,1,1,0.985,15.93,14.1,4.699,48,622.6 343.8 871.2 672.1
+test_oops,all,OOPS,falls/DoubleFailsCompilation_DoubleTroubleByFailArmy20167,1,1,1,0.994,3.42,3.25,2.339,2,747.0 390.1 878.4 584.0
+test_oops,all,OOPS,falls/DoubleFailsNovember2017_FailArmy11,1,1,1,0.995,2.4,1.07,0.857,1,339.2 489.6 563.1 641.5
+test_oops,all,OOPS,falls/DoubleFailsNovember2017_FailArmy2,1,1,1,0.983,4.74,3.8,3.584,2,12.0 450.7 181.8 681.9
+test_oops,all,OOPS,falls/DoubleFailsNovember2017_FailArmy40,1,1,2,0.995,5.21,4.47,4.332,2,551.7 181.3 733.0 674.1
+test_oops,all,OOPS,falls/DownhillMayhem-FailsoftheWeekMarch2019_FailArmy14,1,1,1,0.995,4.74,3.74,3.585,1,296.1 265.4 519.2 600.4
+test_oops,all,OOPS,falls/DownhillMayhem-FailsoftheWeekMarch2019_FailArmy26,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/DownhillMayhem-FailsoftheWeekMarch2019_FailArmy3,1,1,1,0.996,2.4,1.4,1.258,1,60.9 434.4 147.0 536.6
+test_oops,all,OOPS,falls/DownhillMayhem-FailsoftheWeekMarch2019_FailArmy4,1,0,0,0.0,,,8.994,,
+test_oops,all,OOPS,falls/DressToImpress-LookinGoodOctober2017_FailArmy43,1,1,2,0.993,4.27,3.54,0.617,5,705.2 384.7 903.6 542.5
+test_oops,all,OOPS,falls/DressToImpress-LookinGoodOctober2017_FailArmy44,1,1,1,0.985,14.55,14.55,13.371,1,142.7 323.5 310.5 569.9
+test_oops,all,OOPS,falls/DressToImpress-LookinGoodOctober2017_FailArmy49,1,1,1,0.996,8.94,7.87,3.526,1,55.0 373.0 330.2 720.0
+test_oops,all,OOPS,falls/DressToImpress-LookinGoodOctober2017_FailArmy50,1,1,1,0.983,3.34,2.74,4.444,2,678.4 133.2 960.0 719.8
+test_oops,all,OOPS,falls/DressedForSuccessJuly2018_FailArmy32,1,1,3,0.992,13.61,12.75,12.595,1,534.5 263.2 685.3 546.8
+test_oops,all,OOPS,falls/DressedForSuccessJuly2018_FailArmy38,1,1,2,0.999,11.75,10.68,10.323,48,625.9 391.4 803.2 660.8
+test_oops,all,OOPS,falls/DropOnIn-FailsoftheWeekJune2018_FailArmy10,1,1,1,0.998,3.0,2.47,1.365,1,271.8 340.1 320.7 435.8
+test_oops,all,OOPS,falls/DropOnIn-FailsoftheWeekJune2018_FailArmy14,1,1,1,0.998,16.87,16.07,40.882,1,257.0 172.2 546.8 447.8
+test_oops,all,OOPS,falls/DunkingOverKids-BestFailsOfTheWeekApril2018_FailArmy14,1,1,1,0.997,4.6,2.8,4.115,1,188.2 238.8 313.6 555.1
+test_oops,all,OOPS,falls/ExpensiveFails-MoMoney_MoFailsFebruary2018_FailArmy23,1,1,1,0.998,5.21,5.01,4.594,1,574.4 391.8 753.8 653.3
+test_oops,all,OOPS,falls/ExpensiveFails-ThatsGoingToCostYouJuly20170,1,1,1,0.998,2.4,2.27,3.838,1,781.7 202.2 976.0 454.2
+test_oops,all,OOPS,falls/ExpensiveFails-ThatsGoingToCostYouJuly201741,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/ExpensiveFails-ThatsGoingToCostYouJuly20175,1,1,1,0.977,2.87,1.94,2.65,1,390.3 3.8 658.2 463.4
+test_oops,all,OOPS,falls/FailArmyAfterDark-DoesThatSheepHaveSunglassesEp8103,1,1,2,0.971,20.93,19.85,19.917,1,558.3 341.9 712.1 587.5
+test_oops,all,OOPS,falls/FailArmyAfterDark-DoesThatSheepHaveSunglassesEp863,1,1,1,0.995,4.92,3.84,4.239,1,767.1 206.6 992.9 484.9
+test_oops,all,OOPS,falls/FailArmyAfterDark-DoesThatSheepHaveSunglassesEp871,1,1,1,0.998,2.92,1.92,1.733,2,368.4 489.2 579.0 646.4
+test_oops,all,OOPS,falls/FailArmyAfterDark-DoesThatSheepHaveSunglassesEp872,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/FailArmyAfterDark-ItsPartyTimeep1156,1,1,3,0.999,13.43,12.18,0.763,41,218.9 610.4 490.2 717.8
+test_oops,all,OOPS,falls/FailArmyAfterDark-ItsPartyTimeep1170,1,0,0,0.0,,,0.837,,
+test_oops,all,OOPS,falls/FailArmyAfterDark-ItsPartyTimeep1174,1,1,1,0.996,2.92,0.5,1.473,1,177.9 448.9 447.6 604.3
+test_oops,all,OOPS,falls/FailArmyAfterDark-ItsPartyTimeep186,1,1,2,0.974,15.93,14.43,2.492,1,423.2 408.8 887.7 715.0
+test_oops,all,OOPS,falls/FailArmyAfterDark-ItsPartyTimeep195,1,1,1,0.996,2.92,2.75,2.287,28,521.9 384.5 770.9 719.6
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSPART2byFailArmy201611,1,1,3,0.997,10.93,10.26,2.86,78,386.6 263.0 463.1 438.8
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSPART2byFailArmy201618,1,0,0,0.0,,,2.113,,
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSPART2byFailArmy20164,1,1,1,0.989,2.92,1.83,1.643,1,0.0 334.9 464.0 710.1
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSPART3byFailArmy201614,1,1,1,0.933,4.42,3.84,3.594,1,193.1 368.0 598.5 716.9
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSPART3byFailArmy201642,1,0,0,0.0,,,2.638,,
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSbyFailArmy201622,1,1,1,0.998,2.92,0.75,2.993,1,421.8 164.5 618.5 388.0
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSbyFailArmy201625,1,1,1,0.972,3.42,2.75,2.589,1,522.0 344.8 656.6 516.7
+test_oops,all,OOPS,falls/FailOlympics_FAIL-YMPICSbyFailArmy201628,1,1,1,0.996,3.42,2.42,2.776,1,268.9 321.5 467.5 572.0
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy117,1,1,6,0.997,21.43,20.52,3.226,142,543.8 167.1 660.8 419.2
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy17,1,1,1,0.997,8.92,8.09,7.866,1,144.1 412.7 284.7 569.3
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy19,1,0,0,0.0,,,0.18,,
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy22,1,1,1,0.992,4.42,3.84,3.767,1,430.5 473.3 585.4 716.8
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy25,1,1,1,0.995,5.42,4.34,3.93,1,221.7 372.1 576.7 578.0
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy46,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy48,1,0,0,0.0,,,0.0,,
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy77,1,1,3,0.997,5.92,4.59,6.573,15,16.9 583.5 213.4 720.0
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy83,1,0,0,0.0,,,9.432,,
+test_oops,all,OOPS,falls/FailsYouMissed-NottheBeesApril2018_Failarmy9,1,1,1,0.997,4.92,4.0,3.866,1,475.9 346.0 743.0 529.6
+test_oops,all,OOPS,falls/FailsYouMissed-SomePranksNeverGetOldMarch2018_FailArmy100,1,1,1,0.933,5.92,4.42,4.139,1,202.3 295.6 462.6 548.4
+test_oops,all,OOPS,falls/FailsYouMissed-SomePranksNeverGetOldMarch2018_FailArmy53,1,1,1,0.987,3.92,2.92,2.544,1,324.0 219.5 606.2 455.2
+test_oops,all,OOPS,falls/FailsYouMissed-SomePranksNeverGetOldMarch2018_FailArmy72,1,1,1,0.995,2.92,0.5,1.487,1,280.8 440.7 453.3 645.2
+test_oops,all,OOPS,falls/FailsYouMissed-SomePranksNeverGetOldMarch2018_FailArmy95,1,1,2,0.997,3.92,1.75,4.656,3,176.5 224.0 260.5 329.3
+test_oops,all,OOPS,falls/FailsYouMissed-SomePranksNeverGetOldMarch2018_FailArmy96,1,1,1,0.997,5.42,4.0,4.19,1,564.1 356.1 659.0 448.5
+test_oops,all,OOPS,falls/FailsYouMissed-ToiletOrBustMarch2018_FailArmy25,1,1,2,0.994,11.43,10.59,1.897,28,490.0 330.3 574.3 425.5
+test_oops,all,OOPS,falls/FailsYouMissed-ToiletOrBustMarch2018_FailArmy35,1,1,1,0.996,4.92,4.0,4.01,2,337.5 251.0 702.6 658.1
+test_oops,all,OOPS,falls/FailsYouMissed-ToiletOrBustMarch2018_FailArmy38,1,1,1,0.967,3.92,3.0,2.391,3,82.8 43.7 385.9 295.2
+test_oops,all,OOPS,falls/FailsYouMissed-ToiletOrBustMarch2018_FailArmy52,1,1,1,0.977,2.92,1.83,1.644,1,59.3 12.3 677.6 720.0
+test_oops,all,OOPS,falls/FailsYouMissed-ToiletOrBustMarch2018_FailArmy64,1,1,3,0.964,5.42,4.17,2.514,1,70.2 359.8 312.2 604.0
+test_oops,all,OOPS,falls/FailsYouMissed-WaitingForSummerMarch2018_FailArmy100,1,1,1,0.998,3.92,3.92,3.824,2,103.9 171.5 295.3 488.9
+test_oops,all,OOPS,falls/FailsYouMissed-WaitingForSummerMarch2018_FailArmy44,1,1,1,0.992,7.92,7.34,6.739,1,241.7 410.6 442.9 720.0
+test_oops,all,OOPS,falls/FailsYouMissed-WaitingForSummerMarch2018_FailArmy66,1,1,1,0.994,4.42,2.67,1.778,3,397.0 181.2 446.4 295.1
+test_oops,all,OOPS,falls/FailsYouMissed-WaitingForSummerMarch2018_FailArmy76,1,1,2,0.992,8.92,7.76,3.573,9,77.1 323.7 368.0 652.5
+test_oops,all,OOPS,falls/FailsYouMissed-WaitingForSummerMarch2018_FailArmy88,1,1,1,0.973,4.42,2.0,5.289,1,118.8 227.0 186.6 359.3
+test_oops,all,OOPS,falls/FailsatHome-HomeIsWhereTheFailIsMay2018_FailArmy10,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/FailsatHome-HomeIsWhereTheFailIsMay2018_FailArmy15,1,1,1,0.996,12.68,11.81,11.547,4,24.1 345.7 375.3 705.2
+test_oops,all,OOPS,falls/FailsatHome-HomeIsWhereTheFailIsMay2018_FailArmy18,1,1,1,0.995,5.21,4.6,6.339,1,106.3 154.1 261.9 423.1
+test_oops,all,OOPS,falls/FailsatHome-HomeIsWhereTheFailIsMay2018_FailArmy30,1,0,0,0.0,,,4.841,,
+test_oops,all,OOPS,falls/FailsatHome-HomeIsWhereTheFailIsMay2018_FailArmy5,1,1,1,0.997,3.34,2.74,2.299,1,605.1 361.5 829.9 701.5
+test_oops,all,OOPS,falls/FailsatHome-HomeIsWhereTheFailIsMay2018_FailArmy6,1,0,0,0.0,,,7.909,,
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201712,1,1,1,0.989,3.8,2.74,2.789,1,526.2 375.3 628.9 496.5
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201724,0,1,1,0.893,3.34,1.8,,1,505.3 115.4 786.1 498.0
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201727,1,1,1,0.989,5.21,3.27,2.985,1,545.9 450.3 864.8 549.7
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201738,1,1,1,0.985,2.4,1.53,2.455,1,425.8 249.2 667.0 480.9
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201741,1,1,2,0.991,4.74,3.67,3.728,3,498.3 175.1 679.0 599.3
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201742,1,1,2,0.996,13.15,11.75,9.979,6,528.1 445.6 918.1 604.3
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201750,1,1,1,0.991,2.87,1.94,4.031,1,176.0 170.2 338.1 475.6
+test_oops,all,OOPS,falls/FailsoftheMonth-FailingintoSummerlikeMay201757,1,1,3,0.996,19.69,18.62,18.526,20,0.0 263.2 344.8 409.1
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy23,1,1,1,0.917,9.41,8.68,0.0,1,346.8 194.9 490.4 403.8
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy27,1,1,1,0.998,5.67,5.41,6.473,1,686.4 129.5 921.3 417.6
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy3,1,1,1,0.998,2.4,1.53,2.024,1,214.5 455.3 370.2 609.8
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy32,1,1,1,0.994,4.74,3.87,3.696,1,359.8 316.2 508.2 497.0
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy37,1,1,1,0.978,3.34,2.27,2.208,1,651.9 371.3 1130.2 717.7
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy38,0,1,1,0.98,2.4,1.6,,1,0.0 209.7 226.7 438.4
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy48,1,1,1,0.917,7.07,5.41,2.982,14,482.8 283.9 656.4 423.1
+test_oops,all,OOPS,falls/FailsoftheMonth-FailureInFullForceJanuary2017_FailArmy9,1,1,3,0.997,2.87,2.14,1.977,1,512.8 379.3 618.1 453.4
+test_oops,all,OOPS,falls/FailsoftheMonth-GetReadyToLaughApril201711,1,1,2,0.993,2.4,1.27,4.75,2,201.4 49.0 353.9 590.8
+test_oops,all,OOPS,falls/FailsoftheMonth-GetReadyToLaughApril201737,1,1,1,0.996,4.27,3.74,3.567,1,160.9 446.8 420.0 688.3
+test_oops,all,OOPS,falls/FailsoftheMonth-GetReadyToLaughApril201744,1,0,0,0.0,,,1.159,,
+test_oops,all,OOPS,falls/FailsoftheMonth-GetReadyToLaughApril20178,1,1,1,0.963,3.8,2.87,2.494,3,281.2 410.0 508.2 720.0
+test_oops,all,OOPS,falls/FailsoftheMonth-StuckTheLanding_FailArmy18,1,1,2,0.997,3.8,2.74,6.393,1,0.0 69.0 958.0 357.8
+test_oops,all,OOPS,falls/FailsoftheMonth-StuckTheLanding_FailArmy29,1,1,1,0.997,5.21,4.67,4.428,1,448.1 490.7 710.2 698.8
+test_oops,all,OOPS,falls/FailsoftheMonth-StuckTheLanding_FailArmy3,1,1,4,0.996,22.02,21.42,2.746,53,213.2 219.7 354.0 434.8
+test_oops,all,OOPS,falls/FailsoftheMonth-StuckTheLanding_FailArmy30,1,1,2,0.988,2.4,1.13,1.08,1,188.0 175.8 425.6 468.5
+test_oops,all,OOPS,falls/FailsoftheMonth-StuckTheLanding_FailArmy37,1,1,2,0.982,6.61,6.27,12.386,1,0.0 148.3 535.7 464.7
+test_oops,all,OOPS,falls/FailsoftheMonthAugust2016_FailArmy36,1,1,2,0.992,9.88,9.54,19.453,14,252.2 220.1 419.0 353.1
+test_oops,all,OOPS,falls/FailsoftheMonthAugust2016_FailArmy52,1,0,0,0.0,,,6.11,,
+test_oops,all,OOPS,falls/FailsoftheMonthDecember2016_FailArmy11,1,1,1,0.979,4.27,3.8,6.723,1,147.3 0.2 404.0 272.5
+test_oops,all,OOPS,falls/FailsoftheMonthDecember2016_FailArmy42,1,1,1,0.999,3.34,2.8,3.395,3,289.9 251.2 491.6 416.8
+test_oops,all,OOPS,falls/FailsoftheMonthDecember2016_FailArmy43,1,1,1,0.998,2.87,2.34,2.172,1,461.8 421.6 672.4 707.4
+test_oops,all,OOPS,falls/FailsoftheMonthDecember2016_FailArmy45,1,1,1,0.988,6.14,5.27,5.074,1,375.9 244.9 774.0 708.6
+test_oops,all,OOPS,falls/FailsoftheMonthDecember2016_FailArmy5,1,1,1,0.989,2.4,0.73,0.0,1,395.6 166.5 563.0 470.4
+test_oops,all,OOPS,falls/FailsoftheMonthDecember2016_FailArmy56,1,0,0,0.0,,,6.325,,
+test_oops,all,OOPS,falls/FailsoftheMonthDecember2016_FailArmy6,1,1,1,0.977,2.4,1.0,3.857,1,36.7 140.0 242.9 719.8
+test_oops,all,OOPS,falls/FailsoftheMonthFebruary2017_FailArmy12,1,1,1,0.955,2.87,2.0,2.459,1,27.9 12.7 298.8 394.3
+test_oops,all,OOPS,falls/FailsoftheMonthFebruary2017_FailArmy16,1,1,1,0.998,2.4,0.47,3.842,1,997.3 83.6 1263.1 580.5
+test_oops,all,OOPS,falls/FailsoftheMonthFebruary2017_FailArmy24,1,1,1,0.997,2.87,2.54,2.046,1,544.3 396.9 825.4 518.7
+test_oops,all,OOPS,falls/FailsoftheMonthFebruary2017_FailArmy29,1,0,0,0.0,,,2.782,,
+test_oops,all,OOPS,falls/FailsoftheMonthFebruary2017_FailArmy3,1,1,1,0.981,4.27,3.6,3.791,1,433.0 296.9 570.0 454.9
+test_oops,all,OOPS,falls/FailsoftheMonthFebruary2017_FailArmy30,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/FailsoftheMonthFebruary2017_FailArmy37,1,1,2,0.987,8.94,7.87,3.16,26,951.8 209.4 1280.0 363.0
+test_oops,all,OOPS,falls/FailsoftheMonthJuly2016_FailArmy13,1,1,1,0.991,2.4,1.87,3.473,2,118.4 350.1 395.2 630.1
+test_oops,all,OOPS,falls/FailsoftheMonthJuly2016_FailArmy21,1,1,1,0.994,3.34,2.54,2.501,3,563.9 242.6 645.6 406.1
+test_oops,all,OOPS,falls/FailsoftheMonthJuly2016_FailArmy31,1,1,2,0.994,12.68,12.61,12.306,26,1.8 445.4 124.3 720.0
+test_oops,all,OOPS,falls/FailsoftheMonthJuly2016_FailArmy42,1,1,2,0.998,3.34,2.8,2.65,1,675.6 364.5 770.8 490.3
+test_oops,all,OOPS,falls/FailsoftheMonthJuly2016_FailArmy5,1,1,1,0.951,8.48,7.87,3.076,48,260.3 272.4 559.8 466.3
+test_oops,all,OOPS,falls/FailsoftheMonthJuly2016_FailArmy8,1,1,1,0.998,2.4,1.07,1.431,1,232.2 407.4 338.8 540.7
+test_oops,all,OOPS,falls/FailsoftheMonthOctober2016_FailArmy32,1,0,0,0.0,,,1.636,,
+test_oops,all,OOPS,falls/FailsoftheMonthOctober2016_FailArmy4,1,1,2,0.999,3.92,3.17,3.309,1,369.0 546.6 577.7 720.0
+test_oops,all,OOPS,falls/FailsoftheMonthOctober2016_FailArmy42,1,0,0,0.0,,,0.867,,
+test_oops,all,OOPS,falls/FailsoftheMonthOctober2016_FailArmy56,1,1,2,0.973,14.43,13.34,5.648,27,171.8 153.1 358.1 553.3
+test_oops,all,OOPS,falls/FailsoftheMonthOctober2016_FailArmy69,1,1,1,0.996,3.42,1.25,3.031,1,150.4 359.1 266.7 566.6
+test_oops,all,OOPS,falls/FailsoftheMonthSeptember2016_FailArmy11,1,1,1,0.998,7.54,7.01,2.845,1,535.4 296.3 674.4 424.6
+test_oops,all,OOPS,falls/FailsoftheMonthSeptember2016_FailArmy24,1,1,1,0.995,3.34,2.87,6.192,1,142.4 160.9 277.4 491.5
+test_oops,all,OOPS,falls/FailsoftheMonthSeptember2016_FailArmy3,1,0,0,0.0,,,1.587,,
+test_oops,all,OOPS,falls/FailsoftheMonthSeptember2016_FailArmy30,1,1,1,0.998,2.87,2.0,1.397,2,262.8 394.9 702.8 660.8
+test_oops,all,OOPS,falls/FailsoftheMonthSeptember2016_FailArmy7,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/FailsoftheWeek-BetterLuckNextTimeJanuary2017_FailArmy22,1,1,2,0.999,4.27,2.87,5.421,3,9.3 16.3 392.2 575.4
+test_oops,all,OOPS,falls/FailsoftheWeek-BetterLuckNextTimeJanuary2017_FailArmy28,1,1,2,0.987,3.34,3.0,3.266,1,582.8 170.0 682.7 311.3
+test_oops,all,OOPS,falls/FailsoftheWeek-BetterLuckNextTimeJanuary2017_FailArmy9,1,1,1,0.903,9.88,9.28,4.712,4,503.7 83.1 584.6 188.4
+test_oops,all,OOPS,falls/FailsoftheWeek-BigAir_BiggerFailsMarch2017_FailArmy33,1,1,1,0.991,4.27,3.34,3.215,1,56.2 330.4 347.2 643.4
+test_oops,all,OOPS,falls/FailsoftheWeek-BigAir_BiggerFailsMarch2017_FailArmy39,1,1,1,0.988,3.8,3.07,2.768,1,498.7 570.9 635.8 720.0
+test_oops,all,OOPS,falls/FailsoftheWeek-BridesmaidRuinsWeddingJune201712,1,1,2,0.997,3.34,2.54,2.148,4,460.9 327.7 811.9 618.0
+test_oops,all,OOPS,falls/FailsoftheWeek-BridesmaidRuinsWeddingJune201747,1,1,2,0.999,10.81,10.01,9.832,18,542.3 463.6 700.3 624.0
+test_oops,all,OOPS,falls/FailsoftheWeek-BridesmaidRuinsWeddingJune20177,1,0,0,0.0,,,1.265,,
+test_oops,all,OOPS,falls/FailsoftheWeek-DoWhatYouCanFebruary2017_FailArmy18,1,1,1,0.996,9.41,9.34,2.427,12,162.7 264.0 346.5 543.2
+test_oops,all,OOPS,falls/FailsoftheWeek-DoWhatYouCanFebruary2017_FailArmy40,1,0,0,0.0,,,0.0,,
+test_oops,all,OOPS,falls/FailsoftheWeek-DoWhatYouCanFebruary2017_FailArmy49,1,1,1,0.959,8.01,6.67,5.306,20,134.0 534.5 442.1 641.6
+test_oops,all,OOPS,falls/FailsoftheWeek-DoWhatYouCanFebruary2017_FailArmy9,1,1,2,0.993,3.8,3.0,2.679,1,0.0 134.4 317.0 594.9
+test_oops,all,OOPS,falls/FailsoftheWeek-DronetotheFaceApril2018_FailArmy26,1,0,0,0.0,,,6.441,,
+test_oops,all,OOPS,falls/FailsoftheWeek-DronetotheFaceApril2018_FailArmy48,1,0,0,0.0,,,1.382,,
+test_oops,all,OOPS,falls/FailsoftheWeek-GoaheadandsenditMay201727,1,1,1,0.993,4.27,3.6,3.307,1,158.7 464.6 351.0 602.6
+test_oops,all,OOPS,falls/FailsoftheWeek-InsulttoInjuryJanuary2017_FailArmy10,1,0,0,0.0,,,3.068,,
+test_oops,all,OOPS,falls/FailsoftheWeek-October2016_FailArmy46,1,0,0,0.0,,,7.161,,
+test_oops,all,OOPS,falls/FailsoftheWeekMarch2017_FailArmy11,1,0,0,0.0,,,3.835,,
+test_oops,all,OOPS,falls/FailsoftheWeekMarch2017_FailArmy15,1,1,1,0.977,4.27,3.27,3.056,1,874.7 114.7 1280.0 632.1
+test_oops,all,OOPS,falls/FailsoftheWeekMarch2017_FailArmy28,1,1,1,0.993,5.21,4.6,5.392,1,87.0 308.9 295.7 697.0
+test_oops,all,OOPS,falls/FailsoftheWeekMarch2017_FailArmy50,1,1,1,0.997,2.87,2.0,2.477,1,246.2 190.3 380.6 425.7
+test_oops,all,OOPS,falls/GoFaster_OrFail-ThrowbackFailsJanuary2018_FailArmy42,1,0,0,0.0,,,2.379,,
+test_oops,all,OOPS,falls/GoforBroke-BreakingThingsNovember2016_FailArmy0,0,1,1,0.937,3.34,3.07,,1,930.6 79.1 1208.1 714.3
+test_oops,all,OOPS,falls/GoforBroke-BreakingThingsNovember2016_FailArmy24,1,1,1,0.996,9.41,8.48,9.18,1,159.3 233.9 416.7 626.3
+test_oops,all,OOPS,falls/GoforBroke-BreakingThingsNovember2016_FailArmy4,1,1,1,0.998,9.41,8.81,1.518,2,61.6 470.2 226.3 705.3
+test_oops,all,OOPS,falls/GoforBroke-BreakingThingsNovember2016_FailArmy43,1,0,0,0.0,,,2.537,,
+test_oops,all,OOPS,falls/GoforBroke-BreakingThingsNovember2016_FailArmy47,0,1,1,0.88,8.94,7.67,,1,517.5 468.7 714.4 715.3
+test_oops,all,OOPS,falls/GoforBroke-BreakingThingsNovember2016_FailArmy49,1,1,1,0.995,2.4,1.67,3.622,1,316.3 376.6 403.4 537.7
+test_oops,all,OOPS,falls/GoneFishing-ThrowbackThursdayNovember2017_FailArmy17,1,1,3,0.966,4.27,3.4,5.144,4,12.2 417.5 100.7 679.1
+test_oops,all,OOPS,falls/GoneFishing-ThrowbackThursdayNovember2017_FailArmy21,1,1,1,0.997,13.15,12.48,11.626,1,416.6 500.0 607.9 635.4
+test_oops,all,OOPS,falls/GoneFishing-ThrowbackThursdayNovember2017_FailArmy25,1,1,2,0.987,2.4,0.87,7.799,4,0.0 10.9 404.0 719.9
+test_oops,all,OOPS,falls/GoneFishing-ThrowbackThursdayNovember2017_FailArmy63,1,1,1,0.968,2.4,2.4,3.681,1,39.7 1.5 279.1 294.3
+test_oops,all,OOPS,falls/GrandmasvsGrandpas-FailArmyVersusDecember2017_FailArmy0,1,1,1,0.996,6.14,5.34,4.964,1,122.2 105.5 557.3 349.2
+test_oops,all,OOPS,falls/GrandmasvsGrandpas-FailArmyVersusDecember2017_FailArmy11,1,1,1,0.994,2.4,1.67,4.234,1,367.7 194.7 531.2 568.6
+test_oops,all,OOPS,falls/GrandmasvsGrandpas-FailArmyVersusDecember2017_FailArmy14,1,1,1,0.979,2.4,0.6,6.077,2,545.4 132.6 642.0 664.4
+test_oops,all,OOPS,falls/GrandmasvsGrandpas-FailArmyVersusDecember2017_FailArmy2,1,1,1,0.963,2.4,1.67,1.552,1,548.0 271.5 716.1 620.8
+test_oops,all,OOPS,falls/GrandmasvsGrandpas-FailArmyVersusDecember2017_FailArmy34,1,1,1,0.864,3.8,2.67,2.744,1,168.7 207.4 372.5 408.1
+test_oops,all,OOPS,falls/GrandmasvsGrandpas-FailArmyVersusDecember2017_FailArmy7,1,1,1,0.952,7.07,6.34,0.0,2,123.4 306.6 374.1 501.9
+test_oops,all,OOPS,falls/GrassIsAlwaysGreener-GetOffMyLawnJuly2018_FailArmy16,1,1,1,0.992,4.74,3.4,5.372,1,461.9 388.1 602.3 658.7
+test_oops,all,OOPS,falls/GrassIsAlwaysGreener-GetOffMyLawnJuly2018_FailArmy5,1,1,1,0.998,5.21,4.47,4.147,1,159.6 519.7 353.0 664.2
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy11,1,1,2,0.994,13.61,12.01,11.05,4,150.3 334.4 537.9 620.7
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy23,1,1,1,0.996,16.88,16.62,1.019,11,576.8 344.7 667.9 485.8
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy29,1,1,2,0.998,5.21,3.74,7.48,7,395.7 453.2 653.5 620.8
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy30,1,1,1,0.978,6.14,5.61,5.191,1,201.1 209.2 518.6 454.9
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy39,1,1,1,0.972,2.4,1.4,12.651,1,514.5 319.7 815.7 705.8
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy53,1,1,1,0.987,2.4,1.0,0.904,6,582.5 354.6 825.2 451.3
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy56,1,1,1,0.988,2.4,2.27,2.904,1,451.5 196.3 688.8 587.2
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy59,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/GuessitsTimetoLeave-ThrowbackThursdayOctober2017_FailArmy75,1,1,1,0.998,2.4,1.4,2.44,1,36.5 326.0 362.1 689.7
+test_oops,all,OOPS,falls/GymandWorkoutFails-NewYear_NewMeJanuary2018_FailArmy0,1,1,2,0.983,11.75,10.54,2.517,8,566.1 567.3 840.9 718.4
+test_oops,all,OOPS,falls/GymandWorkoutFails-NewYear_NewMeJanuary2018_FailArmy12,1,1,1,0.927,7.07,6.27,5.649,1,701.5 25.7 1259.3 663.7
+test_oops,all,OOPS,falls/GymandWorkoutFails-NewYear_NewMeJanuary2018_FailArmy18,1,0,0,0.0,,,4.802,,
+test_oops,all,OOPS,falls/GymandWorkoutFails-NewYear_NewMeJanuary2018_FailArmy30,1,1,1,0.995,3.8,3.67,2.518,1,55.3 401.0 301.8 692.9
+test_oops,all,OOPS,falls/GymandWorkoutFails-NewYear_NewMeJanuary2018_FailArmy33,1,1,1,0.996,3.8,2.14,7.693,1,214.8 46.1 385.3 373.0
+test_oops,all,OOPS,falls/Hardcore_Parkour-FanSubmissionsMay2018_FailArmy0,1,0,0,0.0,,,4.413,,
+test_oops,all,OOPS,falls/Hardcore_Parkour-FanSubmissionsMay2018_FailArmy24,1,1,1,0.979,3.8,3.54,3.518,1,144.7 271.5 239.5 454.3
+test_oops,all,OOPS,falls/Hardcore_Parkour-FanSubmissionsMay2018_FailArmy28,1,1,1,0.989,5.67,4.87,5.916,2,474.5 267.6 845.5 614.8
+test_oops,all,OOPS,falls/Hardcore_Parkour-FanSubmissionsMay2018_FailArmy29,1,0,0,0.0,,,6.103,,
+test_oops,all,OOPS,falls/Hardcore_Parkour-FanSubmissionsMay2018_FailArmy31,1,1,1,0.991,9.41,9.08,10.25,1,288.6 190.7 459.7 618.3
+test_oops,all,OOPS,falls/Hardcore_Parkour-FanSubmissionsMay2018_FailArmy36,1,0,0,0.0,,,2.349,,
+test_oops,all,OOPS,falls/Hardcore_Parkour-FanSubmissionsMay2018_FailArmy4,1,1,1,0.999,2.87,2.2,1.844,1,873.5 465.1 1034.6 676.9
+test_oops,all,OOPS,falls/HesGonnaSendIt-ThrowbackFailsNovember2017_FailArmy11,1,0,0,0.0,,,1.475,,
+test_oops,all,OOPS,falls/HesGonnaSendIt-ThrowbackFailsNovember2017_FailArmy27,1,1,1,0.992,3.8,3.27,3.572,1,259.5 355.6 523.9 603.9
+test_oops,all,OOPS,falls/HesGonnaSendIt-ThrowbackFailsNovember2017_FailArmy34,1,0,0,0.0,,,3.121,,
+test_oops,all,OOPS,falls/HesGonnaSendIt-ThrowbackFailsNovember2017_FailArmy43,1,1,1,0.979,2.4,1.13,3.409,1,187.8 117.7 324.5 370.3
+test_oops,all,OOPS,falls/HesGonnaSendIt-ThrowbackFailsNovember2017_FailArmy75,1,1,1,0.997,3.34,2.54,2.377,1,197.7 401.6 303.3 515.4
+test_oops,all,OOPS,falls/HesGonnaSendIt-ThrowbackFailsNovember2017_FailArmy76,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/HesNotStopping-ThrowbackFailsNovember2017_FailArmy33,1,1,1,0.991,13.15,12.15,12.097,1,698.8 386.2 763.8 515.9
+test_oops,all,OOPS,falls/HesNotStopping-ThrowbackFailsNovember2017_FailArmy53,1,1,1,0.96,6.14,5.14,0.963,2,526.7 284.5 784.7 389.9
+test_oops,all,OOPS,falls/HilariousHolidayFailsDecember2017_FailArmy20,1,0,0,0.0,,,2.94,,
+test_oops,all,OOPS,falls/HilariousHolidayFailsDecember2017_FailArmy26,1,1,1,0.977,4.74,3.8,3.408,2,226.2 80.9 507.6 521.5
+test_oops,all,OOPS,falls/HilariousHolidayFailsDecember2017_FailArmy27,1,1,1,0.997,3.8,3.07,2.879,1,541.1 363.5 643.0 458.6
+test_oops,all,OOPS,falls/HilariousRedneckFailsNovember2017_FailArmy14,1,1,1,0.953,2.4,1.8,1.786,1,157.8 279.7 442.6 476.8
+test_oops,all,OOPS,falls/HilariousScienceFailsJuly2017_FailArmy10,0,1,1,0.93,8.01,6.07,,1,120.9 324.7 418.1 720.0
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy10,1,0,0,0.0,,,8.938,,
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy11,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy17,1,1,1,0.993,11.75,11.08,10.848,1,180.7 325.2 239.8 384.6
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy27,1,1,1,0.99,3.8,2.27,1.762,1,463.5 228.9 944.1 717.3
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy29,1,1,1,0.995,2.4,2.34,3.39,1,67.6 272.2 207.4 570.5
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy32,1,1,1,0.997,2.4,0.73,0.58,1,172.5 383.5 397.6 720.0
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy4,1,1,1,0.997,4.27,3.4,3.592,1,407.3 288.9 508.8 419.5
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy5,1,1,1,0.975,2.4,1.87,1.727,1,142.2 469.6 1228.3 716.4
+test_oops,all,OOPS,falls/HopelessRomantic-FailsoftheWeekOctober2018_FailArmy7,1,1,1,0.978,2.4,0.87,9.528,2,88.9 156.7 241.3 598.2
+test_oops,all,OOPS,falls/HowLowCanYouGo-FailsoftheWeekSeptember2017_FailArmy19,1,1,1,0.955,4.74,3.34,2.804,1,55.4 166.5 489.9 720.0
+test_oops,all,OOPS,falls/HowLowCanYouGo-FailsoftheWeekSeptember2017_FailArmy35,1,1,1,0.978,7.07,6.94,1.557,7,569.2 419.7 749.0 536.7
+test_oops,all,OOPS,falls/HowLowCanYouGo-FailsoftheWeekSeptember2017_FailArmy46,1,1,1,0.995,2.87,2.27,1.848,1,575.9 13.5 900.6 313.6
+test_oops,all,OOPS,falls/HowLowCanYouGo-FailsoftheWeekSeptember2017_FailArmy5,0,1,1,0.992,4.27,3.14,,1,122.3 218.7 383.5 700.9
+test_oops,all,OOPS,falls/HowLowCanYouGo-FailsoftheWeekSeptember2017_FailArmy51,1,1,2,0.981,2.87,2.0,1.694,1,523.5 283.8 715.7 535.1
+test_oops,all,OOPS,falls/HowdYouGetUpsideDown-BestFailsoftheWeekAugust2018_FailArmy0,1,1,1,0.998,4.6,3.67,3.684,2,92.2 324.1 281.1 411.6
+test_oops,all,OOPS,falls/HowdYouGetUpsideDown-BestFailsoftheWeekAugust2018_FailArmy15,1,1,1,0.998,14.2,13.47,13.418,1,598.5 542.1 684.5 670.4
+test_oops,all,OOPS,falls/IAmStuckInThisCar-FailsYouMissed16_FailArmy57,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/IAmStuckInThisCar-FailsYouMissed16_FailArmy70,1,0,0,0.0,,,4.981,,
+test_oops,all,OOPS,falls/IAmStuckInThisCar-FailsYouMissed16_FailArmy79,1,1,1,0.908,3.92,3.67,2.965,1,536.9 463.2 767.1 667.8
+test_oops,all,OOPS,falls/IAmStuckInThisCar-FailsYouMissed16_FailArmy93,1,1,1,0.992,12.93,12.68,11.627,4,348.7 443.9 608.5 700.4
+test_oops,all,OOPS,falls/ICaughtABigCrab-ThrowbackFailsDecember2017_FailArmy65,1,1,1,0.964,2.4,2.0,1.43,1,0.0 325.0 238.9 666.9
+test_oops,all,OOPS,falls/ICaughtABigCrab-ThrowbackFailsDecember2017_FailArmy81,1,1,1,0.93,5.67,4.6,5.866,1,112.5 336.7 285.8 661.3
+test_oops,all,OOPS,falls/IMadeIt-FailsoftheWeekOctober2017_FailArmy10,1,1,1,0.997,3.53,2.93,2.743,1,178.6 570.0 346.7 720.0
+test_oops,all,OOPS,falls/IMadeIt-FailsoftheWeekOctober2017_FailArmy14,1,1,1,0.878,4.07,3.13,3.029,1,246.1 417.6 424.2 604.4
+test_oops,all,OOPS,falls/IMadeIt-FailsoftheWeekOctober2017_FailArmy30,1,1,1,0.981,3.0,2.33,3.839,1,382.0 261.2 518.3 403.4
+test_oops,all,OOPS,falls/IMadeIt-FailsoftheWeekOctober2017_FailArmy34,1,1,1,0.99,3.53,2.6,2.43,2,547.7 388.4 746.9 557.7
+test_oops,all,OOPS,falls/IMadeIt-FailsoftheWeekOctober2017_FailArmy39,1,1,1,0.985,14.73,13.8,9.518,19,91.3 224.5 383.4 719.5
+test_oops,all,OOPS,falls/IMadeIt-FailsoftheWeekOctober2017_FailArmy9,1,1,1,0.879,4.6,3.67,3.426,1,217.4 249.8 848.5 669.2
+test_oops,all,OOPS,falls/ImSlipping_ImFalling_ICantGetUp-ThrowbackFailsJanuary2018_FailArmy21,1,1,1,0.982,5.67,4.67,5.504,1,81.9 202.3 367.2 719.8
+test_oops,all,OOPS,falls/ImSlipping_ImFalling_ICantGetUp-ThrowbackFailsJanuary2018_FailArmy25,1,0,0,0.0,,,3.538,,
+test_oops,all,OOPS,falls/ImSlipping_ImFalling_ICantGetUp-ThrowbackFailsJanuary2018_FailArmy45,1,0,0,0.0,,,7.615,,
+test_oops,all,OOPS,falls/ImSlipping_ImFalling_ICantGetUp-ThrowbackFailsJanuary2018_FailArmy79,1,1,1,0.88,3.34,2.54,2.253,1,388.2 298.7 485.4 447.1
+test_oops,all,OOPS,falls/InstantKarmaFails-BestoftheYear2017_FailArmy42,1,1,1,0.998,9.41,8.54,8.988,6,639.3 485.8 821.4 699.0
+test_oops,all,OOPS,falls/InstantKarmaFails-ItsPaybackTimeDecember2016_FailArmy25,1,0,0,0.0,,,2.643,,
+test_oops,all,OOPS,falls/InstantKarmaFails-ItsPaybackTimeDecember2016_FailArmy42,1,1,2,0.977,12.21,10.74,10.684,38,131.4 103.5 262.7 243.1
+test_oops,all,OOPS,falls/InternationalFailsFromAroundTheWorldJanuary2018_FailArmy35,1,1,1,0.995,4.27,3.27,4.721,1,161.9 333.4 227.5 410.6
+test_oops,all,OOPS,falls/InternationalFailsFromAroundTheWorldJanuary2018_FailArmy42,1,0,0,0.0,,,7.699,,
+test_oops,all,OOPS,falls/InternationalFailsFromAroundTheWorldJanuary2018_FailArmy51,1,1,1,0.993,3.34,2.27,2.635,1,431.6 112.4 579.2 349.7
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust2017100,1,1,1,0.994,8.48,7.67,7.756,5,167.4 238.9 279.5 319.3
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201714,1,0,0,0.0,,,4.701,,
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201717,1,1,1,0.96,2.87,1.33,5.998,1,273.5 0.8 392.4 299.0
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201722,1,0,0,0.0,,,2.348,,
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201723,1,1,1,0.991,4.74,3.94,2.389,11,403.4 480.0 644.4 529.3
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201728,1,0,0,0.0,,,0.0,,
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201730,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201735,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201738,1,1,1,0.994,3.8,3.4,3.138,2,279.7 397.9 402.2 563.3
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201745,1,1,2,0.991,2.87,2.0,2.448,1,606.2 271.0 782.0 444.8
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201746,1,1,1,0.991,7.07,6.21,6.182,1,127.1 2.4 604.2 172.3
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201750,1,1,1,0.997,3.8,3.14,3.414,1,527.0 197.3 762.8 556.2
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201758,1,1,1,0.992,3.8,3.27,2.675,1,102.6 308.0 328.2 518.7
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201762,1,0,0,0.0,,,4.99,,
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201780,1,0,0,0.0,,,2.169,,
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201782,1,1,1,0.995,3.34,2.74,3.124,1,460.8 354.8 602.1 493.1
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201792,1,1,1,0.97,3.34,3.14,3.203,1,32.9 0.0 334.7 349.7
+test_oops,all,OOPS,falls/ItsAllDownHillFromHere-ThrowbackFailsAugust201796,1,0,0,0.0,,,4.117,,
+test_oops,all,OOPS,falls/ItsDangerousOutside-StayInsideApril2018_FailArmy27,1,1,1,0.99,4.27,2.67,3.071,5,108.1 199.6 205.5 326.7
+test_oops,all,OOPS,falls/ItsDangerousOutside-StayInsideApril2018_FailArmy54,1,0,0,0.0,,,2.357,,
+test_oops,all,OOPS,falls/JustGrowUp-ActYourAgeFailsJuly2017_FailArmy29,1,1,1,0.978,4.74,4.4,4.178,1,428.7 301.6 627.5 413.8
+test_oops,all,OOPS,falls/KayakChaos-FailsoftheWeekAugust2018_FailArmy12,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/KayakChaos-FailsoftheWeekAugust2018_FailArmy15,0,1,1,0.983,2.4,0.93,,1,1042.7 286.4 1233.6 482.1
+test_oops,all,OOPS,falls/KayakChaos-FailsoftheWeekAugust2018_FailArmy16,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/KeepItGoing_KeepItGoing-BestFailsoftheMonthSeptember2017_FailArmy5,1,1,1,0.989,4.6,3.87,3.189,4,265.0 312.8 499.8 479.5
+test_oops,all,OOPS,falls/LakeFails-TimeForAShowerApril2017_FailArmy0,1,1,2,0.994,3.34,3.07,2.016,1,839.4 321.7 1156.3 680.1
+test_oops,all,OOPS,falls/LakeFails-TimeForAShowerApril2017_FailArmy15,1,1,1,0.993,4.74,4.0,4.026,1,384.9 216.1 739.7 516.3
+test_oops,all,OOPS,falls/LaughingCameraman-BestLaughsEverJanuary2017_FailArmy10,1,1,1,0.996,4.27,3.34,2.626,2,488.7 190.0 648.5 413.2
+test_oops,all,OOPS,falls/LaughingCameraman-BestLaughsEverJanuary2017_FailArmy28,1,1,2,0.995,7.07,5.67,3.513,6,506.7 167.1 772.5 441.0
+test_oops,all,OOPS,falls/LaughingCameraman-BestLaughsEverJanuary2017_FailArmy4,1,1,1,0.999,2.4,1.2,1.337,1,157.0 520.0 382.1 720.0
+test_oops,all,OOPS,falls/LaughingCameraman-BestLaughsEverJanuary2017_FailArmy7,1,0,0,0.0,,,3.077,,
+test_oops,all,OOPS,falls/LetsGetCheesy-FailsoftheWeek9,1,1,1,0.996,2.4,0.87,6.114,1,134.3 195.6 258.8 481.6
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep213,1,0,0,0.0,,,0.956,,
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep2170,1,0,0,0.0,,,2.379,,
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep220,1,1,2,0.988,3.42,1.0,3.429,5,656.4 430.6 738.6 567.8
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep2215,1,0,0,0.0,,,0.6,,
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep234,1,0,0,0.0,,,1.854,,
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep241,1,0,0,0.0,,,1.561,,
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep245,1,0,0,0.0,,,1.614,,
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep248,1,1,1,0.995,2.92,1.92,1.719,1,551.4 304.2 619.2 424.5
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep251,0,1,1,0.995,2.92,1.42,,1,761.0 456.8 950.0 707.3
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep270,1,0,0,0.0,,,0.965,,
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep283,1,1,1,0.988,2.92,1.58,1.462,1,591.9 313.9 866.3 644.7
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep288,1,1,2,0.966,6.42,5.34,1.683,5,63.4 19.5 308.9 399.9
+test_oops,all,OOPS,falls/LetsGetIt-FailArmyAfterDarkep289,1,0,0,0.0,,,1.65,,
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails0,1,0,0,0.0,,,3.075,,
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails11,1,1,1,0.997,3.34,2.47,2.125,1,285.1 619.1 506.0 715.9
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails13,1,1,1,0.96,11.28,10.34,10.059,13,441.7 611.5 511.8 714.3
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails14,1,1,3,0.994,15.95,15.02,7.752,8,234.5 306.7 369.8 519.2
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails19,1,1,3,0.998,30.9,29.96,6.869,25,82.6 327.0 153.6 426.4
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails20,1,1,1,0.995,9.41,7.67,8.678,4,563.3 428.3 697.9 547.2
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails21,1,1,1,0.961,8.94,8.34,8.276,3,539.4 410.4 803.1 718.5
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails23,1,1,1,0.974,6.61,5.74,5.599,4,455.8 393.0 707.7 616.7
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails25,1,1,1,0.996,3.34,2.34,2.113,1,818.5 295.0 998.4 375.4
+test_oops,all,OOPS,falls/LetsGetStoned-RockFails27,1,1,2,0.996,9.88,9.01,8.545,11,606.1 301.0 732.8 531.0
+test_oops,all,OOPS,falls/LetsGetTropical-BeachFails13,1,1,3,0.997,4.27,2.34,8.895,1,473.9 473.8 587.5 651.1
+test_oops,all,OOPS,falls/LetsGetTropical-BeachFails19,1,1,2,0.994,11.28,10.41,14.661,13,830.4 358.6 917.0 481.1
+test_oops,all,OOPS,falls/LetsGetTropical-BeachFails23,1,1,2,0.996,20.62,20.22,0.938,25,531.1 458.6 697.0 613.9
+test_oops,all,OOPS,falls/LetsGetTropical-BeachFails24,1,1,1,0.991,7.07,6.74,6.118,1,494.2 300.6 728.4 523.4
+test_oops,all,OOPS,falls/LetsGetTropical-BeachFails32,1,0,0,0.0,,,0.931,,
+test_oops,all,OOPS,falls/LookAtMeLikeABoss-FailsYouMissed14_FailArmy56,1,0,0,0.0,,,6.302,,
+test_oops,all,OOPS,falls/LookOutBelow-ThrowbackThursdayOctober2017_FailArmy19,1,1,1,0.951,3.34,2.2,2.001,1,919.7 262.0 1016.5 401.9
+test_oops,all,OOPS,falls/LookOutBelow-ThrowbackThursdayOctober2017_FailArmy45,1,1,1,0.992,3.34,2.34,2.177,1,167.6 338.1 473.1 610.0
+test_oops,all,OOPS,falls/LookOutBelow-ThrowbackThursdayOctober2017_FailArmy56,1,1,1,0.991,2.4,1.27,0.851,1,528.1 627.8 635.4 720.0
+test_oops,all,OOPS,falls/LookOutBelow-ThrowbackThursdayOctober2017_FailArmy63,1,1,1,0.985,4.74,3.74,3.684,1,138.7 416.4 361.4 707.6
+test_oops,all,OOPS,falls/LookOutBelow-ThrowbackThursdayOctober2017_FailArmy69,1,1,1,0.991,4.27,3.94,3.31,1,60.9 516.4 333.1 720.0
+test_oops,all,OOPS,falls/LookOutBelow-ThrowbackThursdayOctober2017_FailArmy70,1,1,1,0.997,2.4,1.33,1.31,1,680.0 316.3 832.4 501.8
+test_oops,all,OOPS,falls/LookOutBelow-ThrowbackThursdayOctober2017_FailArmy8,1,1,2,0.966,25.76,24.89,24.296,3,623.0 289.4 731.5 535.4
+test_oops,all,OOPS,falls/LookOutForThatBush-FailsoftheWeekJune2017_FailArmy38,1,1,1,0.922,8.01,6.61,3.251,12,137.1 456.3 460.4 720.0
+test_oops,all,OOPS,falls/LookOutForThatBush-FailsoftheWeekJune2017_FailArmy48,1,1,1,0.997,3.8,3.14,3.037,2,474.0 361.4 577.0 534.5
+test_oops,all,OOPS,falls/MMAMishap-FailsoftheWeekSeptember2018_FailArmy8,1,0,0,0.0,,,5.418,,
+test_oops,all,OOPS,falls/MenvsWomen-FailArmyVersusAugust201713,1,0,0,0.0,,,3.362,,
+test_oops,all,OOPS,falls/MenvsWomen-FailArmyVersusAugust201717,1,0,0,0.0,,,3.76,,
+test_oops,all,OOPS,falls/MenvsWomen-FailArmyVersusAugust201732,1,1,1,0.96,7.54,6.67,3.962,11,0.7 625.8 160.0 720.0
+test_oops,all,OOPS,falls/MenvsWomen-FailArmyVersusAugust201741,1,1,1,0.996,3.34,3.27,2.804,1,327.7 428.3 476.4 631.0
+test_oops,all,OOPS,falls/MirrorFightBack-FailsoftheWeekNovember2017_FailArmy12,1,1,1,0.989,2.47,1.47,1.45,1,530.3 427.8 739.1 525.9
+test_oops,all,OOPS,falls/MirrorFightBack-FailsoftheWeekNovember2017_FailArmy15,1,1,1,0.962,4.07,3.07,2.726,1,94.7 329.5 274.1 603.2
+test_oops,all,OOPS,falls/MirrorFightBack-FailsoftheWeekNovember2017_FailArmy17,1,1,1,0.976,2.47,0.6,1.917,1,593.8 231.0 734.4 450.5
+test_oops,all,OOPS,falls/MirrorFightBack-FailsoftheWeekNovember2017_FailArmy25,1,0,0,0.0,,,3.357,,
+test_oops,all,OOPS,falls/MirrorFightBack-FailsoftheWeekNovember2017_FailArmy28,0,1,1,0.998,12.6,11.67,,1,54.6 495.1 500.8 718.9
+test_oops,all,OOPS,falls/MirrorFightBack-FailsoftheWeekNovember2017_FailArmy4,1,1,1,0.863,2.47,1.07,1.958,1,886.6 285.1 1198.4 646.0
+test_oops,all,OOPS,falls/MomsGoingToBeMad-ThrowbackFailsJune2017_FailArmy18,1,1,1,0.996,5.21,4.47,4.097,1,75.6 161.1 261.8 349.8
+test_oops,all,OOPS,falls/MomsGoingToBeMad-ThrowbackFailsJune2017_FailArmy87,1,1,3,0.99,9.41,8.21,8.053,1,360.4 378.5 639.9 608.1
+test_oops,all,OOPS,falls/MomsGoingToBeMad-ThrowbackFailsJune2017_FailArmy91,1,0,0,0.0,,,3.729,,
+test_oops,all,OOPS,falls/NobodyBelievedMe-FailsYouMissed15_FailArmy77,1,1,2,0.992,13.43,12.59,1.965,50,716.6 299.6 829.7 438.0
+test_oops,all,OOPS,falls/NotintheHouseFailsYouMissed13_FailArmy61,1,1,1,0.979,2.92,2.17,1.972,1,1064.2 194.6 1280.0 625.7
+test_oops,all,OOPS,falls/OnTheJobFails-INeedANewJobOctober2017_FailArmy18,1,1,1,0.993,4.74,3.8,2.829,1,232.1 39.3 820.1 431.0
+test_oops,all,OOPS,falls/OnTheJobFails-INeedANewJobOctober2017_FailArmy20,1,1,1,0.99,4.74,3.94,3.8,1,619.8 361.9 774.1 513.8
+test_oops,all,OOPS,falls/Ouchie-DangThatHurtMay2018_FailArmy17,1,1,1,0.85,14.08,13.08,12.751,1,462.2 229.9 717.0 595.9
+test_oops,all,OOPS,falls/Ouchie-DangThatHurtMay2018_FailArmy26,1,1,2,0.996,5.67,5.07,4.873,4,500.9 253.6 642.1 428.1
+test_oops,all,OOPS,falls/Ouchie-DangThatHurtMay2018_FailArmy39,1,1,1,0.981,4.74,3.74,0.591,1,402.0 358.4 549.7 450.1
+test_oops,all,OOPS,falls/Ouchie-DangThatHurtMay2018_FailArmy8,1,1,1,0.977,3.34,1.74,16.124,1,494.3 10.9 594.3 154.4
+test_oops,all,OOPS,falls/OutdoorFails-FloatonFebruary2017_FailArmy10,1,1,1,0.996,12.21,11.48,2.658,1,118.9 340.1 238.5 487.0
+test_oops,all,OOPS,falls/OutdoorFails-FloatonFebruary2017_FailArmy28,1,1,1,0.968,19.22,17.88,2.004,37,219.5 291.3 305.7 421.2
+test_oops,all,OOPS,falls/ParagliderProblems-FailsoftheWeekJuly201814,1,1,3,0.997,7.8,6.27,2.678,20,334.9 437.8 446.9 532.4
+test_oops,all,OOPS,falls/ParagliderProblems-FailsoftheWeekJuly201817,1,1,2,0.995,14.2,13.67,13.429,2,93.9 350.6 220.2 571.9
+test_oops,all,OOPS,falls/ParkingSpotBattle-FailsoftheWeekApril2019_FailArmy8,1,1,1,0.986,4.74,2.8,7.319,1,152.9 227.3 269.7 527.5
+test_oops,all,OOPS,falls/PeopleVsNatureFails-ItsGoingToBlowYouAwayMay201725,1,1,1,0.935,4.27,3.2,2.902,1,572.3 220.8 673.9 371.2
+test_oops,all,OOPS,falls/PeopleVsNatureFails-ItsGoingToBlowYouAwayMay201755,1,0,0,0.0,,,2.104,,
+test_oops,all,OOPS,falls/PolarVortexProblems10,1,1,3,0.99,42.58,41.91,1.55,49,48.9 356.8 246.1 486.6
+test_oops,all,OOPS,falls/PolePosition-FailsoftheWeekSeptember2018_FailArmy17,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/RapperSlipsofftheStage-FailsoftheWeekJuly201722,1,0,0,0.0,,,0.0,,
+test_oops,all,OOPS,falls/RapperSlipsofftheStage-FailsoftheWeekJuly201727,1,1,3,0.993,2.87,1.0,2.938,1,210.6 172.1 307.1 371.2
+test_oops,all,OOPS,falls/Ready_Set_FailFailsoftheWeekSeptember2018_FailArmy25,1,0,0,0.0,,,8.219,,
+test_oops,all,OOPS,falls/RuralvsUrbanFailsAugust2018_FailArmy16,1,1,1,0.956,6.14,5.87,5.101,1,34.1 307.0 257.9 512.3
+test_oops,all,OOPS,falls/RussiansvsRednecks-FailArmyVersus14,1,1,2,0.989,10.34,8.54,0.0,7,536.6 251.6 730.9 538.2
+test_oops,all,OOPS,falls/SendItToFailArmy-FailsoftheWeekOctober201733,1,0,0,0.0,,,3.453,,
+test_oops,all,OOPS,falls/SisterFails_FunnySistersFailCompilationByFailArmy201652,1,1,1,0.976,4.27,3.4,3.232,4,622.6 456.5 845.5 716.6
+test_oops,all,OOPS,falls/SledDeadRedemption-FailsoftheWeek_FailArmy23,1,1,1,0.998,8.01,7.34,7.221,11,612.9 305.7 814.8 626.3
+test_oops,all,OOPS,falls/SnowDayFails-ItsColdOutThereJanuary2018_FailArmy0,1,1,1,0.997,5.21,4.74,4.633,1,628.1 377.5 804.7 505.5
+test_oops,all,OOPS,falls/SnowDayFails-ItsColdOutThereJanuary2018_FailArmy21,1,1,2,0.996,3.34,2.8,2.686,1,90.8 313.9 264.2 544.0
+test_oops,all,OOPS,falls/SnowDayFails-ItsColdOutThereJanuary2018_FailArmy44,1,1,1,0.996,7.54,7.14,6.939,1,288.6 316.6 380.8 429.4
+test_oops,all,OOPS,falls/SnowDayFails-ItsColdOutThereJanuary2018_FailArmy46,1,1,1,0.992,3.8,3.0,2.804,1,561.7 416.3 666.5 507.9
+test_oops,all,OOPS,falls/SomeoneMovethatdog-FailsoftheWeekAugust2017_FailArmy6,1,1,2,0.994,8.48,7.87,1.181,5,602.6 377.2 770.0 556.3
+test_oops,all,OOPS,falls/SpeedingIntoTheWeekend-ThrowbackFailsJanuary2018_FailArmy53,1,1,2,0.988,2.4,1.2,2.543,3,150.0 249.7 321.0 635.2
+test_oops,all,OOPS,falls/SpringisHereMarch2019_FailArmy25,1,1,3,0.987,6.61,5.67,12.764,1,1005.7 305.2 1280.0 715.6
+test_oops,all,OOPS,falls/SpringisHereMarch2019_FailArmy31,0,1,1,0.963,16.42,15.82,,8,0.0 227.8 86.0 652.2
+test_oops,all,OOPS,falls/SticksandStonesJuly2018_FailArmy8,1,1,1,0.999,4.27,3.27,3.173,1,568.4 424.6 650.6 545.7
+test_oops,all,OOPS,falls/SticksvsStones-FailArmyVersusSeptember2017_FailArmy16,1,1,4,0.999,13.61,13.61,6.634,29,607.5 280.7 760.2 645.1
+test_oops,all,OOPS,falls/SwingsetStupidity-FailsoftheWeekMay2019_FailArmy14,1,0,0,0.0,,,4.374,,
+test_oops,all,OOPS,falls/TakeaSeat-ThrowbackThursdayOctober2017_FailArmy6,1,1,1,0.99,4.74,3.87,3.671,1,173.1 274.9 412.8 579.9
+test_oops,all,OOPS,falls/TeeterTotterTurmoil-FailsoftheMonthJune2018_FailArmy12,1,1,1,0.996,16.87,16.0,23.042,1,198.3 251.8 326.8 531.3
+test_oops,all,OOPS,falls/TetherballtotheFace-FailsoftheWeekMarch2019_FailArmy25,1,1,2,0.989,11.28,10.81,10.251,1,68.6 201.7 404.0 370.7
+test_oops,all,OOPS,falls/ThatCantBeGood-FailsoftheWeekNovember2016_FailArmy37,1,1,1,0.995,6.14,5.34,5.078,1,348.3 35.8 647.3 315.8
+test_oops,all,OOPS,falls/ThatsASidewaysWheelie-ThrowbackThursdayAugust2017_FailArmy0,1,1,1,0.995,5.21,4.6,4.247,1,440.9 393.6 1280.0 715.5
+test_oops,all,OOPS,falls/ThatsASidewaysWheelie-ThrowbackThursdayAugust2017_FailArmy4,1,1,1,0.997,3.8,2.87,2.818,7,611.1 314.2 687.8 414.8
+test_oops,all,OOPS,falls/ThatsGoingtoLeaveaMark-ThrowbackThursdayAugust2017107,1,1,1,0.981,5.67,4.87,5.015,1,654.8 331.2 806.8 477.2
+test_oops,all,OOPS,falls/ThatsGoingtoLeaveaMark-ThrowbackThursdayAugust2017113,1,0,0,0.0,,,7.12,,
+test_oops,all,OOPS,falls/TheBestFailReactions-NowThatsFunnySeptember2017_FailArmy27,0,1,1,0.99,2.4,1.74,,1,783.2 212.6 996.9 717.0
+test_oops,all,OOPS,falls/TheBestFailsofAllTimeSoFar_byFailArmy8,1,1,3,0.998,6.14,5.34,3.282,28,868.4 276.9 948.2 428.9
+test_oops,all,OOPS,falls/TheDroneofDoom-ThrowbackThursdayOctober2017_FailArmy42,1,1,1,0.993,2.87,2.8,2.519,1,515.8 101.1 771.1 403.1
+test_oops,all,OOPS,falls/TheNutcracker-FailArmyEdition32,1,1,2,0.991,3.34,2.6,2.228,1,398.8 490.2 558.0 674.5
+test_oops,all,OOPS,falls/TheReturnoftheFailNinja-ThrowbackThursdaySeptember2017_FailArmy23,1,1,2,0.999,6.61,5.61,5.443,1,395.2 569.8 738.8 714.9
+test_oops,all,OOPS,falls/TheSlideofDoom-FailsoftheWeek_FailArmy39,1,1,1,0.98,5.21,4.6,4.337,1,603.5 332.3 777.1 675.0
+test_oops,all,OOPS,falls/TheWheelsAreComingOff-ThrowbackFailsDecember2017_FailArmy44,1,1,2,0.999,8.94,8.74,9.013,1,633.4 124.7 882.1 500.3
+test_oops,all,OOPS,falls/ThereWasAnAttempt_ThenAFailMarch2018_FailArmy11,1,0,0,0.0,,,10.37,,
+test_oops,all,OOPS,falls/ThereWasAnAttempt_ThenAFailMarch2018_FailArmy23,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/TheresATruckInTheLake-FailsoftheWeekJuly201754,1,1,1,0.94,2.4,1.2,1.283,1,436.2 281.6 930.2 714.9
+test_oops,all,OOPS,falls/ThrowbackFails-BackflipBellyFlopsOptionalDecember2017_FailArmy69,1,1,1,0.961,8.01,6.47,6.801,2,564.4 203.5 813.7 391.5
+test_oops,all,OOPS,falls/ThrowbackFails-CarriageCarnageApril2018_FailArmy39,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/ThrowbackFails-CarriageCarnageApril2018_FailArmy50,1,1,1,0.994,2.87,2.2,1.992,1,686.6 357.9 899.9 480.1
+test_oops,all,OOPS,falls/ThrowbackFails-CarriageCarnageApril2018_FailArmy71,1,1,3,0.995,12.68,12.15,3.771,3,251.1 259.6 502.9 481.3
+test_oops,all,OOPS,falls/ThrowbackFails-FacePaintRequiredMarch2018_FailArmy31,1,1,1,0.997,4.27,3.47,3.212,1,434.3 557.7 810.1 717.3
+test_oops,all,OOPS,falls/ThrowbackFails-JumpAroundMarch2018_FailArmy14,1,1,2,0.994,6.14,5.94,10.986,3,0.0 0.0 324.4 445.8
+test_oops,all,OOPS,falls/ThrowbackFails-JumpAroundMarch2018_FailArmy47,0,1,1,0.975,8.01,7.14,,1,623.6 535.0 765.2 718.2
+test_oops,all,OOPS,falls/ThrowbackFails-JumpAroundMarch2018_FailArmy60,0,1,4,0.997,10.81,9.28,,23,57.3 556.9 338.2 717.0
+test_oops,all,OOPS,falls/ThrowbackFails-JumpAroundMarch2018_FailArmy65,1,1,2,0.998,30.43,28.9,2.408,15,200.8 297.5 379.4 421.4
+test_oops,all,OOPS,falls/ThrowbackFails-JumpAroundMarch2018_FailArmy73,1,1,2,0.996,9.41,8.68,7.888,2,225.5 325.8 388.4 574.6
+test_oops,all,OOPS,falls/ThrowbackFails-Ready_Set_FailMarch2018_FailArmy10,1,1,1,0.994,8.48,7.67,12.759,5,451.8 54.7 899.1 714.7
+test_oops,all,OOPS,falls/ThrowbackFails-Ready_Set_FailMarch2018_FailArmy58,1,1,2,0.994,4.74,3.87,3.497,1,70.2 438.8 209.9 607.2
+test_oops,all,OOPS,falls/ThrowbackFails-SavedItJanuary2018_FailArmy13,1,1,4,0.998,21.09,20.62,2.145,71,310.7 41.0 702.0 533.3
+test_oops,all,OOPS,falls/ThrowbackFails-SavedItJanuary2018_FailArmy54,1,1,6,0.995,4.27,3.34,3.452,5,188.8 263.3 291.9 489.4
+test_oops,all,OOPS,falls/ThrowbackFails-Thatsonegreedycat111,1,1,1,0.99,8.01,6.87,6.93,1,212.8 224.3 357.3 403.7
+test_oops,all,OOPS,falls/ThrowbackFails-Thatsonegreedycat32,1,1,1,0.997,8.94,7.81,7.84,1,182.9 458.0 487.2 688.4
+test_oops,all,OOPS,falls/ThrowbackFails-Thatsonegreedycat33,1,1,1,0.993,5.67,5.07,1.47,2,0.0 383.0 101.9 699.2
+test_oops,all,OOPS,falls/ThrowbackFails-WhenEnoughIsEnoughFebruary2018_FailArmy11,1,1,1,0.998,10.81,10.34,5.039,15,607.4 407.9 819.7 719.6
+test_oops,all,OOPS,falls/ThrowbackFails-WhenEnoughIsEnoughFebruary2018_FailArmy16,1,1,1,0.919,2.4,1.4,1.558,1,437.5 318.4 648.7 546.1
+test_oops,all,OOPS,falls/ThrowbackThursday-AreMyTeethOKMay20175,1,1,1,0.995,10.34,9.48,0.953,1,755.0 24.8 1094.5 279.8
+test_oops,all,OOPS,falls/ThrowbackThursday-AreMyTeethOKMay201767,1,1,2,0.989,2.87,2.07,4.14,1,353.9 433.8 493.5 709.4
+test_oops,all,OOPS,falls/ThrowbackThursday-ThatwasamazingMay2017123,1,1,1,0.997,4.92,3.92,13.414,1,199.4 439.2 363.0 674.0
+test_oops,all,OOPS,falls/ThrowbackThursday-TryandstaybalancedApril201750,1,1,2,0.998,2.92,1.75,8.763,5,624.3 265.8 719.4 431.3
+test_oops,all,OOPS,falls/ThrowbackThursdayFails-HereGoesNothingApril2017_FailArmy40,1,0,0,0.0,,,8.118,,
+test_oops,all,OOPS,falls/ThrowbackThursdayFails-ItsHardNotToLaughApril201795,1,1,3,0.995,2.4,0.6,2.771,3,475.9 0.0 724.7 671.1
+test_oops,all,OOPS,falls/ThrowbackThursdayFails-ThisWatersGross_FailArmy58,0,0,0,0.0,,,,,
+test_oops,all,OOPS,falls/TreadmillTerror-FailsoftheWeekNovember2018_FailArmy28,1,1,1,0.986,2.4,1.4,1.178,3,227.2 409.2 650.8 720.0
+test_oops,all,OOPS,falls/TreadmillTerror-FailsoftheWeekNovember2018_FailArmy32,1,1,1,0.995,56.59,55.79,28.634,9,200.7 304.8 404.0 386.0
+test_oops,all,OOPS,falls/TricycleTrouble-FailsoftheWeekSeptember2018_FailArmy16,1,1,1,0.997,3.34,1.4,8.88,1,9.5 49.1 261.5 720.0
+test_oops,all,OOPS,falls/UltimateParkourFailsCompilationPart2byFailArmy_YouAreTheKingOfBails_Man22,1,1,2,0.998,3.34,1.53,7.434,3,569.9 367.3 698.0 587.2
+test_oops,all,OOPS,falls/UltimateParkourFailsCompilationPart2byFailArmy_YouAreTheKingOfBails_Man31,1,1,1,0.984,2.87,0.93,15.721,1,545.0 45.0 936.0 624.3
+test_oops,all,OOPS,falls/UltimateParkourFailsCompilationPart2byFailArmy_YouAreTheKingOfBails_Man59,1,1,1,0.938,6.61,5.87,0.796,10,319.6 317.1 454.0 548.4
+test_oops,all,OOPS,falls/UltimateParkourFailsCompilationPart2byFailArmy_YouAreTheKingOfBails_Man60,1,1,1,0.991,2.4,1.07,2.898,1,465.0 20.0 712.9 349.8
+test_oops,all,OOPS,falls/UltimateWinterFailsCompilation_Boards_Skis_andSnowfromFailArmy17,1,1,1,0.997,8.48,7.94,7.517,1,523.8 392.3 654.1 566.6
+test_oops,all,OOPS,falls/UltimateWinterFailsCompilation_Boards_Skis_andSnowfromFailArmy2,1,1,1,0.993,2.4,1.33,1.713,1,424.2 491.8 520.8 611.2
+test_oops,all,OOPS,falls/UltimateWinterFailsCompilation_Boards_Skis_andSnowfromFailArmy6,1,0,0,0.0,,,5.14,,
+test_oops,all,OOPS,falls/UltimateWinterFailsCompilation_Boards_Skis_andSnowfromFailArmy9,1,1,1,0.977,3.34,2.54,2.071,1,661.5 347.9 779.0 462.0
+test_oops,all,OOPS,falls/ValentinesDayFailsCompilation_SalutetoForeverAlonebyFailArmy4,1,1,3,0.994,19.69,18.89,27.463,34,611.6 284.7 718.9 645.6
+test_oops,all,OOPS,falls/VirtualRealityFreakout-FailsoftheWeekNovember2018_FailArmy29,1,1,4,0.985,2.4,1.67,2.48,2,190.4 451.3 440.4 720.0
+test_oops,all,OOPS,falls/WakeboardWipeout-FailsoftheWeekApril2019_FailArmy17,1,1,2,0.996,8.01,7.14,8.127,1,113.0 343.4 179.0 451.8
+test_oops,all,OOPS,falls/WakeboardWipeout-FailsoftheWeekApril2019_FailArmy7,1,1,2,0.986,2.4,1.4,1.083,1,369.5 19.0 648.0 526.5
+test_oops,all,OOPS,falls/WatchOutForThatTreeFailsoftheWeekFebruary2019_FailArmy10,1,1,3,0.993,5.67,4.74,4.4,3,989.1 240.5 1075.6 485.3
+test_oops,all,OOPS,falls/Wedidit-FailsYouMissed22December2017_FailArmy104,0,1,1,0.954,13.93,13.26,,1,601.2 145.6 992.5 716.7
+test_oops,all,OOPS,falls/WereBackFailsoftheWeekMay2019_FailArmy11,1,1,1,0.998,13.61,12.95,12.052,1,664.3 342.7 872.6 616.4
+test_oops,all,OOPS,falls/WereBackFailsoftheWeekMay2019_FailArmy20,1,1,2,0.99,2.4,0.93,5.699,1,96.5 242.0 203.0 417.3
+test_oops,all,OOPS,falls/WheelieGoneWrong-FailsoftheWeekMay2018_FailArmy3,1,1,1,0.997,7.8,7.6,6.61,1,506.7 436.4 616.2 551.6
+test_oops,all,OOPS,falls/WhenNothingGoesRight-ThrowbackFailsJune2017_FailArmy41,1,0,0,0.0,,,4.347,,
+test_oops,all,OOPS,falls/Wheredyougo-FailsoftheWeekAugust2017_FailArmy19,1,1,2,0.993,3.8,2.94,2.778,1,394.1 208.6 526.4 303.9
+test_oops,all,OOPS,falls/WhipIt_WhipItRealGood-FailsoftheMonthNovember2017_FailArmy44,1,1,2,0.994,13.13,12.4,4.607,6,302.3 402.4 482.5 641.5
+test_oops,all,OOPS,falls/WinterFailsJanuary2017_FailArmy0,1,0,0,0.0,,,3.866,,
+test_oops,all,OOPS,falls/WinterFailsJanuary2017_FailArmy32,1,1,1,0.999,5.67,4.4,1.391,7,240.4 55.8 737.3 280.9
+test_oops,all,OOPS,falls/WinterFailsJanuary2017_FailArmy45,1,1,1,0.993,7.07,5.61,3.579,25,504.2 353.8 572.4 465.4
+test_oops,all,OOPS,falls/WinterisComing-SnowFailsOctober2018_FailArmy21,1,1,1,0.985,7.54,7.54,6.615,1,330.7 453.7 495.0 613.2
+test_oops,all,OOPS,falls/WorkSucks-FailingAtWorkJune2018_FailArmy23,1,1,1,0.982,54.25,53.99,53.789,27,214.1 412.6 515.9 679.7
+test_oops,all,OOPS,falls/YogaFails-ImSoZenRightNowApril2017_FailArmy16,0,1,1,0.859,4.74,4.6,,1,476.7 134.7 1228.0 645.5
+test_oops,all,OOPS,falls/YoureGoingWayTooFast-ThrowbackThursdaySeptember2017_FailArmy99,1,0,0,0.0,,,1.637,,
+test_oops,all,OOPS,falls/YouveGotBadFriends-FriendshipFailsSeptember2018_FailArmy32,1,1,2,0.994,8.48,7.47,7.243,2,131.6 263.5 757.1 471.0
