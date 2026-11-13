@@ -22,10 +22,9 @@ import cv2
 
 EXTS = (".mp4", ".mov", ".avi", ".mkv", ".m4v", ".3gp")
 ALLOWED = dict(light={"day", "night"}, type={"fall", "adl"},
-               fall_from={"standing", "walking", "chair", "bed", "none", ""},
-               people={"1", "2"}, distance={"near", "far"}, angle={"eye", "high"})
+               distance={"near", "far"}, angle={"eye", "high"})
 PLAN = [("day falls", 6), ("night clips", 8), ("night falls", 4), ("no-fall clips", 9),
-        ("two people", 2), ("far away", 4), ("high angle", 4)]
+        ("2+ people", 2), ("far away", 4), ("high angle", 4)]
 
 
 def video_info(path):
@@ -86,6 +85,8 @@ def main():
             v = (r.get(col) or "").strip().lower()
             if v not in ok:
                 problems.append(f"{key}: {col} = '{v}' (allowed: {', '.join(sorted(x for x in ok if x))})")
+        if not (r.get("people") or "").strip().isdigit() or int(r["people"]) < 1:
+            problems.append(f"{key}: people = '{r.get('people')}' (write a number: 1, 2, 3, ...)")
         is_fall = (r.get("type") or "").strip().lower() == "fall"
         st = (r.get("fall_start_s") or "").strip()
         if is_fall and not st:
@@ -107,7 +108,7 @@ def main():
             "night clips": sum(low(r, "light") == "night" for r in rs),
             "night falls": sum(low(r, "light") == "night" and low(r, "type") == "fall" for r in rs),
             "no-fall clips": sum(low(r, "type") == "adl" for r in rs),
-            "two people": sum(low(r, "people") == "2" for r in rs),
+            "2+ people": sum(low(r, "people").isdigit() and int(low(r, "people")) >= 2 for r in rs),
             "far away": sum(low(r, "distance") == "far" for r in rs),
             "high angle": sum(low(r, "angle") == "high" for r in rs)}
     print("\nRecording plan (from the labels sheet)")
