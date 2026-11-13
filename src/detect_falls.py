@@ -3,14 +3,16 @@ FallVision: the complete fall detector for any video (Member 1, Step 22).
 
 Pipeline:
   1. YOLO11m-pose + ByteTrack on frames resampled to about 15 fps (baseline_fall.extract_tracks).
-     If the people in the video are small (median box height < --small-px pixels) the video is
+     If the people in the video are small (standing height < --small-px pixels) the video is
      run again at input 960, which Step 15b showed helps far-away people.
   2. Broken tracks are joined (preprocess.join_tracks): a person keeps one id through the fall.
   3. EVERY person tracked for at least 2 s gets their own 92-feature sequence (preprocess.py), so
      the person who falls does not have to be the most visible one.
-  4. The GRU (train_gru.py) scores overlapping 2-s windows (every 0.5 s); the fall score of a window
-     is P(falling) + P(fallen), averaged with its neighbour, as chosen on validation (fuse.py).
-  5. Alarm when the score reaches the threshold chosen on validation (default 0.835).
+  4. The learned models score overlapping 2-s windows (every 0.5 s): one or more GRUs (train_gru.py)
+     and optionally the Random Forest (train_rf.py); their probabilities are averaged. The fall score
+     of a window is P(falling) + P(fallen) or P(falling) only (--score), averaged with its neighbour.
+     Models, score and threshold are the ones chosen on validation by fuse.py.
+  5. Alarm when the score reaches the threshold.
      Localization: WHO (person id), WHEN (estimated fall start and alarm time), WHERE (the person's
      box at the alarm).
   6. The rule-based detector (baseline_fall.run_rules) runs on the same skeletons and is reported
@@ -60,16 +62,22 @@ def person_tracks(data):
     return people
 
 
-def gru_scores(model, mean, std, feats, present, fps, device):
-    """Window end indices and smoothed fall scores for one person."""
+def window_scores(grus, rf, feats, present, fps, device, score="fall+fallen"):
+    """Window end indices, smoothed fall scores and mean class probabilities for one person."""
     step = max(1, int(round(STRIDE_S * fps)))
     ends = [e for e in range(WIN, len(feats) + 1, step) if present[e - WIN:e].mean() >= 0.5]
     if not ends:
         return np.array([], int), np.array([]), np.zeros((0, 3))
     X = np.stack([feats[e - WIN:e] for e in ends]).astype(np.float32)
+    probs = []
     with torch.no_grad():
-        p = torch.softmax(model(torch.from_numpy((X - mean) / std).to(device)), 1).cpu().numpy()
-    s = p[:, 1] + p[:, 2]
+        for model, mean, std in grus:
+            probs.append(torch.softmax(model(torch.from_numpy((X - mean) / std).to(device)), 1).cpu().numpy())
+    if rf is not None:
+        from train_rf import summarise
+        probs.append(rf.predict_proba(summarise(X)))
+    p = np.mean(probs, 0)
+    s = p[:, 1] + p[:, 2] if score == "fall+fallen" else p[:, 1].copy()
     if len(s) > 1:
         s = np.convolve(s, [0.5, 0.5], mode="same")
     return np.array(ends), s, p
@@ -78,7 +86,9 @@ def gru_scores(model, mean, std, feats, present, fps, device):
 def main():
     ap = argparse.ArgumentParser(description="FallVision: detect and localize falls in a video")
     ap.add_argument("--video", required=True)
-    ap.add_argument("--gru", required=True, help="model saved by train_gru.py (gru.pt)")
+    ap.add_argument("--gru", nargs="+", required=True, help="one or more models saved by train_gru.py")
+    ap.add_argument("--rf", default=None, help="optional Random Forest saved by train_rf.py (rf.joblib)")
+    ap.add_argument("--score", choices=["fall+fallen", "falling"], default="fall+fallen")
     ap.add_argument("--threshold", type=float, default=0.835, help="chosen on validation (fuse.py)")
     ap.add_argument("--model", default="yolo11m-pose.pt")
     ap.add_argument("--small-px", type=int, default=150, help="re-run at input 960 if people are smaller")
@@ -88,13 +98,19 @@ def main():
     a = ap.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model, mean, std = load_gru(a.gru, device)
+    grus = [load_gru(g, device) for g in a.gru]
+    rf = None
+    if a.rf:
+        import joblib
+        rf = joblib.load(a.rf)
 
     imgsz = 640
     data, images = extract_tracks(a.video, a.model, 15.0, imgsz, keep_frames=bool(a.out), conf=a.conf)
+    # standing height = 90th percentile of box heights (a person lying down has a short box,
+    # so the median would wrongly call a lying person "small")
     heights = [b[3] - b[1] for f in data["frames"] for b in f["boxes"]]
-    if heights and np.median(heights) < a.small_px:
-        print(f"People are small (median height {np.median(heights):.0f} px): re-running at input 960")
+    if heights and np.percentile(heights, 90) < a.small_px:
+        print(f"People are small (standing height {np.percentile(heights, 90):.0f} px): re-running at input 960")
         imgsz = 960
         data, images = extract_tracks(a.video, a.model, 15.0, imgsz, keep_frames=bool(a.out), conf=a.conf)
     fps = data["fps"]
@@ -105,7 +121,7 @@ def main():
         f = features_from_tracks(td)
         if f is None:
             continue
-        ends, s, p = gru_scores(model, mean, std, f["feats"], f["present"], fps, device)
+        ends, s, p = window_scores(grus, rf, f["feats"], f["present"], fps, device, a.score)
         hit = np.where(s >= a.threshold)[0]
         if len(hit) == 0:
             continue

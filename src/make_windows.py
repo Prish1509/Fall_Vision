@@ -57,6 +57,14 @@ def window_label(segs, t0, t1):
     return 0
 
 
+def end_label(segs, t1):
+    """OmniFall class of the segment that contains time t1 (-1 if none)."""
+    for lab, s, e in segs:
+        if s <= t1 <= e:
+            return lab
+    return -1
+
+
 def main():
     ap = argparse.ArgumentParser(description="Cut labelled 2-second windows from preprocessed videos")
     ap.add_argument("--features", required=True, help="output folder of preprocess.py (has manifest.csv)")
@@ -69,7 +77,7 @@ def main():
     with open(os.path.join(a.features, "manifest.csv"), newline="") as f:
         videos = [r for r in csv.DictReader(f) if r["status"] == "ok"]
 
-    per_split = defaultdict(lambda: dict(X=[], y=[], vid=[], t=[], videos=[]))
+    per_split = defaultdict(lambda: dict(X=[], y=[], vid=[], t=[], src=[], videos=[]))
     no_label = 0
     for r in videos:
         key = (r["dataset"], r["path"])
@@ -90,6 +98,7 @@ def main():
             bucket["y"].append(window_label(segs[key], t1 - WIN_S, t1))
             bucket["vid"].append(vid)
             bucket["t"].append(t1)
+            bucket["src"].append(end_label(segs[key], t1))
             n_win += 1
         has_fall = int(any(lab == FALL for lab, _, _ in segs[key]))
         bucket["videos"].append(dict(dataset=r["dataset"], path=r["path"], has_fall=has_fall, n_windows=n_win))
@@ -104,7 +113,8 @@ def main():
             continue
         X, y = np.stack(b["X"]), np.array(b["y"], np.int8)
         np.savez_compressed(os.path.join(a.out, f"{split}.npz"), X=X, y=y,
-                            vid=np.array(b["vid"], np.int32), t=np.array(b["t"], np.float32))
+                            vid=np.array(b["vid"], np.int32), t=np.array(b["t"], np.float32),
+                            src=np.array(b["src"], np.int8))
         with open(os.path.join(a.out, f"{split}_videos.csv"), "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=list(b["videos"][0].keys()))
             w.writeheader()

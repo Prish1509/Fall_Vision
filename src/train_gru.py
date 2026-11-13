@@ -42,6 +42,9 @@ from train_rf import SPLITS_TEST, choose_thresholds, fmt, video_metrics, video_s
 POS, VEL, CONF = slice(0, 34), slice(34, 68), slice(68, 85)
 PRESENT = 91
 FLIP = [0, 2, 1, 4, 3, 6, 5, 8, 7, 10, 9, 12, 11, 14, 13, 16, 15]      # COCO left <-> right
+# OmniFall classes that look like a fall but are not: sit down, lie down, lying, other (exercise...),
+# kneel down, kneeling, squat down, squatting, crawl, jump
+HARD = [3, 5, 6, 9, 10, 11, 12, 13, 14, 15]
 
 
 def load_raw(win_dir, split):
@@ -51,7 +54,9 @@ def load_raw(win_dir, split):
     d = np.load(p)
     with open(os.path.join(win_dir, f"{split}_videos.csv"), newline="") as f:
         vids = list(csv.DictReader(f))
-    return dict(X=d["X"].astype(np.float32), y=d["y"].astype(np.int64), vid=d["vid"], t=d["t"], videos=vids)
+    src = d["src"].astype(np.int64) if "src" in d.files else np.full(len(d["y"]), -1)
+    return dict(X=d["X"].astype(np.float32), y=d["y"].astype(np.int64), vid=d["vid"], t=d["t"], src=src,
+                videos=vids)
 
 
 def augment(x, rng):
@@ -119,6 +124,8 @@ def main():
     ap.add_argument("--lr", type=float, default=1e-3)
     ap.add_argument("--hidden", type=int, default=128)
     ap.add_argument("--no-aug", action="store_true", help="train without augmentation (ablation)")
+    ap.add_argument("--hard-weight", type=float, default=1.0,
+                    help="loss weight for normal windows that look like falls (lying down, exercise, ...)")
     ap.add_argument("--min-precision", type=float, default=0.95)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default="results/gru.md")
@@ -144,7 +151,9 @@ def main():
     model = GRUNet(hidden=a.hidden).to(device)
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, a.epochs)
-    loss_fn = nn.CrossEntropyLoss(weight=w)
+    loss_fn = nn.CrossEntropyLoss(weight=w, reduction="none")
+    sw = np.where((tr["y"] == 0) & np.isin(tr["src"], HARD), a.hard_weight, 1.0).astype(np.float32)
+    print(f"hard-negative windows: {int((sw > 1).sum())} (weight {a.hard_weight})", flush=True)
     best, t0 = (-1, None, 0), time.time()
     for ep in range(1, a.epochs + 1):
         model.train()
@@ -156,7 +165,8 @@ def main():
             xb = torch.from_numpy((xb - mean) / std).to(device)
             yb = torch.from_numpy(tr["y"][idx]).to(device)
             opt.zero_grad()
-            loss = loss_fn(model(xb), yb)
+            wb = torch.from_numpy(sw[idx]).to(device)
+            loss = (loss_fn(model(xb), yb) * wb).sum() / wb.sum()
             loss.backward()
             nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             opt.step()
@@ -179,7 +189,8 @@ def main():
     v_score, _ = video_scores(pv, va["vid"], len(va["videos"]))
     thr_p, thr_f1 = choose_thresholds(v_score, v_truth, a.min_precision)
 
-    title = "GRU without augmentation" if a.no_aug else "GRU with augmentation"
+    title = ("GRU without augmentation" if a.no_aug else "GRU with augmentation") + \
+        (f", hard-negative weight {a.hard_weight}" if a.hard_weight != 1.0 else "")
     lines = [f"# {title} (Step 21)", "",
              f"2-layer GRU, hidden {a.hidden}, best epoch {best[2]} of {a.epochs} (val window macro-F1 "
              f"{best[0]:.3f}). Thresholds chosen on validation videos only.", "",
