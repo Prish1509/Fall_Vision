@@ -89,3 +89,31 @@ Findings:
 - Error analysis: 9 of the 12 worst missed OOPS falls scored 0 because the person is detected in
   only 6-21 % of frames - a pose-detection failure, not a classifier failure. 77 of 818 OOPS clips
   carry no "fall" label although they come from the falls folder, so OOPS precision is understated.
+
+## Final system: complete pipeline on whole videos (Steps 23 and 25)
+
+detect_falls.py end to end (YOLO11m-pose + ByteTrack, every tracked person scored by the GRU,
+alarm at threshold 0.849 chosen on validation). A video alarms if any person does.
+
+| Test set | Videos | F1 | Precision | Recall | False alarms | Missed falls | Fall-start error | Alarm delay |
+|---|---|---|---|---|---|---|---|---|
+| GMDCSA24 Subjects 3-4 | 80 | 0.916 | 0.844 | **1.000** | 7 | 0 | 0.4 s | 1.4 s |
+| Staged (Le2i, CAUCAFall, MCFD) | 57 | **0.968** | 0.968 | 0.968 | 1 | 1 | 0.2 s | 1.4 s |
+| OOPS (real-world) | 818 | 0.875 | 0.945 | 0.815 | 35 | 137 | 0.5 s | 1.0 s |
+| **Our own videos** | 20 | 0.92 | 1.00 | 0.85 | 0 | 3 | 0.4 s | 0.5 s |
+
+Our own videos (results/system_own.md): 20 falls recorded by the team (19 day, 1 night), never used
+for training or tuning. 17 of 20 caught, including the night fall, the fall from sitting, and 7 of 8
+falls with two or more people in view. Near: 15/16 caught; far away: 2/4. The three misses are two
+far-away falls (one with the person seen in only 46 % of frames) and one fall with three people in
+view. The set has no no-fall clips, so false alarms are measured on GMDCSA24 and the staged set.
+
+Localization (results/localization.md): for 36 sampled alarms (12 per test set) the alarm frame
+with the system's box was checked by eye. The box is on the person who fell in 33/36 (92 %):
+GMDCSA24 12/12, staged 12/12, OOPS 9/12. Temporal localization: the estimated fall start is within
+0.2-0.5 s of the labelled start (median), and the alarm comes 0.5-1.4 s after the fall begins.
+
+Error analysis (results/error_analysis.md; 12 missed falls and 6 false alarms watched by hand):
+misses are mostly small or far-away people (4), camera motion (3) and very fast falls (2), plus a
+backward fall from sitting and a fall while mounting a horse; false alarms are lying down on purpose
+(2), exercise, a non-person "fall", one very fast movement and one label error.

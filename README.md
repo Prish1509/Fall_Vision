@@ -29,6 +29,18 @@ Output: printed alarms (person, fall start, alarm time, box), a CSV, and an anno
 | Test (never trained or tuned on) | GMDCSA24 Subjects 3-4, staged test, **OOPS** (818 real-world falls), **our own videos** |
 
 ## Results
+Final system (threshold chosen on validation, never tuned on test):
+
+| Test set | F1 | Precision | Recall |
+|---|---|---|---|
+| GMDCSA24 Subjects 3-4 (80 videos) | 0.916 | 0.844 | 1.000 |
+| Staged: Le2i, CAUCAFall, MCFD (57) | 0.968 | 0.968 | 0.968 |
+| OOPS real-world (818) | 0.875 | 0.945 | 0.815 |
+| Our own videos (20 falls) | 0.92 | 1.00 | 0.85 |
+
+The alarm box is on the person who fell in 92 % of checked alarms; the fall start is found to
+within about 0.5 s.
+
 See `results/summary.md` for every experiment, including the ideas we tested and rejected
 (night brightening, zoom re-check for small people, input 1280, shorter hold time).
 
