@@ -24,6 +24,7 @@ temporal:
   history_s: 10.0                       # past seconds per person used for body height and floor level
   track_join_gap_s: 1.5                 # a new track id within this gap, near a lost one, is the same person
   fall_aware_join: false                # tested on the hard validation set, no gain (Step 27)
+  decision_lag_s: 0.0                   # score the window ending this long before the newest frame (validation)
 
 alarm:
   label: person_collapse

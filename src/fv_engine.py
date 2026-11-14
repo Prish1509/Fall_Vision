@@ -8,7 +8,8 @@ Per processed frame:
      person was lost is the same person (same rule as preprocess.join_tracks).
   3. Every stride_s, each person seen recently gets the 92-feature sequence of their last
      history_s seconds (preprocess.features_from_tracks: body height and floor level come only
-     from these past frames) and the GRU scores their latest 2-s window.
+     from these past frames) and the GRU scores the 2-s window that ends decision_lag_s before the
+     newest frame (0 = the latest window).
   4. score = P(falling) + P(fallen), averaged with that person's previous window; an alarm is
      raised when it reaches the threshold. A person can alarm again after rearm_s below it.
   5. When people are small (standing height below small_person_px in a 1280-wide frame, measured
@@ -46,6 +47,7 @@ def load_config(path):
         tracker=p["tracker"], model_fps=float(raw["frame_sampling"]["model_fps"]),
         window_s=float(t["window_s"]), stride_s=float(t["stride_s"]), history_s=float(t["history_s"]),
         join_gap_s=float(t["track_join_gap_s"]), join_v2=bool(t["fall_aware_join"]),
+        decision_lag_s=float(t.get("decision_lag_s", 0.0)),
         score=a["score"], threshold=float(a["threshold"]), rearm_s=float(a["rearm_s"]),
         config_path=os.path.abspath(path))
 
@@ -100,6 +102,7 @@ class Person:
         self.pid = pid
         self.obs = deque()           # (slot, box, kpts) of the past history_s
         self.prev_raw = 0.0          # raw score of the previous window (smoothing)
+        self.prev_by_lag = {}        # the same, per decision lag (evaluation only)
         self.score = 0.0             # latest smoothed collapse score
         self.alarm = None            # dict while this person is in an alarm
         self.low_since = None
@@ -115,6 +118,7 @@ class CollapseEngine:
         self.win = int(round(cfg["window_s"] * self.fps))
         self.stride = max(1, int(round(cfg["stride_s"] * self.fps)))
         self.hist = int(round(cfg["history_s"] * self.fps))
+        self.lag = int(round(cfg["decision_lag_s"] * self.fps))
         self.max_gap = int(round(cfg["join_gap_s"] * self.fps))
         self.people, self.owner, self.next_pid = {}, {}, 1
         self.next_score = self.win
@@ -180,41 +184,79 @@ class CollapseEngine:
         return self.imgsz
 
     # ---- scoring ----
-    def step(self, slot, t_now):
-        """Score the latest window of every person when a stride is due. Returns the new alarms."""
-        if slot < self.next_score:
-            return []
-        self.next_score = slot + self.stride
+    def _person_features(self, slot, lag):
+        """Features of every person whose window (ending lag slots ago) can be scored now."""
         batch = []
         for p in self.people.values():
-            if not p.obs or p.obs[-1][0] < slot - self.win:
+            if not p.obs or p.obs[-1][0] < slot - self.win - lag:
                 continue
             first = max(p.obs[0][0], slot - self.hist)
             frames = [dict(t=s / self.fps, ids=[], boxes=[], kpts=[]) for s in range(first, slot + 1)]
             for s, b, k in p.obs:
                 if s >= first:
                     frames[s - first].update(ids=[p.pid], boxes=[b], kpts=[k])
-            if len(frames) < self.win:
+            if len(frames) < self.win + lag:
                 continue
             f = features_from_tracks(dict(fps=self.fps, frames=frames))
-            if f is None or f["present"][-self.win:].mean() < 0.5:
+            if f is None:
                 continue
             batch.append((p, f, frames))
-        if not batch:
-            return []
-        X = np.stack([f["feats"][-self.win:] for _, f, _ in batch]).astype(np.float32)
+        return batch
+
+    def _raw_scores(self, batch, lag):
+        """GRU score of the 2-s window that ends `lag` slots before the newest frame (all past frames)."""
+        keep, X = [], []
+        for item in batch:
+            f = item[1]
+            end = len(f["feats"]) - lag
+            if end < self.win or f["present"][end - self.win:end].mean() < 0.5:
+                continue
+            keep.append(item)
+            X.append(f["feats"][end - self.win:end])
+        if not keep:
+            return [], np.zeros(0)
+        X = np.stack(X).astype(np.float32)
         with torch.no_grad():
             prob = torch.softmax(self.model(torch.from_numpy((X - self.mean) / self.std).to(self.device)), 1)
         prob = prob.cpu().numpy()
+        raw = prob[:, 1] + prob[:, 2] if self.cfg["score"] == "fall+fallen" else prob[:, 1]
+        return keep, raw
+
+    def scores_for_lags(self, slot, lags):
+        """Evaluation helper: highest smoothed score over people for several decision lags (in slots).
+        Call once per stride, after add_frame; does not change alarms."""
+        out = {}
+        batch = self._person_features(slot, max(lags))
+        for lag in lags:
+            keep, raw = self._raw_scores(batch, lag)
+            best = 0.0
+            for (p, _, _), r in zip(keep, raw):
+                prev = p.prev_by_lag.get(lag, 0.0)
+                p.prev_by_lag[lag] = float(r)
+                best = max(best, 0.5 * (float(r) + prev))
+            out[lag] = best
+        return out
+
+    def step(self, slot, t_now):
+        """Score every person when a stride is due. Returns the new alarms.
+
+        The scored window ends decision_lag_s before the newest frame, so it is seen with a short
+        'after' context, as in training; only frames up to now are used and the alarm time
+        (decision_timestamp_s) is the newest frame."""
+        if slot < self.next_score:
+            return []
+        self.next_score = slot + self.stride
+        lag = self.lag
+        keep, raw = self._raw_scores(self._person_features(slot, lag), lag)
         new = []
-        for (p, f, frames), pr in zip(batch, prob):
-            raw = float(pr[1] + pr[2]) if self.cfg["score"] == "fall+fallen" else float(pr[1])
-            p.score = 0.5 * (raw + p.prev_raw)
-            p.prev_raw = raw
+        for (p, f, frames), r in zip(keep, raw):
+            p.score = 0.5 * (float(r) + p.prev_raw)
+            p.prev_raw = float(r)
             if p.alarm is None and p.score >= self.cfg["threshold"]:
                 ts = f["feats"][:, HEAD_TOP_SPEED]
-                lo = len(ts) - self.win
-                st = lo + int(np.argmin(ts[lo:]))
+                end = len(ts) - lag
+                lo = end - self.win
+                st = lo + int(np.argmin(ts[lo:end]))
                 while st > lo and ts[st - 1] < -0.3:
                     st -= 1
                 self.n_alarms += 1

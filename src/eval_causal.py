@@ -8,9 +8,10 @@ every video of the chosen splits and stores, per video, the collapse score over 
 all people, every 0.5 s).
 
   --run     score the videos (resumable: videos already in --scores are skipped)
-  --report  choose the alarm threshold on the VALIDATION split only (highest F1; ties -> fewer false
-            alarms), then report every test split once at that threshold, next to the earlier
-            threshold from config.yaml; also writes the chosen threshold to results/causal_eval.md
+  --report  on the VALIDATION split only, choose the decision lag (best average precision; ties ->
+            shorter lag) and then the alarm threshold (best F1; ties -> fewer false alarms); report
+            every test split once with that choice, next to the current config.yaml setting
+  --lags    decision lags to score in one pass (default 0, 0.5, 1.0, 1.5 s)
 
 Usage:
   python src/eval_causal.py --run --omnifall-root OMNI --gmd-root GMD --own-root OWN --device cuda:0
@@ -36,15 +37,16 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIELDS = ["split", "dataset", "path", "has_fall", "true_start_s", "max_score", "series", "frames", "seconds"]
 
 
-def score_video(path, cfg, pose, gru, device):
-    """Return [(t, highest smoothed score over people)] every stride, exactly as infer.py computes it."""
+def score_video(path, cfg, pose, gru, device, lags_s):
+    """Per decision lag: [(t, highest smoothed score over people)] every stride, as infer.py computes it."""
     cap = cv2.VideoCapture(path)
     src_fps = cap.get(cv2.CAP_PROP_FPS)
     if not src_fps or src_fps != src_fps or src_fps > 1000:
         src_fps = None
     pose.reset()
     eng = CollapseEngine(cfg, gru, device)
-    series, last_slot, idx = [], -1, -1
+    lags = {l: int(round(l * eng.fps)) for l in lags_s}
+    series, last_slot, idx = {l: [] for l in lags_s}, -1, -1
     while True:
         ok, img = cap.read()
         if not ok:
@@ -57,10 +59,11 @@ def score_video(path, cfg, pose, gru, device):
         last_slot = slot
         det = pose.track(img, eng.pose_input_size(slot))
         eng.add_frame(slot, det, (img.shape[1], img.shape[0]))
-        due = slot >= eng.next_score
-        eng.step(slot, t)
-        if due:
-            series.append((round(t, 2), round(max([p.score for p in eng.people.values()] or [0.0]), 4)))
+        if slot >= eng.next_score:
+            eng.next_score = slot + eng.stride
+            sc = eng.scores_for_lags(slot, list(lags.values()))
+            for l, n in lags.items():
+                series[l].append((round(t, 2), round(sc[n], 4)))
     cap.release()
     return series, idx + 1
 
@@ -109,11 +112,12 @@ def run(a):
             if not os.path.exists(r["file"]):
                 print(f"  missing video: {r['file']}")
                 continue
-            series, frames = score_video(r["file"], cfg, pose, gru, dev)
+            series, frames = score_video(r["file"], cfg, pose, gru, dev, a.lags)
+            s0 = series[a.lags[0]]
             w.writerow(dict(split=r["split"], dataset=r["dataset"], path=r["path"], has_fall=r["has_fall"],
-                            true_start_s=r["true_start_s"], max_score=max([s for _, s in series] or [0.0]),
-                            series=json.dumps(series), frames=frames,
-                            seconds=round(series[-1][0], 2) if series else 0))
+                            true_start_s=r["true_start_s"], max_score=max([s for _, s in s0] or [0.0]),
+                            series=json.dumps({str(l): v for l, v in series.items()}), frames=frames,
+                            seconds=round(s0[-1][0], 2) if s0 else 0))
             f.flush()
             if n % 25 == 0 or n == len(todo):
                 el = time.time() - t0
@@ -137,43 +141,80 @@ def metrics(rows, thr):
                 accuracy=(tp + tn) / max(1, len(rows)), delay=float(np.median(delays)) if delays else None)
 
 
-def report(a):
-    rows = list(csv.DictReader(open(a.scores, newline="")))
-    for r in rows:
-        r["has_fall"] = int(r["has_fall"])
-        r["max_score"] = float(r["max_score"])
-        r["series"] = json.loads(r["series"])
-    val = [r for r in rows if r["split"] == "val"]
-    if not val:
-        sys.exit("no validation videos scored yet")
+def average_precision(rows):
+    """Threshold-free ranking quality on one split: average precision of fall videos by score."""
+    order = sorted(rows, key=lambda r: -r["max_score"])
+    n_pos, tp, ap = sum(r["has_fall"] for r in rows), 0, 0.0
+    for i, r in enumerate(order, 1):
+        if r["has_fall"]:
+            tp += 1
+            ap += tp / i
+    return ap / max(n_pos, 1)
+
+
+def best_threshold(rows):
     best = None
-    for thr in sorted({r["max_score"] for r in val} | {1.01}):
-        m = metrics(val, thr)
+    for thr in sorted({r["max_score"] for r in rows} | {1.01}):
+        m = metrics(rows, thr)
         if best is None or m["f1"] > best[1]["f1"] + 1e-12 or (abs(m["f1"] - best[1]["f1"]) < 1e-12 and m["fp"] < best[1]["fp"]):
             best = (thr, m)
-    chosen = round(best[0], 4)
-    old = load_config(a.config)["threshold"]
+    return round(best[0], 4), best[1]
+
+
+def report(a):
+    raw = list(csv.DictReader(open(a.scores, newline="")))
+    lag_mode = raw and raw[0]["series"].lstrip().startswith("{")
+    lags = sorted({float(k) for k in json.loads(raw[0]["series"]).keys()}) if lag_mode else [0.0]
+
+    def rows_for(lag):
+        out = []
+        for r in raw:
+            ser = json.loads(r["series"])
+            ser = ser[str(lag)] if lag_mode else ser
+            out.append(dict(split=r["split"], has_fall=int(r["has_fall"]), true_start_s=r["true_start_s"],
+                            series=ser, max_score=max([s for _, s in ser] or [0.0])))
+        return out
+
+    # 1) decision lag: best average precision on VALIDATION (ties -> shorter lag); 2) threshold: best F1 on
+    #    VALIDATION (ties -> fewer false alarms). Rule fixed before any test result was seen.
+    cand = []
+    for lag in lags:
+        val = [r for r in rows_for(lag) if r["split"] == "val"]
+        if not val:
+            sys.exit("no validation videos scored yet")
+        cand.append((average_precision(val), -lag, lag))
+    ap_best, _, lag = max(cand)
+    rows = rows_for(lag)
+    thr, vm = best_threshold([r for r in rows if r["split"] == "val"])
+    old = load_config(a.config)
     order = ["val", "test_gmdcsa24", "test_staged", "test_oops", "test_own"]
-    lines = ["# Submitted (causal) system: evaluation (Step 28)", "",
+    lines = ["# Submitted (causal) system: evaluation" + (" with decision lag (Step 28b)" if lag_mode else " (Step 28)"), "",
              "infer.py engine on whole videos, frame by frame, current and past frames only. One alarm per video "
              "is counted if the highest collapse score reaches the threshold.", "",
-             f"Threshold chosen on VALIDATION only (highest F1, ties -> fewer false alarms): **{chosen}**. "
-             f"Earlier threshold (whole-video evaluation): {old}.", "",
-             "| Split | Threshold | Videos | F1 | Precision | Recall | Accuracy | TP | FP | TN | FN | Median alarm delay |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+             "Choice on VALIDATION only, rule fixed in advance: decision lag with the best average precision "
+             "(ties -> shorter lag), then threshold with the best F1 (ties -> fewer false alarms).", "",
+             "| Decision lag | Validation average precision |", "|---|---|"]
+    lines += [f"| {l} s | {ap:.4f} |" for ap, _, l in sorted(cand, key=lambda c: c[2])]
+    lines += ["", f"Chosen: decision lag **{lag} s**, threshold **{thr}**.", "",
+              "| Split | Setting | Videos | F1 | Precision | Recall | Accuracy | TP | FP | TN | FN | Median alarm delay |",
+              "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    ref = rows_for(lags[0])
     for split in order:
-        rs = [r for r in rows if r["split"] == split]
-        if not rs:
-            continue
-        for name, thr in (("chosen", chosen), ("earlier", old)):
-            m = metrics(rs, thr)
+        settings = [(f"chosen: lag {lag} s, thr {thr}", rows, thr),
+                    (f"config: lag {old['decision_lag_s']} s, thr {old['threshold']}", rows_for(old["decision_lag_s"])
+                     if old["decision_lag_s"] in lags else ref, old["threshold"])]
+        for name, rs_all, t in settings:
+            rs = [r for r in rs_all if r["split"] == split]
+            if not rs:
+                continue
+            m = metrics(rs, t)
             d = f"{m['delay']:.1f} s" if m["delay"] is not None else "n/a"
-            lines.append(f"| {split} | {name} {thr} | {m['n']} | {m['f1']:.3f} | {m['precision']:.3f} | {m['recall']:.3f} | "
+            lines.append(f"| {split} | {name} | {m['n']} | {m['f1']:.3f} | {m['precision']:.3f} | {m['recall']:.3f} | "
                          f"{m['accuracy']:.3f} | {m['tp']} | {m['fp']} | {m['tn']} | {m['fn']} | {d} |")
-    out = os.path.join(ROOT, "results", "causal_eval.md")
+    out = os.path.join(ROOT, "results", "causal_eval_lags.md" if lag_mode else "causal_eval.md")
     open(out, "w").write("\n".join(lines) + "\n")
     print("\n".join(lines))
-    print(f"\nSaved {out}\nCHOSEN_THRESHOLD={chosen}")
+    print(f"\nSaved {out}\nCHOSEN_LAG={lag}\nCHOSEN_THRESHOLD={thr}")
 
 
 def main():
@@ -188,6 +229,8 @@ def main():
     ap.add_argument("--own-root", default=None)
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--lags", type=float, nargs="+", default=[0.0, 0.5, 1.0, 1.5],
+                    help="decision lags (s) to score; the first is also written as max_score")
     a = ap.parse_args()
     if a.run:
         run(a)
