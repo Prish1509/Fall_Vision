@@ -195,7 +195,7 @@ class CollapseEngine:
             for s, b, k in p.obs:
                 if s >= first:
                     frames[s - first].update(ids=[p.pid], boxes=[b], kpts=[k])
-            if len(frames) < self.win + lag:
+            if len(frames) < self.win:                   # each lag checks its own window in _raw_scores
                 continue
             f = features_from_tracks(dict(fps=self.fps, frames=frames))
             if f is None:
