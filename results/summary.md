@@ -134,3 +134,33 @@ own videos 17 -> 16 (the fall from sitting, score 0.83, was lost). The validatio
 the synthetic crowds and did not carry over to real video, so the final system keeps 0.824
 (chosen on validation by fuse.py). This choice was made after seeing the test results and is
 reported as such; both rows are shown. No further values were tried on test data.
+
+## FINAL system (after the model retrain was found; replaces the numbers in "Final system" above)
+
+The final evaluation run retrained the GRUs (Save & Run All), so the model and threshold were
+re-chosen on validation for those weights: fuse.py picked `gru_hard.pt`, threshold 0.824
+(results/fusion.md). The numbers in the "Final system" section above came from `gru.pt` with a
+threshold chosen for earlier weights and are kept only as a record. Final results
+(results/system_final.md, results/system_own_final.md):
+
+| Test set | Videos | F1 | Precision | Recall | False alarms | Missed falls | Fall-start error | Alarm delay |
+|---|---|---|---|---|---|---|---|---|
+| GMDCSA24 Subjects 3-4 | 80 | 0.900 | 0.857 | 0.947 | 6 | 2 | 0.5 s | 1.7 s |
+| Staged (Le2i, CAUCAFall, MCFD) | 57 | 0.968 | 0.968 | 0.968 | 1 | 1 | 0.3 s | 1.3 s |
+| OOPS (real-world) | 818 | 0.860 | 0.954 | 0.783 | 28 | 161 | 0.4 s | 1.1 s |
+| Our own videos | 20 | 0.92 | 1.00 | 0.85 | 0 | 3 | 0.4 s | 1.0 s |
+
+Own videos: 17/20 caught (night fall and fall from sitting caught); misses: 002 (tracked 96 % of the
+time but the model never scores it as a fall), 009 (small person lost by the detector at the moment
+of the fall), 011 (three people; the faller's track breaks at the fall). Localization (92 % correct
+person) was checked on the earlier model's alarms with the same box logic.
+
+Step 27, ideas tested on a hard validation set (validation videos made far away and put into
+crowds; results/system_hv_*.md) and not kept: low-confidence tracking (far 18 -> 17 caught,
+false alarms 22 -> 21) and fall-aware track joining (no change). The hard set showed that false
+alarms rise when several people are in view (crowd no-fall videos: 14/20 alarmed, partly because
+the same no-fall clips are reused in several crowds).
+
+Live mode (live_fall.py): the same model, features, windows, smoothing and threshold, applied
+while the video runs, for any number of people; tested to give the same alarm as run_fall.py on the
+same clip. All settings are in configs/fallvision.json.

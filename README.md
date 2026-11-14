@@ -5,7 +5,7 @@ localizes them: **who** fell (track ID), **where** (bounding box) and **when** (
 
 ## How it works
 1. **Pose:** Ultralytics YOLO11m-pose (17 COCO keypoints) + ByteTrack, at about 15 fps.
-   If people are small (standing height < 150 px) the video is re-run at input 960.
+   If people are small (standing height < 150 px in a 1280-wide frame) the video is re-run at input 960.
 2. **Tracks:** broken tracks are joined so a person keeps one ID through the fall.
 3. **Features:** 92 numbers per frame per person (joint positions and speeds scaled by body
    height, joint confidences, head height and speed, box shape, torso angle).
@@ -15,11 +15,19 @@ localizes them: **who** fell (track ID), **where** (bounding box) and **when** (
 5. **Alarm:** when the fall score passes the threshold chosen on validation; every person is scored.
 6. **Second opinion:** a rule-based detector runs on the same skeletons.
 
-## Run it on a video
+## Run it
+All settings (model, threshold, detection settings) are in `configs/fallvision.json`; nothing is
+set inside the code. Put the trained model at `models/gru_hard.pt` (from the Kaggle output).
 
-    python src/detect_falls.py --video clip.mp4 --gru models/gru_hard.pt --threshold 0.824 --out clip_annotated.mp4 --csv clip_falls.csv
+    pip install -r requirements.txt
+    python run_fall.py "path/to/video.mp4"        # whole video: FALL / NO FALL + annotated video
+    python live_fall.py                            # live from the webcam (q to quit)
+    python live_fall.py "path/to/video.mp4"       # a video shown as it plays, alarms in real time
+    python live_fall.py rtsp://camera-address      # CCTV / IP camera
 
-Output: printed alarms (person, fall start, alarm time, box), a CSV, and an annotated video.
+Output: who fell (person number), when (fall start and alarm time) and where (box), printed in the
+terminal and drawn on the video (red FALL box). Without an NVIDIA GPU the pose model is converted
+once to OpenVINO, which runs about 4x faster on a CPU.
 
 ## Data and splits
 | Use | Data |
@@ -29,20 +37,26 @@ Output: printed alarms (person, fall start, alarm time, box), a CSV, and an anno
 | Test (never trained or tuned on) | GMDCSA24 Subjects 3-4, staged test, **OOPS** (818 real-world falls), **our own videos** |
 
 ## Results
-Final system (threshold chosen on validation, never tuned on test):
+Final system: `gru_hard.pt`, threshold 0.824, both chosen on validation. One alternative threshold
+(0.864, from a harder validation set) was run once on test, lost recall and was not kept; both are
+reported in `results/summary.md`.
 
-| Test set | F1 | Precision | Recall |
-|---|---|---|---|
-| GMDCSA24 Subjects 3-4 (80 videos) | 0.916 | 0.844 | 1.000 |
-| Staged: Le2i, CAUCAFall, MCFD (57) | 0.968 | 0.968 | 0.968 |
-| OOPS real-world (818) | 0.875 | 0.945 | 0.815 |
-| Our own videos (20 falls) | 0.92 | 1.00 | 0.85 |
+| Test set | F1 | Precision | Recall | False alarms | Missed falls |
+|---|---|---|---|---|---|
+| GMDCSA24 Subjects 3-4 (80 videos) | 0.900 | 0.857 | 0.947 | 6 | 2 |
+| Staged: Le2i, CAUCAFall, MCFD (57) | 0.968 | 0.968 | 0.968 | 1 | 1 |
+| OOPS real-world (818) | 0.860 | 0.954 | 0.783 | 28 | 161 |
+| Our own videos (20 falls) | 0.92 | 1.00 | 0.85 | 0 | 3 |
 
-The alarm box is on the person who fell in 92 % of checked alarms; the fall start is found to
-within about 0.5 s.
+- Own videos: the night fall and the fall from sitting are caught; misses are two far-away people
+  and one fall in a group of three.
+- Localization: the alarm box is on the person who fell in 92 % of checked alarms; the fall start
+  is found to within about 0.4 s and the alarm comes about 1-1.7 s after the fall begins.
+- Speed: 29.6 frames/s on a T4 GPU (2x real time); about 10-13 frames/s on a CPU with OpenVINO.
 
 See `results/summary.md` for every experiment, including the ideas we tested and rejected
-(night brightening, zoom re-check for small people, input 1280, shorter hold time).
+(night brightening, zoom re-check for small people, input 1280, shorter hold time, low-confidence
+tracking, fall-aware track joining, a higher threshold chosen on a harder validation set).
 
 ## Code (`src/`)
 | Step | File |
@@ -51,7 +65,10 @@ See `results/summary.md` for every experiment, including the ideas we tested and
 | Rule baseline | `baseline_fall.py`, `eval_gmdcsa24.py`, `eval_rules_splits.py` |
 | Night and far-away tests | `simulate_night.py`, `simulate_far.py`, `night_analysis.py`, `small_person.py` |
 | Learned models | `preprocess.py`, `make_windows.py`, `train_rf.py`, `train_gru.py`, `fuse.py` |
-| Complete system | `detect_falls.py`, `eval_system.py` |
+| Complete system | `detect_falls.py`, `eval_system.py`, `eval_own.py`, `speed_test.py` |
+| Hard validation set (far / crowd) | `make_hard_val.py` |
+| Localization check, own-video check | `loc_sheets.py`, `check_own_videos.py` |
+| Run it (root folder) | `run_fall.py`, `live_fall.py`, settings in `configs/fallvision.json` |
 
 Videos, pose caches and model weights stay on Kaggle and are never committed.
 Pose model: Ultralytics YOLO11 (AGPL-3.0). Datasets: see their own licences (OOPS and Le2i are
