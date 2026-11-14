@@ -1,0 +1,121 @@
+video,light,type,fall_from,people,distance,angle,has_fall,alarm,people_flagged,score,alarm_time_s,fall_start_est_s,true_fall_start_s,person_id,box,imgsz,standing_px,person_seen,notes
+normal_000,day,fall,standing,1,near,eye,True,True,1,0.996,3.95,2.5,0.86,1,318.1 244.3 421.4 478.6,640,415,0.94,normal
+far_000,day,fall,standing,1,far,eye,True,True,1,0.851,11.95,10.8,0.86,7,528.8 338.2 565.2 397.1,960,127,0.67,far
+normal_001,day,fall,standing,1,near,eye,True,True,1,0.998,4.45,3.0,2.27,1,324.2 257.3 471.7 333.3,640,423,0.83,normal
+far_001,day,fall,standing,1,far,eye,True,True,1,0.998,4.45,3.0,2.27,1,239.9 105.2 267.7 129.4,960,123,0.67,far
+normal_002,day,fall,standing,1,near,eye,True,True,1,0.99,6.16,4.22,2.88,1,301.5 507.4 779.8 719.5,640,541,1.0,normal
+far_002,day,fall,standing,1,far,eye,True,True,1,0.986,6.16,4.55,2.88,1,897.8 620.3 1081.9 684.8,640,162,0.97,far
+normal_003,day,fall,standing,1,near,eye,True,True,1,0.989,11.32,10.38,9.46,1,125.1 494.5 598.2 720.0,640,593,1.0,normal
+far_003,day,fall,standing,1,far,eye,True,True,1,0.987,11.32,10.38,9.46,1,599.4 617.4 742.5 684.4,640,179,1.0,far
+normal_004,day,fall,standing,1,near,eye,True,True,1,1.0,7.6,6.4,6.13,1,125.8 153.8 258.7 218.2,640,513,0.98,normal
+far_004,day,fall,standing,1,far,eye,True,True,1,0.999,7.6,6.24,6.13,1,49.1 69.4 73.2 91.5,640,157,0.99,far
+normal_005,day,fall,standing,1,near,eye,True,True,1,0.999,4.72,3.84,3.47,1,142.1 158.1 210.4 204.3,640,571,1.0,normal
+far_005,day,fall,standing,1,far,eye,True,True,1,0.998,5.2,3.76,3.47,1,216.7 149.0 260.7 162.6,640,174,0.93,far
+normal_006,day,fall,standing,1,near,eye,True,True,2,0.996,2.45,1.15,0.97,1,359.5 164.5 477.2 301.0,640,441,0.82,normal
+far_006,day,fall,standing,1,far,eye,True,True,2,0.995,1.95,1.15,0.97,1,478.9 367.7 504.4 406.0,960,136,0.98,far
+normal_007,day,fall,standing,1,near,eye,True,True,1,0.999,7.58,6.37,6.2,1,96.0 413.7 520.8 689.6,640,578,1.0,normal
+far_007,day,fall,standing,1,far,eye,True,True,1,0.999,7.58,6.91,6.2,1,32.5 437.0 156.5 515.8,640,174,1.0,far
+normal_008,day,fall,standing,1,near,eye,True,True,1,1.0,2.8,1.92,1.43,1,126.8 103.4 197.6 240.0,640,530,0.97,normal
+far_008,day,fall,standing,1,far,eye,True,True,2,0.993,2.8,2.0,1.43,1,165.3 116.0 183.0 156.0,640,160,0.99,far
+normal_009,day,fall,standing,1,near,eye,True,True,1,1.0,4.76,3.82,3.3,1,359.5 425.6 676.0 709.2,640,660,1.0,normal
+far_009,day,fall,standing,1,far,eye,True,True,1,1.0,4.76,3.82,3.3,1,356.8 499.2 452.5 585.3,960,111,1.0,far
+normal_010,day,fall,standing,1,near,eye,True,True,1,0.999,8.98,8.24,6.96,1,442.8 409.8 746.0 627.4,640,558,1.0,normal
+far_010,day,fall,standing,1,far,eye,True,True,1,0.999,8.98,8.17,6.96,1,450.2 481.4 544.9 545.9,640,165,1.0,far
+normal_011,day,fall,standing,1,near,eye,True,True,1,0.999,5.2,4.4,3.9,1,140.6 148.8 204.8 200.5,640,560,0.99,normal
+far_011,day,fall,standing,1,far,eye,True,True,1,0.916,5.2,4.48,3.9,1,277.6 39.9 290.2 69.8,640,167,0.74,far
+normal_012,day,fall,standing,1,near,eye,True,True,1,0.997,4.29,3.22,2.62,1,411.8 526.8 851.8 720.0,640,277,1.0,normal
+far_012,day,fall,standing,1,far,eye,True,True,1,0.995,4.29,3.22,2.62,1,322.4 625.8 456.7 684.0,640,152,1.0,far
+normal_013,day,fall,standing,1,near,eye,True,True,1,0.998,7.92,6.83,6.53,1,96.1 134.8 171.4 178.4,640,423,0.93,normal
+far_013,day,fall,standing,1,far,eye,True,False,0,0.0,,,6.53,,,960,121,0.24,far
+normal_014,day,fall,standing,1,near,eye,True,True,1,0.995,3.82,3.48,1.9,1,444.5 528.7 762.9 720.0,640,709,0.99,normal
+far_014,day,fall,standing,1,far,eye,True,True,1,0.99,3.82,2.75,1.9,1,375.7 569.0 470.3 627.6,640,214,1.0,far
+normal_015,day,fall,standing,1,near,eye,True,True,1,0.996,5.13,3.66,5.26,1,417.8 261.8 869.4 411.9,640,444,0.94,normal
+far_015,day,fall,standing,1,far,eye,True,True,1,0.991,7.79,6.86,5.26,1,240.9 561.0 409.4 627.0,640,165,0.94,far
+normal_016,day,fall,standing,1,near,eye,True,True,1,0.999,5.92,4.75,4.84,1,100.0 150.1 178.0 208.4,640,374,0.98,normal
+far_016,day,fall,standing,1,far,eye,True,False,0,0.0,,,4.84,,,960,141,0.23,far
+normal_017,day,fall,standing,1,near,eye,True,True,1,0.999,3.35,1.88,0.78,1,442.6 522.1 882.9 713.8,640,705,1.0,normal
+far_017,day,fall,standing,1,far,eye,True,True,1,0.999,3.35,1.88,0.78,1,224.1 197.9 345.1 254.9,640,214,0.76,far
+normal_018,day,fall,standing,1,near,eye,True,False,0,0.0,,,5.11,,,640,925,0.57,normal
+far_018,day,fall,standing,1,far,eye,True,False,0,0.0,,,5.11,,,640,275,0.59,far
+normal_019,day,fall,standing,1,near,eye,True,True,1,0.997,4.27,2.33,1.7,1,656.0 505.1 1097.1 716.1,640,494,0.77,normal
+far_019,day,fall,standing,1,far,eye,True,True,1,0.999,4.27,3.27,1.7,1,687.6 207.1 845.4 269.1,640,150,0.41,far
+normal_020,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,621,0.97,normal
+far_020,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,177,0.94,far
+normal_021,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,675,1.0,normal
+far_021,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,198,1.0,far
+normal_022,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,481,0.98,normal
+far_022,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,960,118,1.0,far
+normal_023,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,692,1.0,normal
+far_023,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,209,1.0,far
+normal_024,day,adl,none,1,near,eye,False,True,1,0.999,2.41,0.47,,1,393.5 340.3 832.8 485.5,640,284,1.0,normal
+far_024,day,adl,none,1,far,eye,False,True,1,0.999,2.41,0.47,,1,647.3 204.2 802.7 258.3,640,165,1.0,far
+normal_025,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,467,1.0,normal
+far_025,day,adl,none,1,far,eye,False,True,1,0.889,10.86,10.19,,1,919.1 385.6 1040.1 434.7,640,155,1.0,far
+normal_026,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,520,1.0,normal
+far_026,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,159,0.91,far
+normal_027,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,423,1.0,normal
+far_027,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,960,123,0.79,far
+normal_028,day,adl,none,1,near,eye,False,True,1,0.996,3.0,2.53,,1,430.2 451.9 919.0 711.7,640,441,0.93,normal
+far_028,day,adl,none,1,far,eye,False,True,1,0.994,2.47,2.27,,1,196.5 399.0 377.4 520.0,960,138,0.98,far
+normal_029,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,710,1.0,normal
+far_029,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,216,1.0,far
+normal_030,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,160,1.0,normal
+far_030,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,960,49,1.0,far
+normal_031,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,514,1.0,normal
+far_031,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,170,1.0,far
+normal_032,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,685,1.0,normal
+far_032,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,207,1.0,far
+normal_033,day,adl,none,1,near,eye,False,True,1,0.998,3.35,3.15,,1,499.4 235.9 738.2 466.8,640,330,1.0,normal
+far_033,day,adl,none,1,far,eye,False,True,1,0.993,3.82,3.28,,1,989.7 172.3 1069.5 234.5,640,160,1.0,far
+normal_034,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,566,1.0,normal
+far_034,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,165,1.0,far
+normal_035,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,385,1.0,normal
+far_035,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,960,116,0.52,far
+normal_036,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,637,0.97,normal
+far_036,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,192,0.81,far
+normal_037,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,638,1.0,normal
+far_037,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,194,0.78,far
+normal_038,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,541,1.0,normal
+far_038,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,640,162,0.97,far
+normal_039,day,adl,none,1,near,eye,False,False,0,0.0,,,,,,640,220,0.99,normal
+far_039,day,adl,none,1,far,eye,False,False,0,0.0,,,,,,960,71,1.0,far
+crowd_fall_000,day,fall,standing,3,near,eye,True,True,1,0.964,5.95,4.9,0.86,11,402.1 274.1 538.3 527.1,640,290,1.0,crowd
+crowd_fall_001,day,fall,standing,3,near,eye,True,True,2,0.998,2.45,1.8,2.27,3,354.1 932.9 679.6 1067.2,640,202,1.0,crowd
+crowd_fall_002,day,fall,standing,3,near,eye,True,True,2,0.991,6.63,5.82,2.88,2,196.4 368.5 616.2 538.4,640,246,1.0,crowd
+crowd_fall_003,day,fall,standing,3,near,eye,True,True,1,0.988,11.32,10.38,9.46,1,95.5 377.0 452.5 546.1,640,296,1.0,crowd
+crowd_fall_004,day,fall,standing,3,near,eye,True,True,1,0.984,7.6,6.32,6.13,2,1412.2 345.0 1620.6 512.9,640,191,1.0,crowd
+crowd_fall_005,day,fall,standing,3,near,eye,True,True,1,0.998,4.72,3.84,3.47,1,436.9 354.5 625.8 453.5,640,212,1.0,crowd
+crowd_fall_006,day,fall,standing,3,near,eye,True,True,1,0.995,2.45,1.45,0.97,2,482.3 723.8 638.1 876.7,640,198,1.0,crowd
+crowd_fall_007,day,fall,standing,3,near,eye,True,True,1,0.999,7.11,6.37,6.2,2,1092.0 230.0 1376.7 494.6,640,341,1.0,crowd
+crowd_fall_008,day,fall,standing,3,near,eye,True,True,2,0.999,3.76,3.68,1.43,1,1331.7 166.8 1509.6 336.9,640,197,1.0,crowd
+crowd_fall_009,day,fall,standing,3,near,eye,True,True,2,1.0,4.76,3.82,3.3,2,269.2 855.8 512.4 1073.6,640,187,1.0,crowd
+crowd_fall_010,day,fall,standing,3,near,eye,True,False,0,0.0,,,6.96,,,640,339,1.0,crowd
+crowd_fall_011,day,fall,standing,3,near,eye,True,True,3,0.999,5.2,4.4,3.9,1,382.1 868.9 648.2 995.3,640,211,1.0,crowd
+crowd_fall_012,day,fall,standing,3,near,eye,True,True,1,0.992,4.29,3.15,2.62,1,318.2 935.0 653.0 1078.4,640,256,1.0,crowd
+crowd_fall_013,day,fall,standing,3,near,eye,True,True,1,0.999,7.92,6.83,6.53,3,224.5 926.4 583.1 1078.0,640,236,1.0,crowd
+crowd_fall_014,day,fall,standing,3,near,eye,True,True,1,0.997,3.82,2.75,1.9,2,338.6 938.7 571.5 1080.0,640,355,1.0,crowd
+crowd_fall_015,day,fall,standing,3,near,eye,True,True,1,0.993,4.6,3.13,5.26,2,1291.9 194.9 1599.5 303.0,640,233,1.0,crowd
+crowd_fall_016,day,fall,standing,3,near,eye,True,True,2,1.0,5.92,4.75,4.84,1,259.6 877.6 602.5 998.3,640,201,1.0,crowd
+crowd_fall_017,day,fall,standing,3,near,eye,True,True,1,0.999,3.35,1.95,0.78,1,1297.3 393.8 1610.4 535.2,640,358,1.0,crowd
+crowd_fall_018,day,fall,standing,3,near,eye,True,True,1,0.999,6.42,5.08,5.11,6,1427.3 322.8 1544.5 484.7,640,289,1.0,crowd
+crowd_fall_019,day,fall,standing,3,near,eye,True,True,1,0.999,3.8,3.2,1.7,3,538.9 359.3 827.0 540.4,640,341,1.0,crowd
+crowd_adl_000,day,adl,none,3,near,eye,False,True,1,0.993,1.95,1.75,,3,1252.8 296.4 1650.2 536.4,640,288,1.0,crowd
+crowd_adl_001,day,adl,none,3,near,eye,False,True,2,0.95,8.45,8.3,,1,258.5 752.9 555.6 852.4,640,248,1.0,crowd
+crowd_adl_002,day,adl,none,3,near,eye,False,True,1,0.949,8.45,8.3,,1,251.3 743.4 562.2 853.2,640,287,1.0,crowd
+crowd_adl_003,day,adl,none,3,near,eye,False,True,1,0.839,10.86,10.06,,2,254.8 197.7 549.9 306.5,640,257,1.0,crowd
+crowd_adl_004,day,adl,none,3,near,eye,False,True,1,0.983,3.53,2.93,,3,393.0 389.3 668.6 534.0,640,352,1.0,crowd
+crowd_adl_005,day,adl,none,3,near,eye,False,True,1,0.875,10.86,10.19,,2,257.3 198.3 549.7 305.7,640,257,1.0,crowd
+crowd_adl_006,day,adl,none,3,near,eye,False,True,1,0.999,3.82,3.21,,1,367.6 191.0 570.2 354.6,640,214,1.0,crowd
+crowd_adl_007,day,adl,none,3,near,eye,False,False,0,0.0,,,,,,640,356,1.0,crowd
+crowd_adl_008,day,adl,none,3,near,eye,False,True,2,0.999,2.47,0.53,,1,1204.5 248.5 1586.6 368.5,640,224,1.0,crowd
+crowd_adl_009,day,adl,none,3,near,eye,False,False,0,0.0,,,,,,640,248,1.0,crowd
+crowd_adl_010,day,adl,none,3,near,eye,False,False,0,0.0,,,,,,640,322,1.0,crowd
+crowd_adl_011,day,adl,none,3,near,eye,False,True,2,0.999,2.47,0.53,,1,1203.9 248.4 1586.6 368.6,640,178,1.0,crowd
+crowd_adl_012,day,adl,none,3,near,eye,False,False,0,0.0,,,,,,640,359,1.0,crowd
+crowd_adl_013,day,adl,none,3,near,eye,False,True,1,0.999,2.47,1.27,,1,248.5 783.2 624.2 908.3,640,285,1.0,crowd
+crowd_adl_014,day,adl,none,3,near,eye,False,True,1,0.992,3.35,3.02,,1,367.3 716.0 562.3 888.7,640,356,1.0,crowd
+crowd_adl_015,day,adl,none,3,near,eye,False,False,0,0.0,,,,,,640,229,1.0,crowd
+crowd_adl_016,day,adl,none,3,near,eye,False,True,1,0.838,10.8,10.0,,2,1212.8 193.6 1511.5 306.2,640,266,1.0,crowd
+crowd_adl_017,day,adl,none,3,near,eye,False,False,0,0.0,,,,,,640,341,1.0,crowd
+crowd_adl_018,day,adl,none,3,near,eye,False,True,2,0.998,2.95,2.4,,1,1330.1 198.1 1526.9 351.1,640,288,1.0,crowd
+crowd_adl_019,day,adl,none,3,near,eye,False,True,1,0.992,3.35,3.02,,1,367.4 716.1 562.3 888.6,640,340,1.0,crowd
