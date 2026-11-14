@@ -125,3 +125,12 @@ video; low-resolution video no longer re-runs needlessly. Re-run once on the 20 
 (results/system_own_fix.md): the far video 009 now runs at 960 (person seen in 54 % of frames
 instead of 46 %) but is still missed; all other videos are unchanged, so the own-video result
 stays 17/20 falls caught, 0 false alarms. Kept because it is correct for any video resolution.
+
+Threshold check on the hard validation set (Step 27): F2 (missed falls count twice) chose 0.864
+(hard validation: same 56/60 falls caught, false alarms 22 -> 19). Run once on the test sets
+(results/system_final864.md, system_own_final864.md) it lost recall without reducing false alarms:
+GMDCSA24 36 -> 35 caught (FP 6 -> 6), staged 30 -> 29 (FP 1 -> 1), OOPS 580 -> 570 (FP 28 -> 27),
+own videos 17 -> 16 (the fall from sitting, score 0.83, was lost). The validation gain came mostly from
+the synthetic crowds and did not carry over to real video, so the final system keeps 0.824
+(chosen on validation by fuse.py). This choice was made after seeing the test results and is
+reported as such; both rows are shown. No further values were tried on test data.
