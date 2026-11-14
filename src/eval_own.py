@@ -72,6 +72,7 @@ def main():
     ap.add_argument("--conf", type=float, default=0.25)
     ap.add_argument("--video-out", default=None, help="folder for annotated videos (demo); slower")
     ap.add_argument("--name", default="own")
+    ap.add_argument("--by-notes", action="store_true", help="also report per value of the notes column")
     a = ap.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -122,6 +123,9 @@ def main():
     for col, title in [("light", "light"), ("distance", "distance"), ("angle", "angle")]:
         for g in sorted({x[col] for x in out}):
             lines.append(table_row(f"{title}: {g}", [x for x in out if x[col] == g]))
+    if a.by_notes:
+        for g in sorted({x["notes"] for x in out}):
+            lines.append(table_row(f"set: {g}", [x for x in out if x["notes"] == g]))
     one = [x for x in out if x["people"] == "1"]
     many = [x for x in out if x["people"].isdigit() and int(x["people"]) >= 2]
     if one and many:
