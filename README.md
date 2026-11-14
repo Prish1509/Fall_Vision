@@ -16,18 +16,23 @@ localizes them: **who** fell (track ID), **where** (bounding box) and **when** (
 6. **Second opinion:** a rule-based detector runs on the same skeletons.
 
 ## Run it
-All settings (model, threshold, detection settings) are in `configs/fallvision.json`; nothing is
-set inside the code. Put the trained model at `models/gru_hard.pt` (from the Kaggle output).
+Folders: `app/` (the two programs), `configs/fallvision.json` (every setting; nothing is set inside the
+code), `models/` (put `gru_hard.pt` from the Kaggle output here; the YOLO11 pose weights are
+downloaded here automatically), `test_videos/` (your videos), `outputs/` (results).
+`models/`, `test_videos/` and `outputs/` stay on your computer and are never committed.
 
     pip install -r requirements.txt
-    python run_fall.py "path/to/video.mp4"        # whole video: FALL / NO FALL + annotated video
-    python live_fall.py                            # live from the webcam (q to quit)
-    python live_fall.py "path/to/video.mp4"       # a video shown as it plays, alarms in real time
-    python live_fall.py rtsp://camera-address      # CCTV / IP camera
+    python app/run_fall.py                             # asks for videos one after another; models load only once
+    python app/run_fall.py my_clip.mp4                 # a video in test_videos/: FALL / NO FALL + annotated video in outputs/
+    python app/run_fall.py test_videos                 # every video in a folder
+    python app/live_fall.py                            # live from the webcam (q to quit)
+    python app/live_fall.py my_clip.mp4                # a video shown as it plays, alarms in real time
+    python app/live_fall.py http://192.168.1.20:8080/video --serve   # phone camera; watch on a phone browser
+    python app/live_fall.py rtsp://camera-address      # CCTV / IP camera
 
 Output: who fell (person number), when (fall start and alarm time) and where (box), printed in the
-terminal and drawn on the video (red FALL box). Without an NVIDIA GPU the pose model is converted
-once to OpenVINO, which runs about 4x faster on a CPU.
+terminal and drawn on the video (red FALL box); `--save` keeps the live video and alarms in `outputs/`.
+Without an NVIDIA GPU the pose model is converted once to OpenVINO, which runs about 4x faster on a CPU.
 
 ## Data and splits
 | Use | Data |
@@ -68,7 +73,7 @@ tracking, fall-aware track joining, a higher threshold chosen on a harder valida
 | Complete system | `detect_falls.py`, `eval_system.py`, `eval_own.py`, `speed_test.py` |
 | Hard validation set (far / crowd) | `make_hard_val.py` |
 | Localization check, own-video check | `loc_sheets.py`, `check_own_videos.py` |
-| Run it (root folder) | `run_fall.py`, `live_fall.py`, settings in `configs/fallvision.json` |
+| Run it (`app/`) | `run_fall.py`, `live_fall.py`, `common.py`; settings in `configs/fallvision.json` |
 
 Videos, pose caches and model weights stay on Kaggle and are never committed.
 Pose model: Ultralytics YOLO11 (AGPL-3.0). Datasets: see their own licences (OOPS and Le2i are

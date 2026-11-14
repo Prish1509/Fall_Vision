@@ -3,7 +3,7 @@
   "gru": "models/gru_hard.pt",
   "threshold": 0.824,
   "score": "fall+fallen",
-  "pose_model": "yolo11m-pose.pt",
+  "pose_model": "models/yolo11m-pose.pt",
   "det_conf": 0.25,
   "join_v2": false,
   "small_px": 150,

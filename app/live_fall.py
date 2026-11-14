@@ -1,11 +1,14 @@
 """
 FallVision LIVE: fall or no fall while the video is running.
 
-    python live_fall.py                    # webcam 0
-    python live_fall.py 1                  # another webcam
-    python live_fall.py "D:/videos/a.mp4"  # a video file, played as it runs
-    python live_fall.py rtsp://user:pass@192.168.1.10/stream   # CCTV / IP camera
-Options: --out annotated.mp4   --csv falls.csv   --no-show (no window)   --fast (files: no waiting)
+    python app/live_fall.py                          # webcam 0
+    python app/live_fall.py 1                        # another webcam
+    python app/live_fall.py my_clip.mp4              # a video in test_videos/, played as it runs
+    python app/live_fall.py http://192.168.1.20:8080/video   # phone camera ("IP Webcam" app)
+    python app/live_fall.py rtsp://user:pass@192.168.1.10/stream   # CCTV / IP camera
+Options: --save       keep the annotated video and the list of falls in outputs/
+         --serve      also show the live picture on a phone browser (same Wi-Fi); the address is printed
+         --no-show    no window          --fast   video files: process as fast as possible
 Quit the window with q or Esc.
 
 Works for any camera, resolution, orientation and number of people:
@@ -21,7 +24,6 @@ Every setting comes from configs/fallvision.json (chosen on validation); nothing
 
 import argparse
 import csv
-import json
 import math
 import os
 import queue
@@ -34,43 +36,10 @@ import cv2
 import numpy as np
 import torch
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(ROOT, "src"))
-
+from common import OUT_DIR, ROOT, check_model, load_config, pose_model   # noqa: E402,F401
 from baseline_fall import Params, draw                      # noqa: E402
 from detect_falls import REF_W, load_gru                   # noqa: E402
 from preprocess import features_from_tracks, join_tracks    # noqa: E402
-
-
-def load_config(path):
-    cfg = json.load(open(path))
-    for k in ("gru", "pose_model"):
-        p = os.path.join(ROOT, cfg[k])
-        if os.path.exists(p):
-            cfg[k] = p
-    return cfg
-
-
-def pick_pose_model(name):
-    """GPU: the PyTorch model. CPU: the same weights converted once to OpenVINO (much faster)."""
-    if torch.cuda.is_available():
-        return name
-    ov = os.path.join(ROOT, os.path.splitext(os.path.basename(name))[0] + "_openvino_model")
-    if os.path.isdir(ov):
-        return ov
-    try:
-        import openvino  # noqa: F401
-        from ultralytics import YOLO
-        print("No GPU: converting the pose model to OpenVINO once (~1 min)...")
-        cwd = os.getcwd()
-        os.chdir(ROOT)
-        try:
-            YOLO(name).export(format="openvino", dynamic=True, half=False, verbose=False)
-        finally:
-            os.chdir(cwd)
-        return ov if os.path.isdir(ov) else name
-    except Exception:
-        return name
 
 
 class LatestFrame:
@@ -211,6 +180,79 @@ class LiveFall:
         return new
 
 
+class PhoneView:
+    """Shows the annotated live picture in any browser on the same Wi-Fi (phone, tablet, laptop).
+    The address has a random key, printed at start, so only people you give it to can open it."""
+
+    def __init__(self, port):
+        import secrets
+        import socket
+        from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+        self.key, self.jpg, self.status, self.lock = secrets.token_urlsafe(6), None, "starting...", threading.Lock()
+        view = self
+
+        class Handler(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+
+            def do_GET(self):
+                if self.path == f"/{view.key}":
+                    page = (f"<html><head><meta name='viewport' content='width=device-width, initial-scale=1'>"
+                            f"<title>FallVision live</title></head><body style='margin:0;background:#000;color:#fff;"
+                            f"font-family:sans-serif;text-align:center'><h3 style='margin:8px'>FallVision live</h3>"
+                            f"<img src='/{view.key}/stream' style='width:100%;max-width:1000px'>"
+                            f"<p id='s' style='font-size:20px'></p><script>setInterval(()=>fetch('/{view.key}/status')"
+                            f".then(r=>r.text()).then(t=>{{const e=document.getElementById('s');e.textContent=t;"
+                            f"e.style.color=t.startsWith('FALL')?'#ff4040':'#fff'}}),500)</script></body></html>")
+                    self._send(200, "text/html", page.encode())
+                elif self.path == f"/{view.key}/status":
+                    with view.lock:
+                        self._send(200, "text/plain", view.status.encode())
+                elif self.path == f"/{view.key}/stream":
+                    self.send_response(200)
+                    self.send_header("Content-Type", "multipart/x-mixed-replace; boundary=frame")
+                    self.end_headers()
+                    try:
+                        while True:
+                            with view.lock:
+                                jpg = view.jpg
+                            if jpg is not None:
+                                self.wfile.write(b"--frame\r\nContent-Type: image/jpeg\r\n\r\n" + jpg + b"\r\n")
+                            time.sleep(1 / 15)
+                    except (BrokenPipeError, ConnectionResetError):
+                        pass
+                else:
+                    self._send(404, "text/plain", b"not found")
+
+            def _send(self, code, ctype, body):
+                self.send_response(code)
+                self.send_header("Content-Type", ctype)
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+        self.server = ThreadingHTTPServer(("0.0.0.0", port), Handler)
+        threading.Thread(target=self.server.serve_forever, daemon=True).start()
+        try:                                            # this computer's address on the Wi-Fi (nothing is sent)
+            sk = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sk.connect(("10.255.255.255", 1))
+            ip = sk.getsockname()[0]
+            sk.close()
+        except OSError:
+            ip = "127.0.0.1"
+        self.url = f"http://{ip}:{port}/{self.key}"
+
+    def update(self, img, status):
+        h, w = img.shape[:2]
+        if w > 960:
+            img = cv2.resize(img, (960, int(h * 960 / w)))
+        ok, buf = cv2.imencode(".jpg", img, [cv2.IMWRITE_JPEG_QUALITY, 75])
+        with self.lock:
+            if ok:
+                self.jpg = buf.tobytes()
+            self.status = status
+
+
 def standing_height(boxes, frame_w, frame_h):
     h = [b[3] - b[1] for b in boxes]
     return float(np.percentile(h, 90)) * REF_W / max(frame_w, frame_h) if h else None
@@ -220,24 +262,32 @@ def main():
     ap = argparse.ArgumentParser(description="FallVision live: fall / no fall while the video runs")
     ap.add_argument("source", nargs="?", default="0", help="webcam number, video file, or stream URL")
     ap.add_argument("--config", default=os.path.join(ROOT, "configs", "fallvision.json"))
-    ap.add_argument("--out", default=None, help="save the annotated video here (.mp4)")
-    ap.add_argument("--csv", default=None, help="save one row per fall here")
+    ap.add_argument("--save", action="store_true",
+                    help="save the annotated video and the list of falls in outputs/ (live_<time>.mp4 / .csv)")
     ap.add_argument("--no-show", action="store_true", help="do not open a window")
     ap.add_argument("--fast", action="store_true", help="video files: process as fast as possible")
+    ap.add_argument("--serve", type=int, nargs="?", const=8000, default=None, metavar="PORT",
+                    help="also show the live picture in a browser (phone) on the same Wi-Fi; default port 8000")
     a = ap.parse_args()
+    a.out = a.csv = None
+    if a.save:
+        os.makedirs(OUT_DIR, exist_ok=True)
+        stamp = time.strftime("%Y%m%d_%H%M%S")
+        a.out, a.csv = os.path.join(OUT_DIR, f"live_{stamp}.mp4"), os.path.join(OUT_DIR, f"live_{stamp}_falls.csv")
 
     cfg = load_config(a.config)
-    if not os.path.isfile(cfg["gru"]):
-        sys.exit(f"Model not found: {cfg['gru']} (see configs/fallvision.json)")
+    check_model(cfg)
     from ultralytics import YOLO
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    pose = YOLO(pick_pose_model(cfg["pose_model"]), task="pose")
+    pose = YOLO(pose_model(cfg), task="pose")
     live = LiveFall(cfg, device)
 
     for sz in (640, 960):                                      # warm up before the clock starts
         pose.predict(np.zeros((sz, sz, 3), np.uint8), imgsz=sz, verbose=False)
 
     src = int(a.source) if a.source.isdigit() else a.source
+    if isinstance(src, str) and not os.path.isfile(src) and os.path.isfile(os.path.join(ROOT, "test_videos", src)):
+        src = os.path.join(ROOT, "test_videos", src)            # a bare name means test_videos/<name>
     is_file = isinstance(src, str) and os.path.isfile(src)
     cap = cv2.VideoCapture(src)
     if not cap.isOpened():
@@ -246,6 +296,9 @@ def main():
     if not src_fps or src_fps != src_fps or src_fps > 240:
         src_fps = 30.0
     reader = None if is_file else LatestFrame(cap)
+    phone = PhoneView(a.serve) if a.serve else None
+    if phone:
+        print(f"Watch on your phone (same Wi-Fi): {phone.url}")
     show = not a.no_show
     print(f"Source: {a.source} ({'file' if is_file else 'live'}), model {os.path.basename(cfg['gru'])}, "
           f"threshold {cfg['threshold']}, device {device}. Press q to quit." if show else
@@ -320,7 +373,7 @@ def main():
             if rate < 0.8 * live.fps:
                 print(f"  Warning: this computer processes {rate:.1f} frames/s, below the {live.fps:.0f} the model "
                       f"expects; missing frames are filled in, but a GPU or OpenVINO gives more reliable results.")
-        if show or a.out:
+        if show or a.out or phone:
             labels = {tid: ("FALL" if live.people.get(live.owner.get(tid)) is not None
                             and live.people[live.owner[tid]].alarm is not None else "")
                       for tid in det["ids"]}
@@ -330,6 +383,11 @@ def main():
             rate = n_proc / max(time.monotonic() - tick, 1e-6)
             cv2.putText(shown, f"{slot / live.fps:5.1f} s  {rate:4.1f} fps  people {len(det['ids'])}",
                         (20, shown.shape[0] - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
+            if phone:
+                flagged = [e for e in live.events if live.people.get(e["person_id"]) is not None
+                           and live.people[e["person_id"]].alarm is not None]
+                phone.update(shown, (f"FALL: person #{flagged[-1]['person_id']} at {flagged[-1]['alarm_time_s']:.1f} s"
+                                     if flagged else f"no fall   ({len(det['ids'])} people, {rate:.0f} fps)"))
             if a.out:
                 if writer is None:
                     writer = cv2.VideoWriter(a.out, cv2.VideoWriter_fourcc(*"mp4v"), live.fps,
@@ -369,6 +427,7 @@ def main():
     print(f"Processed {n_proc} frames at {rate:.1f} frames/s (real time needs {live.fps:.0f})")
     if a.out:
         print(f"Annotated video saved: {a.out}")
+        print(f"Alarm list saved     : {a.csv}")
     print("=" * 60)
 
 

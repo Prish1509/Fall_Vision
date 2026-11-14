@@ -121,6 +121,21 @@ def denoise_brighten(frame, dark_below=80.0, target=100.0):
     return cv2.LUT(out, lut)
 
 
+_POSE_MODELS = {}
+
+
+def _pose_model(model_name):
+    """Load the pose model once per program run and reuse it; each video gets a fresh tracker, so
+    results are the same as loading it again, only faster when several videos are processed."""
+    from ultralytics import YOLO
+    model = _POSE_MODELS.get(model_name)
+    if model is None:
+        model = _POSE_MODELS[model_name] = YOLO(model_name, task="pose")
+    elif getattr(model, "predictor", None) is not None and hasattr(model.predictor, "trackers"):
+        del model.predictor.trackers                        # new video: new ByteTrack state
+    return model
+
+
 def extract_tracks(video_path, model_name="yolo11m-pose.pt", target_fps=15.0, imgsz=640,
                    keep_frames=False, night="off", conf=0.25, small_px=0):
     """Run pose + tracking. Returns dict with effective fps and per-frame detections.
@@ -129,9 +144,7 @@ def extract_tracks(video_path, model_name="yolo11m-pose.pt", target_fps=15.0, im
     conf: detection confidence threshold (a lower value keeps more people in dark video).
     small_px: if > 0, people whose box is shorter than this many pixels are re-checked on an
               enlarged crop (small_person.py, Step 15). 0 = off."""
-    from ultralytics import YOLO
-
-    model = YOLO(model_name)
+    model = _pose_model(model_name)
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         raise IOError(f"Cannot open video: {video_path}")

@@ -15,3 +15,6 @@ outputs/
 *.npz
 *.zip
 *_openvino_model/
+test_videos/
+__pycache__/
+*_falls.csv
