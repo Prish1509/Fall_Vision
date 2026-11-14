@@ -6,3 +6,4 @@ scikit-learn
 torch
 lap
 tqdm
+openvino   # fast CPU inference for run_fall.py (no GPU needed)

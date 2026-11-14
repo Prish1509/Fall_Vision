@@ -14,3 +14,4 @@ outputs/
 *.npy
 *.npz
 *.zip
+*_openvino_model/
