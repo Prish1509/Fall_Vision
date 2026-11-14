@@ -16,10 +16,13 @@ import os
 import sys
 import time
 
+import json
+
 VIDEO = r"path/to/your/video.mp4"          # <-- put the video path here
-GRU = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "gru_hard.pt")
-THRESHOLD = 0.824                          # chosen on validation; do not change
 ROOT = os.path.dirname(os.path.abspath(__file__))
+CFG = json.load(open(os.path.join(ROOT, "configs", "fallvision.json")))   # all settings live here
+GRU = os.path.join(ROOT, CFG["gru"])
+THRESHOLD = CFG["threshold"]
 
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
@@ -29,12 +32,13 @@ def pose_model():
     Without one: the model converted once to OpenVINO (Intel's CPU runtime), about 4x faster on a
     CPU with practically the same keypoints (checked: same alarm, same fall time)."""
     import torch
-    pt = os.path.join(ROOT, "yolo11m-pose.pt")
+    name = CFG["pose_model"]
+    pt = os.path.join(ROOT, name)
     if not os.path.isfile(pt):
-        pt = "yolo11m-pose.pt"                           # downloaded automatically on first use
+        pt = name                                        # downloaded automatically on first use
     if torch.cuda.is_available():
         return pt
-    ov = os.path.join(ROOT, "yolo11m-pose_openvino_model")
+    ov = os.path.join(ROOT, os.path.splitext(os.path.basename(name))[0] + "_openvino_model")
     if os.path.isdir(ov):
         return ov
     try:
@@ -47,7 +51,7 @@ def pose_model():
     cwd = os.getcwd()
     os.chdir(ROOT)                                       # weights and converted model stay in the repo folder
     try:
-        YOLO("yolo11m-pose.pt").export(format="openvino", dynamic=True, half=False, verbose=False)
+        YOLO(name).export(format="openvino", dynamic=True, half=False, verbose=False)
     except Exception as e:                               # e.g. a CPU OpenVINO does not support
         print(f"OpenVINO conversion failed ({type(e).__name__}); using the normal model.")
     finally:
@@ -70,7 +74,8 @@ def main():
     model = pose_model()
     print(f"Pose model: {os.path.basename(model.rstrip(os.sep))}")
     sys.argv = ["detect_falls.py", "--video", video, "--gru", GRU, "--threshold", str(THRESHOLD),
-                "--model", model, "--out", out_video, "--csv", out_csv]
+                "--score", CFG["score"], "--conf", str(CFG["det_conf"]), "--small-px", str(CFG["small_px"]),
+                "--model", model, "--out", out_video, "--csv", out_csv] + (["--join-v2"] if CFG["join_v2"] else [])
     t0 = time.time()
     detect_falls.main()
     took = time.time() - t0

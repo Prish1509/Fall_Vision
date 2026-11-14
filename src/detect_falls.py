@@ -146,7 +146,11 @@ def main():
     ap.add_argument("--conf", type=float, default=0.25)
     ap.add_argument("--out", default=None, help="annotated output video (.mp4)")
     ap.add_argument("--csv", default=None, help="CSV with one row per alarm")
+    ap.add_argument("--join-v2", action="store_true", help="fall-aware track joining (preprocess.JOIN_V2)")
     a = ap.parse_args()
+    if a.join_v2:
+        import preprocess
+        preprocess.JOIN_V2 = True
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     grus = [load_gru(g, device) for g in a.gru]
