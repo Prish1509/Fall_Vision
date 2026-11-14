@@ -1,0 +1,24 @@
+python 3.13.16
+os Linux-6.18.55+-x86_64-with-glibc2.39
+torch 2.11.0+cu130 cuda 13.0
+lap==0.5.14
+matplotlib==3.10.0
+numpy==2.1.3
+opencv-python==4.14.0.94
+opencv-python-headless==4.14.0.94
+pandas==2.3.3
+pillow==13.0.0
+polars==1.35.2
+psutil==5.9.5
+PyYAML==6.0.3
+requests==2.34.2
+scikit-learn==1.6.1
+scipy==1.16.3
+torch==2.11.0+cu130
+torchvision==0.26.0+cu130
+tqdm==4.67.3
+ultralytics==8.4.212
+ultralytics-thop==2.2.5
+name, driver_version
+Tesla T4, 580.178.04
+Tesla T4, 580.178.04
