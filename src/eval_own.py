@@ -4,7 +4,7 @@ The complete system on our own recorded videos (Member 2, Step 25 / Step 13).
 Own videos are TEST ONLY. Each video goes through exactly what detect_falls.py does on a new video:
 YOLO11m-pose + ByteTrack at input 640, a re-run at input 960 when people are small (standing height
 under --small-px), then the GRU on every tracked person (alarms_for_video). The threshold is the one
-chosen on validation (0.849); nothing is tuned here.
+chosen on validation (0.824 for gru_hard.pt); nothing is tuned here.
 
 Labels come from splits/own_videos_labels.csv (light, type, fall_from, fall_start_s, people,
 distance, angle). Reported:

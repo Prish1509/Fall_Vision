@@ -140,7 +140,7 @@ def main():
     ap.add_argument("--gru", nargs="+", required=True, help="one or more models saved by train_gru.py")
     ap.add_argument("--rf", default=None, help="optional Random Forest saved by train_rf.py (rf.joblib)")
     ap.add_argument("--score", choices=["fall+fallen", "falling"], default="fall+fallen")
-    ap.add_argument("--threshold", type=float, default=0.849, help="chosen on validation (fuse.py)")
+    ap.add_argument("--threshold", type=float, default=0.824, help="chosen on validation (fuse.py)")
     ap.add_argument("--model", default="yolo11m-pose.pt")
     ap.add_argument("--small-px", type=int, default=150, help="re-run at input 960 if the standing height (in a 1280-wide frame) is below this")
     ap.add_argument("--conf", type=float, default=0.25)

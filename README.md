@@ -17,7 +17,7 @@ localizes them: **who** fell (track ID), **where** (bounding box) and **when** (
 
 ## Run it on a video
 
-    python src/detect_falls.py --video clip.mp4 --gru models/gru.pt --threshold 0.849 --out clip_annotated.mp4 --csv clip_falls.csv
+    python src/detect_falls.py --video clip.mp4 --gru models/gru_hard.pt --threshold 0.824 --out clip_annotated.mp4 --csv clip_falls.csv
 
 Output: printed alarms (person, fall start, alarm time, box), a CSV, and an annotated video.
 

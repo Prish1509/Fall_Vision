@@ -6,7 +6,7 @@ FallVision on one video: put the path below (or give it in the terminal) and run
 
 Prints FALL DETECTED or NO FALL (who, when, where) and saves the video with boxes, skeletons and
 a red FALL label on the person who fell, next to the input as <name>_falls.mp4.
-Needs models/gru.pt (from the fallvision-models Kaggle output) and, the first time, internet for
+Needs models/gru_hard.pt (from the fallvision-models Kaggle output) and, the first time, internet for
 the YOLO11m-pose weights (downloaded automatically). Without an NVIDIA GPU the pose model is
 converted once to OpenVINO (pip install openvino), which runs about 4x faster on a CPU.
 """
@@ -17,8 +17,8 @@ import sys
 import time
 
 VIDEO = r"path/to/your/video.mp4"          # <-- put the video path here
-GRU = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "gru.pt")
-THRESHOLD = 0.849                          # chosen on validation; do not change
+GRU = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", "gru_hard.pt")
+THRESHOLD = 0.824                          # chosen on validation; do not change
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -61,8 +61,8 @@ def main():
         sys.exit(f"Video not found: {video}\nPut the path in VIDEO at the top of run_fall.py, "
                  f"or run:  python run_fall.py \"path/to/video.mp4\"")
     if not os.path.isfile(GRU):
-        sys.exit(f"Model not found: {GRU}\nDownload gru.pt from the fallvision-models Kaggle output "
-                 f"(Output -> models -> gru.pt) and put it in the models folder.")
+        sys.exit(f"Model not found: {GRU}\nDownload gru_hard.pt from the fallvision-models Kaggle output "
+                 f"(Output -> models -> gru_hard.pt) and put it in the models folder.")
 
     import detect_falls
     stem = os.path.splitext(video)[0]
