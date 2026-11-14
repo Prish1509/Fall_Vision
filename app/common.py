@@ -1,9 +1,10 @@
 """
 Shared by run_fall.py and live_fall.py: where things are, the settings file, and the pose model.
+(The official entry point for the course is infer.py in the main folder.)
 
 Folder layout (only code, settings and results are in git; the rest stays on your computer):
   app/            run_fall.py, live_fall.py, this file
-  configs/        fallvision.json  - every setting (model, threshold, detection)
+  config.yaml     every setting (model paths, threshold, input size, sampling, windows, alarm)
   models/         gru_hard.pt (from Kaggle), yolo11m-pose.pt (downloaded automatically),
                   yolo11m-pose_openvino_model/ (made automatically on a computer without a GPU)
   test_videos/    your own videos to test
@@ -11,7 +12,6 @@ Folder layout (only code, settings and results are in git; the rest stays on you
   src/            the pipeline (pose, tracking, features, GRU, evaluation)
 """
 
-import json
 import os
 import sys
 
@@ -21,12 +21,9 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 
 def load_config(path=None):
-    path = path or os.path.join(ROOT, "configs", "fallvision.json")
-    cfg = json.load(open(path))
-    for k in ("gru", "pose_model"):
-        if not os.path.isabs(cfg[k]):
-            cfg[k] = os.path.join(ROOT, cfg[k])
-    return cfg
+    """The one settings file, config.yaml (also used by infer.py)."""
+    from fv_engine import load_config as _load
+    return _load(path or os.path.join(ROOT, "config.yaml"))
 
 
 def check_model(cfg):

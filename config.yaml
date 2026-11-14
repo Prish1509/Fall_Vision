@@ -1,0 +1,32 @@
+# FallVision - person collapse detection. The one final configuration: every setting used at test
+# time is here and nothing is set inside the code. Paths are relative to this file's folder.
+# Chosen on validation videos only (results/fusion.md, results/summary.md); fixed for testing.
+
+project: person_collapse
+
+models:
+  pose: models/yolo11m-pose.pt          # Ultralytics YOLO11m-pose (17 COCO keypoints), pretrained
+  classifier: models/gru_hard.pt        # our 2-layer GRU (normal / falling / fallen), trained by src/train_gru.py
+
+pose:
+  input_size: 640                       # YOLO input size
+  input_size_small: 960                 # used while people are small (far camera)
+  small_person_px: 150                  # small = standing height below this, measured in a 1280-wide frame
+  detection_confidence: 0.25            # person detection threshold
+  tracker: bytetrack.yaml               # ByteTrack (shipped with Ultralytics)
+
+frame_sampling:
+  model_fps: 15.0                       # frames are taken from the video on a 15-per-second time grid
+
+temporal:
+  window_s: 2.0                         # the GRU reads 2-s windows (30 skeletons) - fixed by training
+  stride_s: 0.5                         # a new window is scored every 0.5 s
+  history_s: 10.0                       # past seconds per person used for body height and floor level
+  track_join_gap_s: 1.5                 # a new track id within this gap, near a lost one, is the same person
+  fall_aware_join: false                # tested on the hard validation set, no gain (Step 27)
+
+alarm:
+  label: person_collapse
+  score: fall+fallen                    # window score = P(falling) + P(fallen), averaged with the previous window
+  threshold: 0.824                      # alarm when the score reaches this (validation, fuse.py)
+  rearm_s: 10.0                         # a person can raise a new alarm after being below threshold this long

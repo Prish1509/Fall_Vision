@@ -19,7 +19,7 @@ Works for any camera, resolution, orientation and number of people:
   - body size and floor level are measured per person from the last few seconds, not fixed;
   - when people are small (far camera) the pose model switches to input 960, as in detect_falls.py;
   - a person who gets a new tracker id at the moment of the fall is joined back to themselves.
-Every setting comes from configs/fallvision.json (chosen on validation); nothing is set in this file.
+Every setting comes from config.yaml (chosen on validation); nothing is set in this file.
 """
 
 import argparse
@@ -261,7 +261,7 @@ def standing_height(boxes, frame_w, frame_h):
 def main():
     ap = argparse.ArgumentParser(description="FallVision live: fall / no fall while the video runs")
     ap.add_argument("source", nargs="?", default="0", help="webcam number, video file, or stream URL")
-    ap.add_argument("--config", default=os.path.join(ROOT, "configs", "fallvision.json"))
+    ap.add_argument("--config", default=os.path.join(ROOT, "config.yaml"))
     ap.add_argument("--save", action="store_true",
                     help="save the annotated video and the list of falls in outputs/ (live_<time>.mp4 / .csv)")
     ap.add_argument("--no-show", action="store_true", help="do not open a window")

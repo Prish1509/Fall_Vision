@@ -16,7 +16,8 @@ localizes them: **who** fell (track ID), **where** (bounding box) and **when** (
 6. **Second opinion:** a rule-based detector runs on the same skeletons.
 
 ## Run it
-Folders: `app/` (the two programs), `configs/fallvision.json` (every setting; nothing is set inside the
+Course entry point: `python infer.py --source INPUT.mp4 --config config.yaml --output-dir results --device cuda:0 --no-display`.
+Folders: `app/` (easy-to-use programs), `config.yaml` (every setting; nothing is set inside the
 code), `models/` (put `gru_hard.pt` from the Kaggle output here; the YOLO11 pose weights are
 downloaded here automatically), `test_videos/` (your videos), `outputs/` (results).
 `models/`, `test_videos/` and `outputs/` stay on your computer and are never committed.
@@ -73,7 +74,7 @@ tracking, fall-aware track joining, a higher threshold chosen on a harder valida
 | Complete system | `detect_falls.py`, `eval_system.py`, `eval_own.py`, `speed_test.py` |
 | Hard validation set (far / crowd) | `make_hard_val.py` |
 | Localization check, own-video check | `loc_sheets.py`, `check_own_videos.py` |
-| Run it (`app/`) | `run_fall.py`, `live_fall.py`, `common.py`; settings in `configs/fallvision.json` |
+| Run it (`app/`) | `run_fall.py`, `live_fall.py`, `common.py`; settings in `config.yaml` |
 
 Videos, pose caches and model weights stay on Kaggle and are never committed.
 Pose model: Ultralytics YOLO11 (AGPL-3.0). Datasets: see their own licences (OOPS and Le2i are
