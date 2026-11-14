@@ -113,6 +113,8 @@ def main():
     ap.add_argument("--far-scale", type=float, default=0.3)
     ap.add_argument("--crowd-k", type=int, default=2, help="no-fall videos placed next to each fall video")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--n-fall", type=int, default=0, help="use only N validation fall videos (0 = all)")
+    ap.add_argument("--n-adl", type=int, default=0, help="use only N validation no-fall videos (0 = all)")
     a = ap.parse_args()
 
     rng = random.Random(a.seed)
@@ -126,6 +128,11 @@ def main():
             vids.append(dict(key=key, path=p, fall=key in starts, start=starts.get(key)))
     falls = [v for v in vids if v["fall"]]
     adls = [v for v in vids if not v["fall"]]
+    if a.n_fall:
+        falls = rng.sample(falls, min(a.n_fall, len(falls)))
+    if a.n_adl:
+        adls = rng.sample(adls, min(a.n_adl, len(adls)))
+    vids = falls + adls
     print(f"{len(vids)} validation videos found ({len(falls)} falls, {len(adls)} no-fall)", flush=True)
 
     os.makedirs(a.out, exist_ok=True)

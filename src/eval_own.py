@@ -72,9 +72,13 @@ def main():
     ap.add_argument("--conf", type=float, default=0.25)
     ap.add_argument("--video-out", default=None, help="folder for annotated videos (demo); slower")
     ap.add_argument("--name", default="own")
+    ap.add_argument("--join-v2", action="store_true", help="join broken tracks with preprocess JOIN_V2")
     ap.add_argument("--by-notes", action="store_true", help="also report per value of the notes column")
     a = ap.parse_args()
 
+    if a.join_v2:
+        import preprocess
+        preprocess.JOIN_V2 = True
     device = "cuda" if torch.cuda.is_available() else "cpu"
     grus = [load_gru(g, device) for g in a.gru]
     files = {os.path.splitext(os.path.basename(p))[0]: p

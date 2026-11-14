@@ -45,8 +45,17 @@ FEATURE_NAMES = ([f"pos_{a}{j}" for j in range(17) for a in "xy"] +
 assert len(FEATURE_NAMES) == N_FEATS
 
 
+JOIN_V2 = False   # set True (eval_own.py / detect_falls.py --join-v2) to use the version below
+
+
 def join_tracks(frames, fps, max_gap_s=1.5):
-    """Return {joined_id: [(frame_idx, box, kpts), ...]} after linking broken tracks."""
+    """Return {joined_id: [(frame_idx, box, kpts), ...]} after linking broken tracks.
+
+    v2 (JOIN_V2 = True), for the moment of a fall: the tracker often starts the new id in the very
+    frame the old one ends (or 1-2 frames before), and the box changes from tall (standing) to wide
+    (lying), so its centre jumps. v2 also accepts an overlap of up to 2 frames and measures the
+    distance between the boxes' bottom centres (where the person touches the ground) as well as
+    their centres, both within one body height."""
     tracks = {}
     for i, f in enumerate(frames):
         for tid, b, k in zip(f["ids"], f["boxes"], f["kpts"]):
@@ -60,10 +69,12 @@ def join_tracks(frames, fps, max_gap_s=1.5):
         for jid, items in joined.items():
             end, b1, _ = items[-1]
             gap = start - end
-            if not (0 < gap <= max_gap_s * fps):
+            if not ((-2 if JOIN_V2 else 0) < gap <= max_gap_s * fps):
                 continue
             cx1, cy1, h1 = (b1[0] + b1[2]) / 2, (b1[1] + b1[3]) / 2, b1[3] - b1[1]
             dist = math.hypot(cx0 - cx1, cy0 - cy1)
+            if JOIN_V2:                                                  # ground point stays put
+                dist = min(dist, math.hypot(cx0 - cx1, b0[3] - b1[3]))
             if dist <= max(h0, h1) and (best is None or dist < best[0]):
                 best = (dist, jid)
         if best is None:
